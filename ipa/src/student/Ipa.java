@@ -8,8 +8,10 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
@@ -20,11 +22,17 @@ import java.util.concurrent.ExecutionException;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 public class Ipa extends JFrame {
 
 	private JPanel contentPane;
 	public static JFrame frame = new JFrame();
+	JButton submitbtn;
+ int filename = random();
+ private final Action action = new SwingAction();
 	/**
 	 * Launch the application.
 	 */
@@ -39,13 +47,17 @@ public class Ipa extends JFrame {
 			}
 		});
 	}
+	private int random() {
+		return new Random().nextInt(100000);
+		
+	}
 
 	/**
 	 * Create the frame.
 	 * @throws LineUnavailableException 
 	 */
 	public Ipa() throws LineUnavailableException {
-		int filename = new Random().nextInt(100000);
+		
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1080, 720);
@@ -56,7 +68,7 @@ public class Ipa extends JFrame {
 		JLabel text = new JLabel("Phonetics");
 		text.setHorizontalAlignment(SwingConstants.CENTER);
 		text.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		text.setBounds(403, 155, 304, 45);
+		text.setBounds(426, 133, 232, 40);
 		contentPane.add(text);
 		
 		JLabel accuracy = new JLabel("");
@@ -90,7 +102,7 @@ public class Ipa extends JFrame {
 		contentPane.add(listen_btn);
 		
 		JButton record_btn = new JButton("Record");
-		record_btn.setBounds(446, 268, 206, 55);
+		record_btn.setBounds(426, 283, 206, 55);
 		record_btn.setBackground(Color.WHITE);
 		record_btn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -110,12 +122,14 @@ public class Ipa extends JFrame {
 					e1.printStackTrace();
 				}
 				listen_btn.setEnabled(true);
+				submitbtn.setEnabled(true);
 				}
 		});
 		contentPane.setLayout(null);
 		contentPane.add(record_btn);
 		
-		JButton submitbtn = new JButton("Save");
+		submitbtn = new JButton("Save");
+		submitbtn.setEnabled(false);
 		submitbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
@@ -136,16 +150,24 @@ public class Ipa extends JFrame {
 		JButton cancelbtn = new JButton("Cancel");
 		cancelbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				new File(filename+"_record.wav").delete();
 				setVisible(false);
+				random();
 				new dashboard().setVisible(true);
+				
 				
 			}
 		});
 		cancelbtn.setBounds(567, 380, 89, 23);
 		contentPane.add(cancelbtn);
 		
-		JButton play = new JButton("play");
-		play.setBounds(406, 168, 89, 23);
+		JButton play = new JButton("");
+		play.setForeground(Color.GREEN);
+		play.setBackground(new Color(0,0,0,0));
+		play.setBorder(null);
+		play.setIcon(new ImageIcon(Ipa.class.getResource("/assets/play-button.png")));
+		play.setBounds(354, 140, 73, 73);
 		play.addActionListener(new ActionListener() {
 
 			@Override
@@ -166,5 +188,13 @@ public class Ipa extends JFrame {
 		
 
 		
+	}
+	private class SwingAction extends AbstractAction {
+		public SwingAction() {
+			putValue(NAME, "SwingAction");
+			putValue(SHORT_DESCRIPTION, "Some short description");
+		}
+		public void actionPerformed(ActionEvent e) {
+		}
 	}
 }

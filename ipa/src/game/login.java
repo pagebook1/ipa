@@ -62,18 +62,18 @@ public class login extends JFrame {
 		setContentPane(contentPane);
 		
 		username = new JTextField();
-		username.setBounds(117, 126, 281, 50);
+		username.setBounds(367, 213, 281, 50);
 		username.setColumns(10);
 		
 		password = new JTextField();
-		password.setBounds(117, 222, 281, 55);
+		password.setBounds(367, 293, 281, 55);
 		password.setColumns(10);
 		
 		loginbtn = new JButton("LOGIN");
 		loginbtn.setFont(new Font("Tahoma", Font.BOLD, 25));
 		loginbtn.setForeground(Color.WHITE);
 		loginbtn.setBackground(Color.BLUE);
-		loginbtn.setBounds(117, 320, 281, 56);
+		loginbtn.setBounds(367, 413, 281, 56);
 		loginbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String user = username.getText();
@@ -106,12 +106,12 @@ public class login extends JFrame {
 		
 		lblNewLabel = new JLabel("New label");
 		lblNewLabel.setIcon(new ImageIcon(login.class.getResource("/assets/user.png")));
-		lblNewLabel.setBounds(67, 116, 36, 71);
+		lblNewLabel.setBounds(321, 203, 36, 71);
 		contentPane.add(lblNewLabel);
 		
 		lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(login.class.getResource("/assets/lock.png")));
-		lblNewLabel_1.setBounds(67, 222, 36, 50);
+		lblNewLabel_1.setBounds(321, 293, 36, 50);
 		contentPane.add(lblNewLabel_1);
 	}
 }
