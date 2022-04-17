@@ -29,5 +29,11 @@
     <artifactId>client-sdk</artifactId>
     <version>1.20.0</version>
   </dependency>
+<dependency>
+    <groupId>org.eclipse.platform</groupId>
+    <artifactId>org.eclipse.swt.win32.win32.x86_64</artifactId>
+    <version>3.118.0</version>
+</dependency>
+
 </dependencies>
 </project>

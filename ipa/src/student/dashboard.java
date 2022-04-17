@@ -71,7 +71,7 @@ public class dashboard extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBounds(23, 101, 224, 185);
+		lblNewLabel.setBounds(24, 49, 224, 185);
 		panel.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(dashboard.class.getResource("/assets/logo1.jpg")));
@@ -198,6 +198,12 @@ public class dashboard extends JFrame {
 		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_3.setBounds(10, 0, 73, 50);
 		logoutbtn.add(lblNewLabel_1_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("STUDENT DASHBOARD");
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 21));
+		lblNewLabel_2.setForeground(new Color(255, 255, 255));
+		lblNewLabel_2.setBounds(10, 243, 249, 43);
+		panel.add(lblNewLabel_2);
 		
 		
 		content = new JPanel();
