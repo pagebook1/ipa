@@ -44,7 +44,7 @@ public class speect2text {
     // This sample takes and existing file and reads it by chunk into a local buffer and then pushes the
     // buffer into an PushAudioStream for pronunciation assessment.
 	static Semaphore stopRecognitionSemaphore; 
-    public  speect2text(String filename) throws InterruptedException, IOException
+    public  speect2text(String filename,String referenceText) throws InterruptedException, IOException
     {
         // Creates an instance of a speech config with specified
         // subscription key and service region. Replace with your own subscription key
@@ -115,7 +115,6 @@ public class speect2text {
             System.out.println("\n    Session stopped event.");
         });
 
-        String referenceText = "phonetics";
         // create pronunciation assessment config, set grading system, granularity and if enable miscue based on your requirement.
         PronunciationAssessmentConfig pronunciationConfig = new PronunciationAssessmentConfig(referenceText,
                 PronunciationAssessmentGradingSystem.HundredMark, PronunciationAssessmentGranularity.Phoneme, true);

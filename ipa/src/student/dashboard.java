@@ -26,7 +26,8 @@ import java.awt.Window.Type;
 public class dashboard extends JFrame {
 	JPanel content;
 	private JPanel contentPane;
-	ActivityList activityList;
+	public static ActivityList activityList;
+	public static home Home;
 	static dashboard frame =  new dashboard();
 	
 
@@ -51,6 +52,7 @@ public class dashboard extends JFrame {
 	public dashboard() {
 		
 		activityList = new ActivityList();
+		Home = new home();
 		activityList.setLocation(0, 0);
 		setType(Type.POPUP);
 		setResizable(false);
@@ -68,11 +70,11 @@ public class dashboard extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(10, 11, 249, 262);
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(23, 101, 224, 185);
 		panel.add(lblNewLabel);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon(dashboard.class.getResource("/assets/attachment_29200812.png")));
+		lblNewLabel.setIcon(new ImageIcon(dashboard.class.getResource("/assets/logo1.jpg")));
 		
 		JPanel homebtn = new JPanel();
 		homebtn.setBorder(new LineBorder(new Color(95, 158, 160), 1, true));
@@ -80,7 +82,7 @@ public class dashboard extends JFrame {
 		homebtn.addMouseListener(new PanelMouseAdapter(homebtn) {
 			public void mouseClicked(java.awt.event.MouseEvent e)
 			{
-				
+				showpanel(Home);
 			}
 		});
 		homebtn.setBounds(10, 310, 249, 50);
@@ -128,8 +130,8 @@ public class dashboard extends JFrame {
 		activitybtn.addMouseListener(new PanelMouseAdapter(activitybtn) {
 			public void mouseClicked(java.awt.event.MouseEvent e)
 			{
-				activityList.setVisible(true);
-				activityList.content.setVisible(true);
+				showpanel(activityList);
+				ActivityList.tabbedPane.setSelectedIndex(0);
 			}
 		});
 		activitybtn.setBounds(10, 432, 249, 50);
@@ -206,29 +208,15 @@ public class dashboard extends JFrame {
 		content.setLayout(null);
 		
 		content.add(activityList);
+		content.add(Home);
 		
-		
-		JButton lpabtn = new JButton("Voice Activity");
-		lpabtn.setBounds(44, 38, 139, 62);
-		content.add(lpabtn);
-		lpabtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				try {
-					new Ipa().setVisible(true);
-					setVisible(false);
-					
-				} catch (LineUnavailableException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-			}
-		});
-		showpanel(content);
+		showpanel(Home);
 	}
 	
-	public void showpanel(JPanel panel) {
+	public static void showpanel(JPanel panel) {
 		activityList.setVisible(false);
+		Home.setVisible(false);
+		
 		panel.setVisible(true);
 		
 	}
