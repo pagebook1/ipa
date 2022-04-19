@@ -91,6 +91,8 @@ public class speect2text {
             }
             else if (e.getResult().getReason() == ResultReason.NoMatch) {
                 System.out.println("NOMATCH: Speech could not be recognized.");
+                accuracy = "0";
+                pronoun = "0";
             }
             stopRecognitionSemaphore.release();
         });

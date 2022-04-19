@@ -13,6 +13,7 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
+
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
@@ -140,6 +141,13 @@ public class dashboard extends JFrame {
 		activitybtn.add(lblNewLabel_1_1);
 		
 		JPanel logoutbtn = new JPanel();
+		logoutbtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				new game.login().setVisible(true);
+				dashboard.this.dispose();
+			}
+		});
 		logoutbtn.setLayout(null);
 		logoutbtn.setBorder(new LineBorder(new Color(95, 158, 160)));
 		logoutbtn.setBackground(new Color(0, 128, 128));

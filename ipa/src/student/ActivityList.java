@@ -16,7 +16,7 @@ import java.awt.Font;
 
 public class ActivityList extends JPanel {
 	Activity1 activity1;
-	Activity1 activity2;
+	Activity2 activity2;
 	Activity1 activity3;
 	public static JTabbedPane tabbedPane;
 	/**
@@ -24,7 +24,7 @@ public class ActivityList extends JPanel {
 	 */
 	public ActivityList() {
 		activity1 = new Activity1("phonetics");
-		activity2 = new Activity1("indigo");
+		activity2 = new	Activity2();
 		activity3 = new Activity1("computerist");
 		
 		setBackground(Color.WHITE);
