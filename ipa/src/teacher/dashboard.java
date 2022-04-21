@@ -222,7 +222,10 @@ public class dashboard extends JFrame {
 		recordlist.setLayout(null);
 		
 		JButton btnNewButton = new JButton("ACTIVITY1");
-		btnNewButton.setBounds(145, 139, 89, 23);
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 18));
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(0, 128, 128));
+		btnNewButton.setBounds(192, 139, 156, 48);
 		recordlist.add(btnNewButton);
 		
 		JButton btnActivity = new JButton("ACTIVITY2");
@@ -231,11 +234,22 @@ public class dashboard extends JFrame {
 				tabbedPane.setSelectedIndex(3);
 			}
 		});
-		btnActivity.setBounds(261, 139, 89, 23);
+		btnActivity.setFont(new Font("Dialog", Font.BOLD, 18));
+		btnActivity.setForeground(new Color(255, 255, 255));
+		btnActivity.setBackground(new Color(0, 128, 128));
+		
+		btnActivity.setBounds(387, 139, 156, 48);
 		recordlist.add(btnActivity);
 		
 		JButton btnActivity_1 = new JButton("ACTIVITY3");
-		btnActivity_1.setBounds(399, 139, 89, 23);
+		btnActivity_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnActivity_1.setBounds(192, 248, 156, 48);
+		btnActivity_1.setFont(new Font("Dialog", Font.BOLD, 18));
+		btnActivity_1.setForeground(new Color(255, 255, 255));
+		btnActivity_1.setBackground(new Color(0, 128, 128));
 		recordlist.add(btnActivity_1);
 		
 		JButton btnActivity_2 = new JButton("ACTIVITY4");
@@ -244,7 +258,10 @@ public class dashboard extends JFrame {
 				tabbedPane.setSelectedIndex(4);
 			}
 		});
-		btnActivity_2.setBounds(529, 139, 89, 23);
+		btnActivity_2.setFont(new Font("Dialog", Font.BOLD, 18));
+		btnActivity_2.setForeground(new Color(255, 255, 255));
+		btnActivity_2.setBackground(new Color(0, 128, 128));
+		btnActivity_2.setBounds(387, 248, 156, 48);
 		recordlist.add(btnActivity_2);
 	}
 

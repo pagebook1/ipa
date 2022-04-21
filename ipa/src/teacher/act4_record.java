@@ -81,6 +81,7 @@ public class act4_record extends JPanel {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
+					model.setRowCount(0);
 					ArrayList<String>records = new connection().getAct4Scores(comboBox_1.getSelectedItem().toString());
 					String[] list = {"1","2","3","4","5","6","7"};
 					

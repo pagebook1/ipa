@@ -16,15 +16,17 @@ public class connection {
 	 public static Connection getConnection() throws Exception{
 	  try{
 	   String driver = "com.mysql.cj.jdbc.Driver";
-	   String url = "jdbc:mysql://localhost:3306/ipa";
-	   String username = "root";
-	   String password = "";
+	   String url = "jdbc:mysql://localhost:3306/ipa"; // localhost or ipadatabase.mysql.database.azure.com
+	   String username = "root"; //pagebook or root
+	   String password = ""; //031920Kevin or ""
 	   Class.forName(driver);
 	   
 	   Connection conn = DriverManager.getConnection(url,username,password);
 //	   System.out.println("Connected");
 	   return conn;
-	  } catch(Exception e){System.out.println(e);}
+	  } catch(Exception e){
+		  System.out.println(e);
+	}
 	  
 	  
 	  return null;
@@ -164,4 +166,18 @@ public class connection {
 		return info;
 		 
 	 }
+	 public static void submitActivity3(ArrayList<String> filename,String attempt_id) throws Exception{
+		 String id = game.login.infos.get(0);
+		 Connection con = getConnection();
+		 Statement stmt=con.createStatement();  
+		 try {
+			stmt.executeUpdate("INSERT INTO `act3_table` (`attempt_id`, `student_id`, `reci1`, `reci2`, `reci3`, `reci4`, `reci5`)"
+					+ " VALUES ('"+attempt_id+"', '"+id+"', '"+filename.get(0)+"', '"+filename.get(1)+"', '"+filename.get(2)+"', '"+filename.get(3)+"', '"+filename.get(4)+"')");
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 System.out.print(filename);
+	 }
+	 
 }
