@@ -19,6 +19,7 @@ public class ActivityList extends JPanel {
 	Activity2 activity2;
 	Activity1 activity3;
 	public static JTabbedPane tabbedPane;
+	Activity4 activity4;
 	/**
 	 * Create the panel.
 	 */
@@ -26,7 +27,7 @@ public class ActivityList extends JPanel {
 		activity1 = new Activity1("phonetics");
 		activity2 = new	Activity2();
 		activity3 = new Activity1("computerist");
-		
+		activity4 = new Activity4();
 		setBackground(Color.WHITE);
 		setBounds(0, 0, 769, 651);
 		setLayout(null);
@@ -75,8 +76,22 @@ public class ActivityList extends JPanel {
 		btnNewButton_2.setBounds(510, 140, 215, 79);
 		panel.add(btnNewButton_2);
 		
+		JButton btnActivity4 = new JButton("ACTIVITY 4");
+		btnActivity4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(4);
+				
+			}
+		});
+		btnActivity4.setForeground(Color.WHITE);
+		btnActivity4.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnActivity4.setBackground(new Color(85, 107, 47));
+		btnActivity4.setBounds(286, 270, 215, 79);
+		panel.add(btnActivity4);
+		
 		tabbedPane.addTab("Activity 1", null,activity1,null);
 		tabbedPane.addTab("Activity 2", null,activity2,null);
 		tabbedPane.addTab("Activity 3", null,activity3,null);
+		tabbedPane.addTab("New tab", null, activity4, null);
 	}
 }

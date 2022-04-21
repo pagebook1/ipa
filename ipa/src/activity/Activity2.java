@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import java.awt.Font;
 import javax.swing.JProgressBar;
@@ -12,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 
+import student.ActivityList;
 import student.play_voice;
 import student.record_voice;
 import student.speect2text;
@@ -26,10 +28,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.awt.SystemColor;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
+
+import database.connection;
+
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
@@ -140,6 +146,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(2);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 24));
@@ -191,6 +198,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(3);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1.setForeground(Color.WHITE);
@@ -242,6 +250,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(4);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1.setForeground(Color.WHITE);
@@ -293,6 +302,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(5);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1.setForeground(Color.WHITE);
@@ -344,6 +354,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(6);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1.setForeground(Color.WHITE);
@@ -395,6 +406,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(7);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1.setForeground(Color.WHITE);
@@ -446,6 +458,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(8);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 			
 		});
@@ -498,6 +511,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(9);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1.setForeground(Color.WHITE);
@@ -549,6 +563,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(10);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_1.setForeground(Color.WHITE);
@@ -600,6 +615,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(11);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_2.setForeground(Color.WHITE);
@@ -651,6 +667,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(12);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_3.setForeground(Color.WHITE);
@@ -702,6 +719,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(13);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_4.setForeground(Color.WHITE);
@@ -753,6 +771,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(14);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_5.setForeground(Color.WHITE);
@@ -804,6 +823,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(15);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_6.setForeground(Color.WHITE);
@@ -855,6 +875,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(16);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 			}
 		});
 		btnNewButton_1_1_1_1_1_1_1_1_7.setForeground(Color.WHITE);
@@ -906,6 +927,7 @@ public class Activity2 extends JPanel {
 				tabbedPane.setSelectedIndex(17);
 				accuracy.add("0");
 				pronoun.add("0");
+				filenamelist.add("NO RECORD");
 				
 				if(accuracy.size() == 16 || tabbedPane.getSelectedIndex() == 17) {
 					int table_size = 0;
@@ -979,18 +1001,24 @@ public class Activity2 extends JPanel {
 		JButton btnNewButton_3 = new JButton("SUBMIT");
 		btnNewButton_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
-				comboBox.removeAllItems();
-				for(String file:filenamelist)
-				{
-					new File(file.toString()).delete();
+				int x = 0;
+				while(x<accuracy.size()) {
+					new database.connection();
+					try {
+						connection.submitActivity2(filename+"_attempt",x+1,accuracy.get(x),pronoun.get(x),filenamelist.get(x));
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					x++;
 				}
-				
+				JOptionPane.showMessageDialog(null,"ACTIVITY SUMBITTED");
+				comboBox.removeAllItems();				
 				accuracy.clear();
 				filenamelist.clear();
 				pronoun.clear();
 				model.setRowCount(0);
-				tabbedPane.setSelectedIndex(0);
+				ActivityList.tabbedPane.setSelectedIndex(0);
 				
 			}
 		});
@@ -1056,7 +1084,6 @@ public class Activity2 extends JPanel {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				label.setIcon(new ImageIcon(Activity2.class.getResource("/assets/play-green.png")));
-				
 			}
 			@Override
 			public void mouseReleased(MouseEvent e) {

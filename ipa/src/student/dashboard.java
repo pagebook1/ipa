@@ -24,7 +24,7 @@ import javax.swing.border.LineBorder;
 import java.awt.Window.Type;
 
 public class dashboard extends JFrame {
-	JPanel content;
+	public JPanel content;
 	private JPanel contentPane;
 	public static ActivityList activityList;
 	public static home Home;

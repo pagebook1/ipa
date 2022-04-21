@@ -46,7 +46,15 @@ public class dashboard extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	act2_record rec;
+	act4_record rec1;
 	public dashboard() {
+		try {
+			rec =new act2_record();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1080, 720);
 		contentPane = new JPanel();
@@ -121,13 +129,19 @@ public class dashboard extends JFrame {
 		discussion.add(lblNewLabel_1_1_1);
 		
 		JPanel activitybtn = new JPanel();
+		activitybtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				tabbedPane.setSelectedIndex(5);
+			}
+		});
 		activitybtn.setLayout(null);
 		activitybtn.setBorder(new LineBorder(new Color(95, 158, 160), 1, true));
 		activitybtn.setBackground(new Color(0, 128, 128));
 		activitybtn.setBounds(10, 432, 249, 50);
 		panel.add(activitybtn);
 		
-		JLabel vclabel = new JLabel("ACTIVITY");
+		JLabel vclabel = new JLabel("RECORDS");
 		vclabel.setHorizontalAlignment(SwingConstants.LEFT);
 		vclabel.setForeground(Color.WHITE);
 		vclabel.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -190,10 +204,48 @@ public class dashboard extends JFrame {
 		discussionList = new DiscussionList();
 		
 		discussions.PlaceArticulation placeArticulation = new discussions.PlaceArticulation();
+		try {
+			rec1 = new act4_record();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		tabbedPane.add(homePanel);
 		tabbedPane.add(discussionList);
 		tabbedPane.add(placeArticulation);
+		tabbedPane.add(rec);
+		tabbedPane.add(rec1);
 		tabbedPane.setSelectedIndex(0);
+		
+		JPanel recordlist = new JPanel();
+		tabbedPane.addTab("New tab", null, recordlist, null);
+		recordlist.setLayout(null);
+		
+		JButton btnNewButton = new JButton("ACTIVITY1");
+		btnNewButton.setBounds(145, 139, 89, 23);
+		recordlist.add(btnNewButton);
+		
+		JButton btnActivity = new JButton("ACTIVITY2");
+		btnActivity.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(3);
+			}
+		});
+		btnActivity.setBounds(261, 139, 89, 23);
+		recordlist.add(btnActivity);
+		
+		JButton btnActivity_1 = new JButton("ACTIVITY3");
+		btnActivity_1.setBounds(399, 139, 89, 23);
+		recordlist.add(btnActivity_1);
+		
+		JButton btnActivity_2 = new JButton("ACTIVITY4");
+		btnActivity_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(4);
+			}
+		});
+		btnActivity_2.setBounds(529, 139, 89, 23);
+		recordlist.add(btnActivity_2);
 	}
 
 }
