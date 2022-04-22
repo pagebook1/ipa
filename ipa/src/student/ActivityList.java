@@ -1,18 +1,18 @@
 package student;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JLayeredPane;
-import javax.swing.JTabbedPane;
-
-import activity.*;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Font;
+import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
+
+import activity.Activity1;
+import activity.Activity2;
+import activity.Activity3;
+import activity.Activity4;
 
 public class ActivityList extends JPanel {
 	Activity1 activity1;
@@ -29,11 +29,11 @@ public class ActivityList extends JPanel {
 		activity3 = new Activity3();
 		activity4 = new Activity4();
 		setBackground(Color.WHITE);
-		setBounds(0, 0, 769, 651);
+		setBounds(0, 0, 769, 491);
 		setLayout(null);
 		
 		 tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, -43,769, 694);
+		tabbedPane.setBounds(0, -43,769, 535);
 		add(tabbedPane);
 		
 		JPanel panel = new JPanel();

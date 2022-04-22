@@ -1,36 +1,24 @@
 package discussions;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JScrollPane;
-import javax.swing.JLabel;
-import javax.swing.JScrollBar;
-import javax.swing.JList;
-import javax.swing.JTabbedPane;
 import java.awt.Font;
-import javax.swing.SwingConstants;
-
-import student.play_voice;
-import student.text2speech;
-
-import javax.swing.JTextPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.BoxLayout;
-import java.awt.FlowLayout;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.EtchedBorder;
-import javax.swing.ListSelectionModel;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.concurrent.ExecutionException;
 
-import javax.swing.JSplitPane;
-import java.awt.GridLayout;
-import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EtchedBorder;
+import javax.swing.border.TitledBorder;
+
+import student.text2speech;
 
 public class PlaceArticulation extends JPanel {
 
@@ -43,7 +31,7 @@ public class PlaceArticulation extends JPanel {
 		setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, 0, 769, 651);
+		tabbedPane.setBounds(0, 0, 769, 491);
 		add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -55,7 +43,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPlaceAndManner.setEditable(false);
 		txtpnPlaceAndManner.setFont(new Font("Dialog", Font.BOLD, 70));
 		txtpnPlaceAndManner.setText("Place and Manner \r\nof Articulation");
-		txtpnPlaceAndManner.setBounds(177, 113, 415, 344);
+		txtpnPlaceAndManner.setBounds(178, 54, 415, 344);
 		panel.add(txtpnPlaceAndManner);
 		
 		JPanel phenomtable = new JPanel();
@@ -63,36 +51,39 @@ public class PlaceArticulation extends JPanel {
 		tabbedPane.addTab("New tab", null, phenomtable, null);
 		phenomtable.setLayout(null);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(51, 67, 127, 396);
+		phenomtable.add(scrollPane);
+		
 		JPanel panel_3 = new JPanel();
+		scrollPane.setViewportView(panel_3);
 		panel_3.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(220, 222, 222)), "PHONETIC SYMBOL", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(79, 86, 99)));
 		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(51, 67, 127, 510);
-		phenomtable.add(panel_3);
 		panel_3.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("/p/");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(10, 55, 107, 54);
+		lblNewLabel.setBounds(10, 55, 107, 33);
 		panel_3.add(lblNewLabel);
 		
 		JLabel lblNewLabel_2 = new JLabel("/b/");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2.setBounds(10, 137, 107, 54);
+		lblNewLabel_2.setBounds(10, 99, 107, 33);
 		panel_3.add(lblNewLabel_2);
 		
 		JLabel lbld = new JLabel("/d/");
 		lbld.setHorizontalAlignment(SwingConstants.CENTER);
-		lbld.setBounds(10, 216, 107, 54);
+		lbld.setBounds(10, 168, 107, 33);
 		panel_3.add(lbld);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("/t/");
 		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1.setBounds(10, 298, 107, 54);
+		lblNewLabel_2_1.setBounds(10, 229, 107, 33);
 		panel_3.add(lblNewLabel_2_1);
 		
 		JLabel lblk = new JLabel("/k/");
 		lblk.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk.setBounds(10, 384, 107, 54);
+		lblk.setBounds(10, 290, 107, 33);
 		panel_3.add(lblk);
 		
 		JPanel panel_3_1 = new JPanel();
@@ -107,7 +98,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap.setEditable(false);
 		btnClick(txtpnPursepsRap,"purse");
 		txtpnPursepsRap.setText("\r\n<b>p</b>urse \r\n/<b>p</b>ɜːs/\r\n");
-		txtpnPursepsRap.setBounds(10, 43, 107, 37);
+		txtpnPursepsRap.setBounds(10, 43, 107, 25);
 		panel_3_1.add(txtpnPursepsRap);
 		
 		JTextPane txtpnRaprp = new JTextPane();
@@ -116,7 +107,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp.setText("ra<b>p</b>\r\n/ræ<b>p</b>/\r\n");
 		txtpnRaprp.setEditable(false);
 		btnClick(txtpnRaprp,"rap");
-		txtpnRaprp.setBounds(10, 77, 107, 37);
+		txtpnRaprp.setBounds(10, 64, 107, 25);
 		panel_3_1.add(txtpnRaprp);
 		
 		JTextPane txtpnRaprp_1 = new JTextPane();
@@ -124,7 +115,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1.setText("ca<b>b</b>\r\n/kæ<b>b</b>/\r\n");
 		txtpnRaprp_1.setEditable(false);
 		btnClick(txtpnRaprp_1,"cab");
-		txtpnRaprp_1.setBounds(10, 159, 107, 37);
+		txtpnRaprp_1.setBounds(10, 123, 107, 25);
 		panel_3_1.add(txtpnRaprp_1);
 		
 		JTextPane txtpnPursepsRap_1 = new JTextPane();
@@ -132,7 +123,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1.setText("<b>b</b>ack \r\n/<b>b</b>æk/\r\n");
 		txtpnPursepsRap_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1,"back");
-		txtpnPursepsRap_1.setBounds(10, 125, 107, 37);
+		txtpnPursepsRap_1.setBounds(10, 100, 107, 25);
 		panel_3_1.add(txtpnPursepsRap_1);
 		
 		JTextPane txtpnDipdp = new JTextPane();
@@ -140,7 +131,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnDipdp.setText("<b>d</b>ip \r\n/<b>d</b>ɪp/\r\n");
 		txtpnDipdp.setEditable(false);
 		btnClick(txtpnDipdp,"dip");
-		txtpnDipdp.setBounds(10, 207, 107, 37);
+		txtpnDipdp.setBounds(10, 159, 107, 25);
 		panel_3_1.add(txtpnDipdp);
 		
 		JTextPane txtpnPursepsRap_1_1 = new JTextPane();
@@ -148,7 +139,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_1.setText("<b>t</b>ab \r\n/<b>t</b>æb/\r\n");
 		txtpnPursepsRap_1_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_1,"tab");
-		txtpnPursepsRap_1_1.setBounds(10, 289, 107, 37);
+		txtpnPursepsRap_1_1.setBounds(10, 219, 107, 25);
 		panel_3_1.add(txtpnPursepsRap_1_1);
 		
 		JTextPane txtpnBadbd = new JTextPane();
@@ -156,7 +147,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnBadbd.setText("ba<b>d</b>\r\n/bæ<b>d</b>/\r\n");
 		txtpnBadbd.setEditable(false);
 		btnClick(txtpnBadbd,"bad");
-		txtpnBadbd.setBounds(10, 241, 107, 37);
+		txtpnBadbd.setBounds(10, 183, 107, 25);
 		panel_3_1.add(txtpnBadbd);
 		
 		JTextPane txtpnRaprp_1_1 = new JTextPane();
@@ -164,7 +155,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1_1.setText("ra<b>t</b>\r\n/ræ<b>t</b>/\r\n");
 		txtpnRaprp_1_1.setEditable(false);
 		btnClick(txtpnRaprp_1_1,"rat");
-		txtpnRaprp_1_1.setBounds(10, 323, 107, 37);
+		txtpnRaprp_1_1.setBounds(10, 240, 107, 25);
 		panel_3_1.add(txtpnRaprp_1_1);
 		
 		JTextPane txtpnKitekat = new JTextPane();
@@ -172,7 +163,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnKitekat.setText("<b>k</b>ite\r\n/<b>k</b>aɪt/\r\n");
 		txtpnKitekat.setEditable(false);
 		btnClick(txtpnKitekat,"kite");
-		txtpnKitekat.setBounds(10, 371, 107, 37);
+		txtpnKitekat.setBounds(10, 276, 107, 37);
 		panel_3_1.add(txtpnKitekat);
 		
 		JTextPane txtpnBackbk = new JTextPane();
@@ -180,10 +171,11 @@ public class PlaceArticulation extends JPanel {
 		txtpnBackbk.setText("bac<b>k</b>\r\n/bæ<b>k</b>/\r\n");
 		txtpnBackbk.setEditable(false);
 		btnClick(txtpnBackbk,"back");
-		txtpnBackbk.setBounds(10, 405, 107, 37);
+		txtpnBackbk.setBounds(10, 304, 107, 25);
 		panel_3_1.add(txtpnBackbk);
 		
 		JPanel panel_3_2 = new JPanel();
+		panel_3_2.setToolTipText("Place of Articulation");
 		panel_3_2.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(220, 222, 222)), "PLACE OF ARTICULATION", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(79, 86, 99)));
 		panel_3_2.setBackground(Color.WHITE);
 		panel_3_2.setBounds(316, 67, 127, 510);
@@ -199,28 +191,29 @@ public class PlaceArticulation extends JPanel {
 		JLabel lblNewLabel_3_1 = new JLabel("Bilabial");
 		lblNewLabel_3_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1.setBounds(10, 134, 107, 54);
+		lblNewLabel_3_1.setBounds(10, 92, 107, 54);
 		panel_3_2.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_3_1_1 = new JLabel("Alveolar");
 		lblNewLabel_3_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_1.setBounds(10, 295, 107, 54);
+		lblNewLabel_3_1_1.setBounds(10, 206, 107, 54);
 		panel_3_2.add(lblNewLabel_3_1_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("Alveolar");
 		lblNewLabel_3_2.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_2.setBounds(10, 210, 107, 54);
+		lblNewLabel_3_2.setBounds(10, 141, 107, 54);
 		panel_3_2.add(lblNewLabel_3_2);
 		
 		JLabel lblNewLabel_3_3 = new JLabel("Velar");
 		lblNewLabel_3_3.setToolTipText("behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.");
 		lblNewLabel_3_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_3.setBounds(10, 384, 107, 54);
+		lblNewLabel_3_3.setBounds(10, 271, 107, 54);
 		panel_3_2.add(lblNewLabel_3_3);
 		
 		JPanel panel_3_3 = new JPanel();
+		panel_3_3.setToolTipText("Manner of Articulation");
 		panel_3_3.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(220, 222, 222)), "MANNER OF ARTICULATION", TitledBorder.CENTER, TitledBorder.TOP, null, new Color(79, 86, 99)));
 		panel_3_3.setBackground(Color.WHITE);
 		panel_3_3.setBounds(453, 67, 127, 510);
@@ -234,22 +227,22 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblNewLabel_4_1 = new JLabel("(Oral) Stop");
 		lblNewLabel_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1.setBounds(10, 129, 107, 54);
+		lblNewLabel_4_1.setBounds(10, 91, 107, 54);
 		panel_3_3.add(lblNewLabel_4_1);
 		
 		JLabel lblNewLabel_4_2 = new JLabel("(Oral) Stop");
 		lblNewLabel_4_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2.setBounds(10, 208, 107, 54);
+		lblNewLabel_4_2.setBounds(10, 137, 107, 54);
 		panel_3_3.add(lblNewLabel_4_2);
 		
 		JLabel lblNewLabel_4_1_1 = new JLabel("(Oral) Stop");
 		lblNewLabel_4_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1.setBounds(10, 296, 107, 54);
+		lblNewLabel_4_1_1.setBounds(10, 200, 107, 54);
 		panel_3_3.add(lblNewLabel_4_1_1);
 		
 		JLabel lblNewLabel_4_1_1_1 = new JLabel("(Oral) Stop");
 		lblNewLabel_4_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1.setBounds(10, 382, 107, 54);
+		lblNewLabel_4_1_1_1.setBounds(10, 265, 107, 54);
 		panel_3_3.add(lblNewLabel_4_1_1_1);
 		
 		JPanel panel_3_4 = new JPanel();
@@ -278,7 +271,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1.setBounds(10, 139, 107, 33);
+		btnNewButton_1_1.setBounds(10, 99, 107, 33);
 		panel_3_4.add(btnNewButton_1_1);
 		
 		JButton btnNewButton_1_2 = new JButton("WATCH");
@@ -289,7 +282,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2.setForeground(Color.WHITE);
 		btnNewButton_1_2.setBackground(Color.GREEN);
-		btnNewButton_1_2.setBounds(10, 223, 107, 33);
+		btnNewButton_1_2.setBounds(10, 154, 107, 33);
 		panel_3_4.add(btnNewButton_1_2);
 		
 		JButton btnNewButton_1_1_1 = new JButton("WATCH");
@@ -300,7 +293,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_1.setBounds(10, 307, 107, 33);
+		btnNewButton_1_1_1.setBounds(10, 212, 107, 33);
 		panel_3_4.add(btnNewButton_1_1_1);
 		
 		JButton btnNewButton_1_2_1 = new JButton("WATCH");
@@ -311,7 +304,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_1.setBounds(10, 394, 107, 33);
+		btnNewButton_1_2_1.setBounds(10, 276, 107, 33);
 		panel_3_4.add(btnNewButton_1_2_1);
 		
 		JPanel phenomtable_1 = new JPanel();
@@ -328,27 +321,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblk_2 = new JLabel("/g/");
 		lblk_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_2.setBounds(10, 55, 107, 54);
+		lblk_2.setBounds(10, 55, 107, 29);
 		panel_3_5.add(lblk_2);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("/f/");
 		lblNewLabel_2_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_2.setBounds(10, 137, 107, 54);
+		lblNewLabel_2_2.setBounds(10, 105, 107, 29);
 		panel_3_5.add(lblNewLabel_2_2);
 		
 		JLabel lblv = new JLabel("/v/");
 		lblv.setHorizontalAlignment(SwingConstants.CENTER);
-		lblv.setBounds(10, 216, 107, 54);
+		lblv.setBounds(10, 163, 107, 29);
 		panel_3_5.add(lblv);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("/ɵ/");
 		lblNewLabel_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1_1.setBounds(10, 298, 107, 54);
+		lblNewLabel_2_1_1.setBounds(10, 223, 107, 29);
 		panel_3_5.add(lblNewLabel_2_1_1);
 		
 		JLabel lblk_1 = new JLabel("/ð/");
 		lblk_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_1.setBounds(10, 384, 107, 54);
+		lblk_1.setBounds(10, 275, 107, 29);
 		panel_3_5.add(lblk_1);
 		
 		JPanel panel_3_1_1 = new JPanel();
@@ -363,7 +356,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnGoodgd.setText("<b>g</b>ood \r\n/<b>g</b>ʊd/\r\n");
 		btnClick(txtpnGoodgd,"good");
 		txtpnGoodgd.setEditable(false);
-		txtpnGoodgd.setBounds(10, 43, 107, 37);
+		txtpnGoodgd.setBounds(10, 43, 107, 25);
 		panel_3_1_1.add(txtpnGoodgd);
 		
 		JTextPane txtpnBugbg = new JTextPane();
@@ -371,7 +364,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnBugbg.setText("bu<b>g</b>\r\n/bʌ<b>g</b>/\r\n");
 		txtpnBugbg.setEditable(false);
 		btnClick(txtpnBugbg,"bug");
-		txtpnBugbg.setBounds(10, 77, 107, 37);
+		txtpnBugbg.setBounds(10, 61, 107, 25);
 		panel_3_1_1.add(txtpnBugbg);
 		
 		JTextPane txtpnRaprp_1_2 = new JTextPane();
@@ -379,7 +372,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1_2.setText("<b>f</b>all\r\n/<b>f</b>ɔːl/\r\n");
 		txtpnRaprp_1_2.setEditable(false);
 		btnClick(txtpnRaprp_1_2,"fall");
-		txtpnRaprp_1_2.setBounds(10, 159, 107, 37);
+		txtpnRaprp_1_2.setBounds(10, 118, 107, 25);
 		panel_3_1_1.add(txtpnRaprp_1_2);
 		
 		JTextPane txtpnPursepsRap_1_2 = new JTextPane();
@@ -387,7 +380,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_2.setText("<b>f</b>rom \r\n/<b>f</b>rɒm/\r\n");
 		txtpnPursepsRap_1_2.setEditable(false);
 		btnClick(txtpnPursepsRap_1_2,"from");
-		txtpnPursepsRap_1_2.setBounds(10, 125, 107, 37);
+		txtpnPursepsRap_1_2.setBounds(10, 97, 107, 25);
 		panel_3_1_1.add(txtpnPursepsRap_1_2);
 		
 		JTextPane txtpnVinevan = new JTextPane();
@@ -395,7 +388,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnVinevan.setText("<b>v</b>ine \r\n/<b>v</b>aɪn/\r\n");
 		txtpnVinevan.setEditable(false);
 		btnClick(txtpnVinevan,"vine");
-		txtpnVinevan.setBounds(10, 207, 107, 37);
+		txtpnVinevan.setBounds(10, 154, 107, 25);
 		panel_3_1_1.add(txtpnVinevan);
 		
 		JTextPane txtpnPursepsRap_1_1_1 = new JTextPane();
@@ -411,7 +404,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnHavehv.setText("<b>h</b>ave\r\n/<b>h</b>æv/\r\n");
 		txtpnHavehv.setEditable(false);
 		btnClick(txtpnHavehv,"have");
-		txtpnHavehv.setBounds(10, 241, 107, 37);
+		txtpnHavehv.setBounds(10, 179, 107, 25);
 		panel_3_1_1.add(txtpnHavehv);
 		
 		JTextPane txtpnThickk = new JTextPane();
@@ -419,7 +412,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnThickk.setText("<b>th</b>ick \r\n/<b>θ</b>ɪk/\r\n");
 		txtpnThickk.setEditable(false);
 		btnClick(txtpnThickk,"thick");
-		txtpnThickk.setBounds(10, 307, 107, 37);
+		txtpnThickk.setBounds(10, 215, 107, 25);
 		panel_3_1_1.add(txtpnThickk);
 		
 		JTextPane txtpnBathb = new JTextPane();
@@ -427,12 +420,12 @@ public class PlaceArticulation extends JPanel {
 		txtpnBathb.setText("ba<b>th</b>\r\n/bɑː<b>θ</b>/\r\n");
 		txtpnBathb.setEditable(false);
 		btnClick(txtpnBathb,"bath");
-		txtpnBathb.setBounds(10, 342, 107, 37);
+		txtpnBathb.setBounds(10, 235, 107, 25);
 		panel_3_1_1.add(txtpnBathb);
 		
 		JTextPane txtpnRaprp_1_1_1 = new JTextPane();
 		txtpnRaprp_1_1_1.setContentType("text/html");
-		txtpnRaprp_1_1_1.setBounds(10, 424, 107, 37);
+		txtpnRaprp_1_1_1.setBounds(10, 271, 107, 37);
 		panel_3_1_1.add(txtpnRaprp_1_1_1);
 		txtpnRaprp_1_1_1.setText("ra<b>th</b>er\r\n/ˈrɑː<b>ð</b>ə/\r\n");
 		txtpnRaprp_1_1_1.setEditable(false);
@@ -448,31 +441,31 @@ public class PlaceArticulation extends JPanel {
 		JLabel lblNewLabel_3_4 = new JLabel("Velar\r\n");
 		lblNewLabel_3_4.setToolTipText("behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.");
 		lblNewLabel_3_4.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_4.setBounds(10, 41, 107, 54);
+		lblNewLabel_3_4.setBounds(10, 43, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_4);
 		
 		JLabel lblNewLabel_3_1_2 = new JLabel("Labio-dental");
 		lblNewLabel_3_1_2.setToolTipText("consonants occur when you block/constrict airflow by curling your lower lip back and raising it to touch your upper row of teeth.");
 		lblNewLabel_3_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_2.setBounds(10, 134, 107, 54);
+		lblNewLabel_3_1_2.setBounds(10, 88, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_1_2);
 		
 		JLabel lblNewLabel_3_1_1_1 = new JLabel("Dental/Interdental");
 		lblNewLabel_3_1_1_1.setToolTipText("are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth.");
 		lblNewLabel_3_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_1_1.setBounds(10, 295, 107, 54);
+		lblNewLabel_3_1_1_1.setBounds(10, 198, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1 = new JLabel("Labio-dental");
 		lblNewLabel_3_2_1.setToolTipText("consonants occur when you block/constrict airflow by curling your lower lip back and raising it to touch your upper row of teeth.");
 		lblNewLabel_3_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_2_1.setBounds(10, 210, 107, 54);
+		lblNewLabel_3_2_1.setBounds(10, 144, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_2_1);
 		
 		JLabel lblNewLabel_3_3_1 = new JLabel("Dental/Interdental");
 		lblNewLabel_3_3_1.setToolTipText("are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth.");
 		lblNewLabel_3_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_3_1.setBounds(10, 384, 107, 54);
+		lblNewLabel_3_3_1.setBounds(10, 255, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_3_1);
 		
 		JPanel panel_3_3_1 = new JPanel();
@@ -489,22 +482,22 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblNewLabel_4_1_2 = new JLabel("Fricative");
 		lblNewLabel_4_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_2.setBounds(10, 129, 107, 54);
+		lblNewLabel_4_1_2.setBounds(10, 93, 107, 54);
 		panel_3_3_1.add(lblNewLabel_4_1_2);
 		
 		JLabel lblNewLabel_4_2_1 = new JLabel("Fricative");
 		lblNewLabel_4_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_1.setBounds(10, 208, 107, 54);
+		lblNewLabel_4_2_1.setBounds(10, 152, 107, 54);
 		panel_3_3_1.add(lblNewLabel_4_2_1);
 		
 		JLabel lblNewLabel_4_1_1_2 = new JLabel("Fricative");
 		lblNewLabel_4_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_2.setBounds(10, 296, 107, 54);
+		lblNewLabel_4_1_1_2.setBounds(10, 198, 107, 54);
 		panel_3_3_1.add(lblNewLabel_4_1_1_2);
 		
 		JLabel lblNewLabel_4_1_1_1_1 = new JLabel("Fricative");
 		lblNewLabel_4_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1_1.setBounds(10, 382, 107, 54);
+		lblNewLabel_4_1_1_1_1.setBounds(10, 263, 107, 54);
 		panel_3_3_1.add(lblNewLabel_4_1_1_1_1);
 		
 		JPanel panel_3_4_1 = new JPanel();
@@ -533,7 +526,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_2.setForeground(Color.WHITE);
 		btnNewButton_1_1_2.setBackground(Color.GREEN);
-		btnNewButton_1_1_2.setBounds(10, 139, 107, 33);
+		btnNewButton_1_1_2.setBounds(10, 108, 107, 33);
 		panel_3_4_1.add(btnNewButton_1_1_2);
 		
 		JButton btnNewButton_1_2_2 = new JButton("WATCH");
@@ -544,7 +537,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_2.setForeground(Color.WHITE);
 		btnNewButton_1_2_2.setBackground(Color.GREEN);
-		btnNewButton_1_2_2.setBounds(10, 223, 107, 33);
+		btnNewButton_1_2_2.setBounds(10, 163, 107, 33);
 		panel_3_4_1.add(btnNewButton_1_2_2);
 		
 		JButton btnNewButton_1_1_1_1 = new JButton("WATCH");
@@ -555,7 +548,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_1_1.setBounds(10, 307, 107, 33);
+		btnNewButton_1_1_1_1.setBounds(10, 207, 107, 33);
 		panel_3_4_1.add(btnNewButton_1_1_1_1);
 		
 		JButton btnNewButton_1_2_1_1 = new JButton("WATCH");
@@ -566,7 +559,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_1_1.setBounds(10, 394, 107, 33);
+		btnNewButton_1_2_1_1.setBounds(10, 269, 107, 33);
 		panel_3_4_1.add(btnNewButton_1_2_1_1);
 		
 		JPanel phenomtable_1_1 = new JPanel();
@@ -583,27 +576,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblk_2_1 = new JLabel("/s/\r\n");
 		lblk_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_2_1.setBounds(10, 55, 107, 54);
+		lblk_2_1.setBounds(10, 43, 107, 33);
 		panel_3_5_1.add(lblk_2_1);
 		
 		JLabel lblNewLabel_2_2_1 = new JLabel("/z/");
 		lblNewLabel_2_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_2_1.setBounds(10, 137, 107, 54);
+		lblNewLabel_2_2_1.setBounds(10, 100, 107, 33);
 		panel_3_5_1.add(lblNewLabel_2_2_1);
 		
 		JLabel lblv_1 = new JLabel("/ʃ/");
 		lblv_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblv_1.setBounds(10, 216, 107, 54);
+		lblv_1.setBounds(10, 154, 107, 33);
 		panel_3_5_1.add(lblv_1);
 		
 		JLabel lblNewLabel_2_1_1_1 = new JLabel("/ʒ/");
 		lblNewLabel_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1_1_1.setBounds(10, 298, 107, 54);
+		lblNewLabel_2_1_1_1.setBounds(10, 212, 107, 33);
 		panel_3_5_1.add(lblNewLabel_2_1_1_1);
 		
 		JLabel lblk_1_1 = new JLabel("/h/");
 		lblk_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_1_1.setBounds(10, 384, 107, 54);
+		lblk_1_1.setBounds(10, 271, 107, 33);
 		panel_3_5_1.add(lblk_1_1);
 		
 		JPanel panel_3_1_1_1 = new JPanel();
@@ -618,7 +611,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnSuitsjut.setText("<b>s</b>uit \r\n/<b>s</b>juːt/\r\n");
 		btnClick(txtpnSuitsjut,"suit");
 		txtpnSuitsjut.setEditable(false);
-		txtpnSuitsjut.setBounds(10, 43, 107, 37);
+		txtpnSuitsjut.setBounds(10, 43, 107, 25);
 		panel_3_1_1_1.add(txtpnSuitsjut);
 		
 		JTextPane txtpnBusbs = new JTextPane();
@@ -626,7 +619,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnBusbs.setText("bu<b>s</b>\r\n/bʌ<b>s</b>/\r\n");
 		txtpnBusbs.setEditable(false);
 		btnClick(txtpnBusbs,"bus");
-		txtpnBusbs.setBounds(10, 77, 107, 37);
+		txtpnBusbs.setBounds(10, 64, 107, 25);
 		panel_3_1_1_1.add(txtpnBusbs);
 		
 		JTextPane txtpnRaprp_1_2_1 = new JTextPane();
@@ -634,7 +627,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1_2_1.setText("ja<b>zz</b>\r\n/ʤæ<b>z</b>/\r\n");
 		txtpnRaprp_1_2_1.setEditable(false);
 		btnClick(txtpnRaprp_1_2_1,"jazz");
-		txtpnRaprp_1_2_1.setBounds(10, 159, 107, 37);
+		txtpnRaprp_1_2_1.setBounds(10, 118, 107, 25);
 		panel_3_1_1_1.add(txtpnRaprp_1_2_1);
 		
 		JTextPane txtpnPursepsRap_1_2_1 = new JTextPane();
@@ -642,7 +635,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_2_1.setText("<b>z</b>it \r\n/<b>z</b>it/\r\n");
 		txtpnPursepsRap_1_2_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_2_1,"zit");
-		txtpnPursepsRap_1_2_1.setBounds(10, 125, 107, 37);
+		txtpnPursepsRap_1_2_1.setBounds(10, 100, 107, 25);
 		panel_3_1_1_1.add(txtpnPursepsRap_1_2_1);
 		
 		JTextPane txtpnShott = new JTextPane();
@@ -650,7 +643,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnShott.setText("<b>sh</b>ot \r\n/<b>ʃ</b>ɒt/\r\n");
 		txtpnShott.setEditable(false);
 		btnClick(txtpnShott,"shot");
-		txtpnShott.setBounds(10, 207, 107, 37);
+		txtpnShott.setBounds(10, 154, 107, 25);
 		panel_3_1_1_1.add(txtpnShott);
 		
 		JTextPane txtpnPursepsRap_1_1_1_1 = new JTextPane();
@@ -658,7 +651,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_1_1_1.setText("<b>h</b>elp\r\n/<b>h</b>ɛlp/\r\n");
 		txtpnPursepsRap_1_1_1_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_1_1_1,"help");
-		txtpnPursepsRap_1_1_1_1.setBounds(10, 401, 107, 37);
+		txtpnPursepsRap_1_1_1_1.setBounds(10, 271, 107, 37);
 		panel_3_1_1_1.add(txtpnPursepsRap_1_1_1_1);
 		
 		JTextPane txtpnHushh = new JTextPane();
@@ -666,7 +659,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnHushh.setText("hu<b>sh</b>\r\n/hʌ<b>ʃ</b>/\r\n");
 		txtpnHushh.setEditable(false);
 		btnClick(txtpnHushh,"hush");
-		txtpnHushh.setBounds(10, 241, 107, 37);
+		txtpnHushh.setBounds(10, 176, 107, 25);
 		panel_3_1_1_1.add(txtpnHushh);
 		
 		JTextPane txtpnGenrer = new JTextPane();
@@ -674,7 +667,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnGenrer.setText("<b>g</b>enre \r\n/<b>ʒ</b>ɑːŋrə/\r\n");
 		txtpnGenrer.setEditable(false);
 		btnClick(txtpnGenrer,"genre");
-		txtpnGenrer.setBounds(10, 307, 107, 37);
+		txtpnGenrer.setBounds(10, 212, 107, 25);
 		panel_3_1_1_1.add(txtpnGenrer);
 		
 		JTextPane txtpnGaragegr = new JTextPane();
@@ -682,7 +675,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnGaragegr.setText("<b>g</b>arage \r\n/ˈgærɑː<b>ʒ</b>/\r\n");
 		txtpnGaragegr.setEditable(false);
 		btnClick(txtpnGaragegr,"garage");
-		txtpnGaragegr.setBounds(10, 342, 107, 37);
+		txtpnGaragegr.setBounds(10, 235, 107, 25);
 		panel_3_1_1_1.add(txtpnGaragegr);
 		
 		JPanel panel_3_2_1_1 = new JPanel();
@@ -695,31 +688,31 @@ public class PlaceArticulation extends JPanel {
 		JLabel lblNewLabel_3_4_1 = new JLabel("Alveolar");
 		lblNewLabel_3_4_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_4_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_4_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_3_4_1.setBounds(10, 43, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_4_1);
 		
 		JLabel lblNewLabel_3_1_2_1 = new JLabel("Alveolar");
 		lblNewLabel_3_1_2_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_2_1.setBounds(10, 134, 107, 54);
+		lblNewLabel_3_1_2_1.setBounds(10, 100, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_1_2_1);
 		
 		JLabel lblNewLabel_3_1_1_1_1 = new JLabel("Post-alveolar ");
 		lblNewLabel_3_1_1_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_1_1_1.setBounds(10, 295, 107, 54);
+		lblNewLabel_3_1_1_1_1.setBounds(10, 212, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_1_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1_1 = new JLabel("Post-alveolar");
 		lblNewLabel_3_2_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_2_1_1.setBounds(10, 210, 107, 54);
+		lblNewLabel_3_2_1_1.setBounds(10, 154, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_2_1_1);
 		
 		JLabel lblNewLabel_3_3_1_1 = new JLabel("Glottal");
 		lblNewLabel_3_3_1_1.setToolTipText("at the larynx (the glottis is the space between the vocal folds). Locate the glottis (the vocal folds) in the diagram, below. A glottal stop is a speech sound articulated by a momentary, complete closing of the glottis in the back of the throat. ");
 		lblNewLabel_3_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_3_1_1.setBounds(10, 384, 107, 54);
+		lblNewLabel_3_3_1_1.setBounds(10, 271, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_3_1_1);
 		
 		JPanel panel_3_3_1_1 = new JPanel();
@@ -731,27 +724,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblNewLabel_4_3_1 = new JLabel("Fricative");
 		lblNewLabel_4_3_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_3_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_4_3_1.setBounds(10, 43, 107, 25);
 		panel_3_3_1_1.add(lblNewLabel_4_3_1);
 		
 		JLabel lblNewLabel_4_1_2_1 = new JLabel("Fricative");
 		lblNewLabel_4_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_2_1.setBounds(10, 129, 107, 54);
+		lblNewLabel_4_1_2_1.setBounds(10, 100, 107, 25);
 		panel_3_3_1_1.add(lblNewLabel_4_1_2_1);
 		
 		JLabel lblNewLabel_4_2_1_1 = new JLabel("Fricative");
 		lblNewLabel_4_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_1_1.setBounds(10, 208, 107, 54);
+		lblNewLabel_4_2_1_1.setBounds(10, 154, 107, 25);
 		panel_3_3_1_1.add(lblNewLabel_4_2_1_1);
 		
 		JLabel lblNewLabel_4_1_1_2_1 = new JLabel("Fricative");
 		lblNewLabel_4_1_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_2_1.setBounds(10, 296, 107, 54);
+		lblNewLabel_4_1_1_2_1.setBounds(10, 212, 107, 25);
 		panel_3_3_1_1.add(lblNewLabel_4_1_1_2_1);
 		
 		JLabel lblNewLabel_4_1_1_1_1_1 = new JLabel("Fricative");
 		lblNewLabel_4_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1_1_1.setBounds(10, 382, 107, 54);
+		lblNewLabel_4_1_1_1_1_1.setBounds(10, 271, 107, 25);
 		panel_3_3_1_1.add(lblNewLabel_4_1_1_1_1_1);
 		
 		JPanel panel_3_4_1_1 = new JPanel();
@@ -769,7 +762,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_3_1.setForeground(Color.WHITE);
 		btnNewButton_1_3_1.setBackground(Color.GREEN);
-		btnNewButton_1_3_1.setBounds(10, 55, 107, 33);
+		btnNewButton_1_3_1.setBounds(10, 43, 107, 33);
 		panel_3_4_1_1.add(btnNewButton_1_3_1);
 		
 		JButton btnNewButton_1_1_2_1 = new JButton("WATCH");
@@ -780,7 +773,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_2_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_2_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_2_1.setBounds(10, 139, 107, 33);
+		btnNewButton_1_1_2_1.setBounds(10, 100, 107, 33);
 		panel_3_4_1_1.add(btnNewButton_1_1_2_1);
 		
 		JButton btnNewButton_1_2_2_1 = new JButton("WATCH");
@@ -791,7 +784,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_2_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_2_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_2_1.setBounds(10, 223, 107, 33);
+		btnNewButton_1_2_2_1.setBounds(10, 154, 107, 33);
 		panel_3_4_1_1.add(btnNewButton_1_2_2_1);
 		
 		JButton btnNewButton_1_1_1_1_1 = new JButton("WATCH");
@@ -802,7 +795,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_1_1_1.setBounds(10, 307, 107, 33);
+		btnNewButton_1_1_1_1_1.setBounds(10, 212, 107, 33);
 		panel_3_4_1_1.add(btnNewButton_1_1_1_1_1);
 		
 		JButton btnNewButton_1_2_1_1_1 = new JButton("WATCH");
@@ -813,7 +806,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_1_1_1.setBounds(10, 394, 107, 33);
+		btnNewButton_1_2_1_1_1.setBounds(10, 271, 107, 33);
 		panel_3_4_1_1.add(btnNewButton_1_2_1_1_1);
 		
 		JPanel phenomtable_1_1_1 = new JPanel();
@@ -830,27 +823,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblk_2_1_1 = new JLabel("/ʧ/");
 		lblk_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_2_1_1.setBounds(10, 55, 107, 54);
+		lblk_2_1_1.setBounds(10, 43, 107, 24);
 		panel_3_5_1_1.add(lblk_2_1_1);
 		
 		JLabel lblNewLabel_2_2_1_1 = new JLabel("/ʤ/");
 		lblNewLabel_2_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_2_1_1.setBounds(10, 137, 107, 54);
+		lblNewLabel_2_2_1_1.setBounds(10, 99, 107, 25);
 		panel_3_5_1_1.add(lblNewLabel_2_2_1_1);
 		
 		JLabel lblv_1_1 = new JLabel("/ɾ/");
 		lblv_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblv_1_1.setBounds(10, 216, 107, 54);
+		lblv_1_1.setBounds(10, 154, 107, 25);
 		panel_3_5_1_1.add(lblv_1_1);
 		
 		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("/m/");
 		lblNewLabel_2_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1_1_1_1.setBounds(10, 298, 107, 54);
+		lblNewLabel_2_1_1_1_1.setBounds(10, 210, 107, 25);
 		panel_3_5_1_1.add(lblNewLabel_2_1_1_1_1);
 		
 		JLabel lblk_1_1_1 = new JLabel("/n/");
 		lblk_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_1_1_1.setBounds(10, 384, 107, 54);
+		lblk_1_1_1.setBounds(10, 266, 107, 25);
 		panel_3_5_1_1.add(lblk_1_1_1);
 		
 		JPanel panel_3_1_1_1_1 = new JPanel();
@@ -865,7 +858,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnChatt.setText("<b>ch</b>at  \r\n/<b>ʧ</b>æt/\r\n");
 		txtpnChatt.setEditable(false);
 		btnClick(txtpnChatt,"chat");
-		txtpnChatt.setBounds(10, 43, 107, 37);
+		txtpnChatt.setBounds(10, 43, 107, 25);
 		panel_3_1_1_1_1.add(txtpnChatt);
 		
 		JTextPane txtpnSuchs = new JTextPane();
@@ -873,7 +866,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnSuchs.setText("su<b>ch </b>\r\n/sʌ<b>ʧ</b>/\r\n");
 		txtpnSuchs.setEditable(false);
 		btnClick(txtpnSuchs,"such");
-		txtpnSuchs.setBounds(10, 77, 107, 37);
+		txtpnSuchs.setBounds(10, 63, 107, 25);
 		panel_3_1_1_1_1.add(txtpnSuchs);
 		
 		JTextPane txtpnRaprp_1_2_1_1 = new JTextPane();
@@ -881,7 +874,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1_2_1_1.setText("hu<b>ge </b>\r\n/hjuː<b>ʤ</b>/\r\n");
 		txtpnRaprp_1_2_1_1.setEditable(false);
 		btnClick(txtpnRaprp_1_2_1_1,"huge");
-		txtpnRaprp_1_2_1_1.setBounds(10, 159, 107, 37);
+		txtpnRaprp_1_2_1_1.setBounds(10, 118, 107, 25);
 		panel_3_1_1_1_1.add(txtpnRaprp_1_2_1_1);
 		
 		JTextPane txtpnPursepsRap_1_2_1_1 = new JTextPane();
@@ -889,7 +882,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_2_1_1.setText("<b>jo</b>ke \r\n/<b>ʤ</b>əʊk/\r\n");
 		txtpnPursepsRap_1_2_1_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_2_1_1,"joke");
-		txtpnPursepsRap_1_2_1_1.setBounds(10, 125, 107, 37);
+		txtpnPursepsRap_1_2_1_1.setBounds(10, 99, 107, 25);
 		panel_3_1_1_1_1.add(txtpnPursepsRap_1_2_1_1);
 		
 		JTextPane txtpnWrittenrn = new JTextPane();
@@ -897,7 +890,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnWrittenrn.setText("w<b>r</b>itten \r\n/ˈ<b>r</b>ɪɾn/ \r\n");
 		txtpnWrittenrn.setEditable(false);
 		btnClick(txtpnWrittenrn,"written");
-		txtpnWrittenrn.setBounds(10, 207, 107, 37);
+		txtpnWrittenrn.setBounds(10, 154, 107, 25);
 		panel_3_1_1_1_1.add(txtpnWrittenrn);
 		
 		JTextPane txtpnPursepsRap_1_1_1_1_1 = new JTextPane();
@@ -913,7 +906,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnLetterlr.setText("le<b>tt</b>er \r\n/ˈlɛ<b>ɾ</b>ər/\r\n");
 		txtpnLetterlr.setEditable(false);
 		btnClick(txtpnLetterlr,"letter");
-		txtpnLetterlr.setBounds(10, 241, 107, 37);
+		txtpnLetterlr.setBounds(10, 174, 107, 25);
 		panel_3_1_1_1_1.add(txtpnLetterlr);
 		
 		JTextPane txtpnMadmd = new JTextPane();
@@ -921,7 +914,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnMadmd.setText("<b>m</b>ad \r\n/<b>m</b>æd/\r\n");
 		txtpnMadmd.setEditable(false);
 		btnClick(txtpnMadmd,"mad");
-		txtpnMadmd.setBounds(10, 307, 107, 37);
+		txtpnMadmd.setBounds(10, 210, 107, 25);
 		panel_3_1_1_1_1.add(txtpnMadmd);
 		
 		JTextPane txtpnClamklm = new JTextPane();
@@ -929,7 +922,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnClamklm.setText("cla<b>m</b>\r\n/klæ<b>m</b>/\r\n");
 		txtpnClamklm.setEditable(false);
 		btnClick(txtpnClamklm,"clam");
-		txtpnClamklm.setBounds(10, 342, 107, 37);
+		txtpnClamklm.setBounds(10, 230, 107, 25);
 		panel_3_1_1_1_1.add(txtpnClamklm);
 		
 		JTextPane txtpnPursepsRap_1_1_1_1_1_1 = new JTextPane();
@@ -937,7 +930,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_1_1_1_1_1.setText("ma<b>n</b> \r\n/mæ<b>n</b>/\r\n");
 		txtpnPursepsRap_1_1_1_1_1_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_1_1_1_1_1,"man");
-		txtpnPursepsRap_1_1_1_1_1_1.setBounds(10, 427, 107, 37);
+		txtpnPursepsRap_1_1_1_1_1_1.setBounds(10, 266, 107, 25);
 		panel_3_1_1_1_1.add(txtpnPursepsRap_1_1_1_1_1_1);
 		
 		JPanel panel_3_2_1_1_1 = new JPanel();
@@ -950,31 +943,31 @@ public class PlaceArticulation extends JPanel {
 		JLabel lblNewLabel_3_4_1_1 = new JLabel("Post-alveolar");
 		lblNewLabel_3_4_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_4_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_4_1_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_3_4_1_1.setBounds(10, 44, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_4_1_1);
 		
 		JLabel lblNewLabel_3_1_2_1_1 = new JLabel("Post-alveolar");
 		lblNewLabel_3_1_2_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_2_1_1.setBounds(10, 134, 107, 54);
+		lblNewLabel_3_1_2_1_1.setBounds(10, 99, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_1_2_1_1);
 		
 		JLabel lblNewLabel_3_1_1_1_1_1 = new JLabel("Bilabial");
 		lblNewLabel_3_1_1_1_1_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_1_1_1_1.setBounds(10, 295, 107, 54);
+		lblNewLabel_3_1_1_1_1_1.setBounds(10, 210, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_1_1_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1_1_1 = new JLabel("Alveolar");
 		lblNewLabel_3_2_1_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_2_1_1_1.setBounds(10, 210, 107, 54);
+		lblNewLabel_3_2_1_1_1.setBounds(10, 154, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_2_1_1_1);
 		
 		JLabel lblNewLabel_3_3_1_1_1 = new JLabel("Alveolar");
 		lblNewLabel_3_3_1_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_3_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_3_1_1_1.setBounds(10, 384, 107, 54);
+		lblNewLabel_3_3_1_1_1.setBounds(10, 266, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_3_1_1_1);
 		
 		JPanel panel_3_3_1_1_1 = new JPanel();
@@ -986,27 +979,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblNewLabel_4_3_1_1 = new JLabel("Affricate");
 		lblNewLabel_4_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_3_1_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_4_3_1_1.setBounds(10, 44, 107, 54);
 		panel_3_3_1_1_1.add(lblNewLabel_4_3_1_1);
 		
 		JLabel lblNewLabel_4_1_2_1_1 = new JLabel("Affricate");
 		lblNewLabel_4_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_2_1_1.setBounds(10, 129, 107, 54);
+		lblNewLabel_4_1_2_1_1.setBounds(10, 99, 107, 54);
 		panel_3_3_1_1_1.add(lblNewLabel_4_1_2_1_1);
 		
 		JLabel lblNewLabel_4_2_1_1_1 = new JLabel("Tap or Flap");
 		lblNewLabel_4_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_1_1_1.setBounds(10, 208, 107, 54);
+		lblNewLabel_4_2_1_1_1.setBounds(10, 154, 107, 54);
 		panel_3_3_1_1_1.add(lblNewLabel_4_2_1_1_1);
 		
 		JLabel lblNewLabel_4_1_1_2_1_1 = new JLabel("(Nasal) Stop ");
 		lblNewLabel_4_1_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_2_1_1.setBounds(10, 296, 107, 54);
+		lblNewLabel_4_1_1_2_1_1.setBounds(10, 210, 107, 54);
 		panel_3_3_1_1_1.add(lblNewLabel_4_1_1_2_1_1);
 		
 		JLabel lblNewLabel_4_1_1_1_1_1_1 = new JLabel("(Nasal) Stop");
 		lblNewLabel_4_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1_1_1_1.setBounds(10, 382, 107, 54);
+		lblNewLabel_4_1_1_1_1_1_1.setBounds(10, 266, 107, 54);
 		panel_3_3_1_1_1.add(lblNewLabel_4_1_1_1_1_1_1);
 		
 		JPanel panel_3_4_1_1_1 = new JPanel();
@@ -1024,7 +1017,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_3_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_3_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_3_1_1.setBounds(10, 55, 107, 33);
+		btnNewButton_1_3_1_1.setBounds(10, 44, 107, 33);
 		panel_3_4_1_1_1.add(btnNewButton_1_3_1_1);
 		
 		JButton btnNewButton_1_1_2_1_1 = new JButton("WATCH");
@@ -1035,7 +1028,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_2_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_2_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_2_1_1.setBounds(10, 139, 107, 33);
+		btnNewButton_1_1_2_1_1.setBounds(10, 99, 107, 33);
 		panel_3_4_1_1_1.add(btnNewButton_1_1_2_1_1);
 		
 		JButton btnNewButton_1_2_2_1_1 = new JButton("WATCH");
@@ -1047,7 +1040,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_2_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_2_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_2_1_1.setBounds(10, 223, 107, 33);
+		btnNewButton_1_2_2_1_1.setBounds(10, 154, 107, 33);
 		panel_3_4_1_1_1.add(btnNewButton_1_2_2_1_1);
 		
 		JButton btnNewButton_1_1_1_1_1_1 = new JButton("WATCH");
@@ -1059,7 +1052,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_1_1_1_1.setBounds(10, 307, 107, 33);
+		btnNewButton_1_1_1_1_1_1.setBounds(10, 210, 107, 33);
 		panel_3_4_1_1_1.add(btnNewButton_1_1_1_1_1_1);
 		
 		JButton btnNewButton_1_2_1_1_1_1 = new JButton("WATCH");
@@ -1070,7 +1063,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_1_1_1_1.setBounds(10, 394, 107, 33);
+		btnNewButton_1_2_1_1_1_1.setBounds(10, 266, 107, 33);
 		panel_3_4_1_1_1.add(btnNewButton_1_2_1_1_1_1);
 		
 		JPanel phenomtable_1_1_1_1 = new JPanel();
@@ -1087,27 +1080,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblk_2_1_1_1 = new JLabel("/ŋ/");
 		lblk_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_2_1_1_1.setBounds(10, 55, 107, 54);
+		lblk_2_1_1_1.setBounds(10, 59, 107, 25);
 		panel_3_5_1_1_1.add(lblk_2_1_1_1);
 		
 		JLabel lblNewLabel_2_2_1_1_1 = new JLabel("/l/");
 		lblNewLabel_2_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_2_1_1_1.setBounds(10, 137, 107, 54);
+		lblNewLabel_2_2_1_1_1.setBounds(10, 95, 107, 25);
 		panel_3_5_1_1_1.add(lblNewLabel_2_2_1_1_1);
 		
 		JLabel lblv_1_1_1 = new JLabel("/r/");
 		lblv_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblv_1_1_1.setBounds(10, 216, 107, 54);
+		lblv_1_1_1.setBounds(10, 153, 107, 25);
 		panel_3_5_1_1_1.add(lblv_1_1_1);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("/w/");
 		lblNewLabel_2_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1_1_1_1_1.setBounds(10, 298, 107, 54);
+		lblNewLabel_2_1_1_1_1_1.setBounds(10, 210, 107, 25);
 		panel_3_5_1_1_1.add(lblNewLabel_2_1_1_1_1_1);
 		
 		JLabel lblk_1_1_1_1 = new JLabel("/j/");
 		lblk_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblk_1_1_1_1.setBounds(10, 384, 107, 54);
+		lblk_1_1_1_1.setBounds(10, 266, 107, 25);
 		panel_3_5_1_1_1.add(lblk_1_1_1_1);
 		
 		JPanel panel_3_1_1_1_1_1 = new JPanel();
@@ -1122,7 +1115,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnLongl.setText("lo<b>ng</b> \r\n/lɒ<b>ŋ</b>/\r\n");
 		btnClick(txtpnLongl,"long");
 		txtpnLongl.setEditable(false);
-		txtpnLongl.setBounds(10, 59, 107, 37);
+		txtpnLongl.setBounds(10, 59, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnLongl);
 		
 		JTextPane txtpnRaprp_1_2_1_1_1 = new JTextPane();
@@ -1130,7 +1123,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRaprp_1_2_1_1_1.setText("fu<b>ll</b>y \r\n/ˈfʊ<b>l</b>i/\r\n");
 		txtpnRaprp_1_2_1_1_1.setEditable(false);
 		btnClick(txtpnRaprp_1_2_1_1_1,"fully");
-		txtpnRaprp_1_2_1_1_1.setBounds(10, 159, 107, 37);
+		txtpnRaprp_1_2_1_1_1.setBounds(10, 117, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnRaprp_1_2_1_1_1);
 		
 		JTextPane txtpnPursepsRap_1_2_1_1_1 = new JTextPane();
@@ -1138,7 +1131,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnPursepsRap_1_2_1_1_1.setText("<b>l</b>uck \r\n/lʌk/\r\n");
 		txtpnPursepsRap_1_2_1_1_1.setEditable(false);
 		btnClick(txtpnPursepsRap_1_2_1_1_1,"luck");
-		txtpnPursepsRap_1_2_1_1_1.setBounds(10, 125, 107, 37);
+		txtpnPursepsRap_1_2_1_1_1.setBounds(10, 95, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnPursepsRap_1_2_1_1_1);
 		
 		JTextPane txtpnRakerek = new JTextPane();
@@ -1146,7 +1139,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnRakerek.setText("<b>r</b>ake \r\n/<b>r</b>eɪk/\r\n");
 		txtpnRakerek.setEditable(false);
 		btnClick(txtpnRakerek,"rake");
-		txtpnRakerek.setBounds(10, 207, 107, 37);
+		txtpnRakerek.setBounds(10, 153, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnRakerek);
 		
 		JTextPane txtpnPursepsRap_1_1_1_1_1_2 = new JTextPane();
@@ -1162,7 +1155,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnCareker.setText("ca<b>r</b>e\r\n/keə<b>r</b>/\r\n");
 		txtpnCareker.setEditable(false);
 		btnClick(txtpnCareker,"care");
-		txtpnCareker.setBounds(10, 241, 107, 37);
+		txtpnCareker.setBounds(10, 174, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnCareker);
 		
 		JTextPane txtpnWaxwks = new JTextPane();
@@ -1170,7 +1163,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnWaxwks.setText("<b>w</b>ax\r\n/<b>w</b>æks/");
 		txtpnWaxwks.setEditable(false);
 		btnClick(txtpnWaxwks,"wax");
-		txtpnWaxwks.setBounds(10, 307, 107, 37);
+		txtpnWaxwks.setBounds(10, 210, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnWaxwks);
 		
 		JTextPane txtpnDwelldwl = new JTextPane();
@@ -1178,7 +1171,7 @@ public class PlaceArticulation extends JPanel {
 		txtpnDwelldwl.setText("<b>d</b>well \r\n/<b>d</b>wɛl/\r\n");
 		txtpnDwelldwl.setEditable(false);
 		btnClick(txtpnDwelldwl,"dwell");
-		txtpnDwelldwl.setBounds(10, 342, 107, 37);
+		txtpnDwelldwl.setBounds(10, 230, 107, 25);
 		panel_3_1_1_1_1_1.add(txtpnDwelldwl);
 		
 		JTextPane txtpnPursepsRap_1_1_1_1_1_1_1 = new JTextPane();
@@ -1187,7 +1180,7 @@ public class PlaceArticulation extends JPanel {
 		btnClick(txtpnPursepsRap_1_1_1_1_1_1_1,"you");
 		txtpnPursepsRap_1_1_1_1_1_1_1.setEditable(false);
 		
-		txtpnPursepsRap_1_1_1_1_1_1_1.setBounds(10, 427, 107, 37);
+		txtpnPursepsRap_1_1_1_1_1_1_1.setBounds(10, 266, 107, 37);
 		panel_3_1_1_1_1_1.add(txtpnPursepsRap_1_1_1_1_1_1_1);
 		
 		JPanel panel_3_2_1_1_1_1 = new JPanel();
@@ -1200,31 +1193,31 @@ public class PlaceArticulation extends JPanel {
 		JLabel lblNewLabel_3_4_1_1_1 = new JLabel("Velar");
 		lblNewLabel_3_4_1_1_1.setToolTipText("behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.");
 		lblNewLabel_3_4_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_4_1_1_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_3_4_1_1_1.setBounds(10, 59, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_4_1_1_1);
 		
 		JLabel lblNewLabel_3_1_2_1_1_1 = new JLabel("Alveolar");
 		lblNewLabel_3_1_2_1_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_1_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_2_1_1_1.setBounds(10, 134, 107, 54);
+		lblNewLabel_3_1_2_1_1_1.setBounds(10, 95, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_1_2_1_1_1);
 		
 		JLabel lblNewLabel_3_1_1_1_1_1_1 = new JLabel("Bilabial");
 		lblNewLabel_3_1_1_1_1_1_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_1_1_1_1_1_1.setBounds(10, 295, 107, 54);
+		lblNewLabel_3_1_1_1_1_1_1.setBounds(10, 210, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_1_1_1_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1_1_1_1 = new JLabel("Post-alveolar");
 		lblNewLabel_3_2_1_1_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_2_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_2_1_1_1_1.setBounds(10, 210, 107, 54);
+		lblNewLabel_3_2_1_1_1_1.setBounds(10, 153, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_2_1_1_1_1);
 		
 		JLabel lblNewLabel_3_3_1_1_1_1 = new JLabel("Palatal");
 		lblNewLabel_3_3_1_1_1_1.setToolTipText("sound involving the center of the hard palate and either the blade or the back of the tongue. ");
 		lblNewLabel_3_3_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_3_3_1_1_1_1.setBounds(10, 384, 107, 54);
+		lblNewLabel_3_3_1_1_1_1.setBounds(10, 266, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_3_1_1_1_1);
 		
 		JPanel panel_3_3_1_1_1_1 = new JPanel();
@@ -1236,27 +1229,27 @@ public class PlaceArticulation extends JPanel {
 		
 		JLabel lblNewLabel_4_3_1_1_1 = new JLabel("(Nasal) Stop");
 		lblNewLabel_4_3_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_3_1_1_1.setBounds(10, 41, 107, 54);
+		lblNewLabel_4_3_1_1_1.setBounds(10, 59, 107, 25);
 		panel_3_3_1_1_1_1.add(lblNewLabel_4_3_1_1_1);
 		
 		JLabel lblNewLabel_4_1_2_1_1_1 = new JLabel("Lateral Approximant");
 		lblNewLabel_4_1_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_2_1_1_1.setBounds(10, 129, 107, 54);
+		lblNewLabel_4_1_2_1_1_1.setBounds(10, 95, 107, 25);
 		panel_3_3_1_1_1_1.add(lblNewLabel_4_1_2_1_1_1);
 		
 		JLabel lblNewLabel_4_2_1_1_1_1 = new JLabel("Approximant");
 		lblNewLabel_4_2_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_2_1_1_1_1.setBounds(10, 208, 107, 54);
+		lblNewLabel_4_2_1_1_1_1.setBounds(10, 153, 107, 25);
 		panel_3_3_1_1_1_1.add(lblNewLabel_4_2_1_1_1_1);
 		
 		JLabel lblNewLabel_4_1_1_2_1_1_1 = new JLabel("Approximant");
 		lblNewLabel_4_1_1_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_2_1_1_1.setBounds(10, 296, 107, 54);
+		lblNewLabel_4_1_1_2_1_1_1.setBounds(10, 210, 107, 25);
 		panel_3_3_1_1_1_1.add(lblNewLabel_4_1_1_2_1_1_1);
 		
 		JLabel lblNewLabel_4_1_1_1_1_1_1_1 = new JLabel("Approximant");
 		lblNewLabel_4_1_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_4_1_1_1_1_1_1_1.setBounds(10, 382, 107, 54);
+		lblNewLabel_4_1_1_1_1_1_1_1.setBounds(10, 266, 107, 25);
 		panel_3_3_1_1_1_1.add(lblNewLabel_4_1_1_1_1_1_1_1);
 		
 		JPanel panel_3_4_1_1_1_1 = new JPanel();
@@ -1275,7 +1268,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_3_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_3_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_3_1_1_1.setBounds(10, 55, 107, 33);
+		btnNewButton_1_3_1_1_1.setBounds(10, 59, 107, 33);
 		panel_3_4_1_1_1_1.add(btnNewButton_1_3_1_1_1);
 		
 		JButton btnNewButton_1_1_2_1_1_1 = new JButton("WATCH");
@@ -1286,7 +1279,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_2_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_2_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_2_1_1_1.setBounds(10, 139, 107, 33);
+		btnNewButton_1_1_2_1_1_1.setBounds(10, 95, 107, 33);
 		panel_3_4_1_1_1_1.add(btnNewButton_1_1_2_1_1_1);
 		
 		JButton btnNewButton_1_2_2_1_1_1 = new JButton("WATCH");
@@ -1297,7 +1290,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_2_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_2_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_2_1_1_1.setBounds(10, 223, 107, 33);
+		btnNewButton_1_2_2_1_1_1.setBounds(10, 153, 107, 33);
 		panel_3_4_1_1_1_1.add(btnNewButton_1_2_2_1_1_1);
 		
 		JButton btnNewButton_1_1_1_1_1_1_1 = new JButton("WATCH");
@@ -1308,7 +1301,7 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_1_1_1_1_1_1.setBounds(10, 307, 107, 33);
+		btnNewButton_1_1_1_1_1_1_1.setBounds(10, 210, 107, 33);
 		panel_3_4_1_1_1_1.add(btnNewButton_1_1_1_1_1_1_1);
 		
 		JButton btnNewButton_1_2_1_1_1_1_1 = new JButton("WATCH");
@@ -1319,44 +1312,8 @@ public class PlaceArticulation extends JPanel {
 		});
 		btnNewButton_1_2_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_2_1_1_1_1_1.setBackground(Color.GREEN);
-		btnNewButton_1_2_1_1_1_1_1.setBounds(10, 394, 107, 33);
+		btnNewButton_1_2_1_1_1_1_1.setBounds(10, 266, 107, 33);
 		panel_3_4_1_1_1_1.add(btnNewButton_1_2_1_1_1_1_1);
-		
-		JPanel panel_1 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_1, null);
-		panel_1.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("PLACE OF ARTICULATION");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 38));
-		lblNewLabel_1.setBounds(10, 0, 528, 69);
-		panel_1.add(lblNewLabel_1);
-		
-		JTextPane txtpnInArticulatoryPhonetics = new JTextPane();
-		txtpnInArticulatoryPhonetics.setFont(new Font("Dialog", Font.PLAIN, 23));
-		txtpnInArticulatoryPhonetics.setText("In articulatory phonetics, the place of articulation (also point of articulation) of a consonant is the point of contact where an obstruction occurs in the vocal tract between an articulatory gesture, an active articulator (typically some part of the tongue and uvula), and a passive location (typically some part of the roof of the mouth). Active Articulator are named so because they are flexible and move, and the Passive Articulator are called so because they are normally fixed and are the parts with which the Active Articulator makes contact. Along with the manner of articulation and the phonation, the place of articulation gives the consonant its distinctive sound.");
-		txtpnInArticulatoryPhonetics.setBounds(34, 87, 679, 477);
-		panel_1.add(txtpnInArticulatoryPhonetics);
-		
-		JPanel panel_2 = new JPanel();
-		tabbedPane.addTab("New tab", null, panel_2, null);
-		panel_2.setLayout(null);
-		
-		JTextPane txtpnDentalinterdentalAre = new JTextPane();
-		txtpnDentalinterdentalAre.setContentType("text/html");
-		txtpnDentalinterdentalAre.setFont(new Font("Dialog", Font.PLAIN, 25));
-		txtpnDentalinterdentalAre.setText("\r\n<p style=\"font-family:dialog;font-size:25;\"><b>Dental/Interdental </b> - are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth. <br><br>\r\nEnglish contains the following two labio-dental sounds<br>\r\n/O/ as is \u2015thick\u2016 and \u2015bath\u2016<br>\r\n/o/ as is \u2015the\u2016 and \u2015rather\u2016\r\n</p>\r\n");
-		txtpnDentalinterdentalAre.setBounds(10, 86, 744, 303);
-		panel_2.add(txtpnDentalinterdentalAre);
-		
-		JButton btnNewButton = new JButton("New button");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				new embedVideo("https://drive.google.com/file/d/19KnXKmihWjJM7qtv3-PzrbvLqLrWiHTh/preview");
-			}
-		});
-		btnNewButton.setBounds(250, 442, 89, 23);
-		panel_2.add(btnNewButton);
 
 	}
 	public void btnClick(JTextPane txt,String text) {

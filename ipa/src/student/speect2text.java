@@ -1,30 +1,19 @@
 package student;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Semaphore;
 
-import javax.sound.sampled.AudioFileFormat;
-import javax.sound.sampled.AudioSystem;
-import javax.swing.JOptionPane;
-
-import com.microsoft.*;
-
-import com.microsoft.cognitiveservices.speech.CancellationDetails;
 import com.microsoft.cognitiveservices.speech.CancellationReason;
 import com.microsoft.cognitiveservices.speech.PronunciationAssessmentConfig;
 import com.microsoft.cognitiveservices.speech.PronunciationAssessmentGradingSystem;
 import com.microsoft.cognitiveservices.speech.PronunciationAssessmentGranularity;
 import com.microsoft.cognitiveservices.speech.PronunciationAssessmentResult;
-import com.microsoft.cognitiveservices.speech.PropertyId;
 import com.microsoft.cognitiveservices.speech.ResultReason;
 import com.microsoft.cognitiveservices.speech.SpeechConfig;
-import com.microsoft.cognitiveservices.speech.SpeechRecognitionResult;
 import com.microsoft.cognitiveservices.speech.SpeechRecognizer;
 import com.microsoft.cognitiveservices.speech.audio.AudioConfig;
 import com.microsoft.cognitiveservices.speech.audio.AudioInputStream;

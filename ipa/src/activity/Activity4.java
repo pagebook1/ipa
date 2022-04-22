@@ -44,13 +44,13 @@ public class Activity4 extends JPanel {
 	ArrayList <String>values;
 	public Activity4() {
 		setBackground(new Color(255, 255, 255));
-		setBounds(0, 0, 769, 651);
+		setBounds(0, 0, 769, 491);
 		setLayout(null);
 		setVisible(true);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(new Color(255, 255, 255));
-		tabbedPane.setBounds(0, -24, 769, 675);
+		tabbedPane.setBounds(0, -24, 769, 525);
 		add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -65,6 +65,7 @@ public class Activity4 extends JPanel {
 		panel_2.setLayout(null);
 		
 		JTextPane txtpnInstructionsReadThe = new JTextPane();
+		txtpnInstructionsReadThe.setEditable(false);
 		txtpnInstructionsReadThe.setForeground(new Color(255, 255, 255));
 		txtpnInstructionsReadThe.setOpaque(false);
 		txtpnInstructionsReadThe.setFont(new Font("Dialog", Font.BOLD, 17));
@@ -74,7 +75,7 @@ public class Activity4 extends JPanel {
 
 		
 		JPanel layeredPane = new JPanel();
-		layeredPane.setBounds(52, 131, 278, 305);
+		layeredPane.setBounds(52, 131, 278, 259);
 		panel.add(layeredPane);
 		layeredPane.setLayout(null);
 		
@@ -82,7 +83,7 @@ public class Activity4 extends JPanel {
 		rhyme1.setLayout(null);
 		rhyme1.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme1.setBackground(new Color(100, 149, 237));
-		rhyme1.setBounds(0, 0, 278, 305);
+		rhyme1.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme1);
 		
 		JTextPane txtpnOneEarTwo = new JTextPane();
@@ -92,14 +93,14 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo.setEditable(false);
 		txtpnOneEarTwo.setBackground(SystemColor.controlDkShadow);
-		txtpnOneEarTwo.setBounds(10, 84, 255, 120);
+		txtpnOneEarTwo.setBounds(10, 74, 255, 120);
 		rhyme1.add(txtpnOneEarTwo);
 		
 		 rhyme2 = new JPanel();
 		rhyme2.setLayout(null);
 		rhyme2.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme2.setBackground(new Color(100, 149, 237));
-		rhyme2.setBounds(0, 0, 278, 305);
+		rhyme2.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme2);
 		
 		JTextPane txtpnOneEarTwo_1 = new JTextPane();
@@ -109,14 +110,14 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo_1.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo_1.setEditable(false);
 		txtpnOneEarTwo_1.setBackground(SystemColor.controlDkShadow);
-		txtpnOneEarTwo_1.setBounds(10, 30, 255, 250);
+		txtpnOneEarTwo_1.setBounds(0, 0, 278, 259);
 		rhyme2.add(txtpnOneEarTwo_1);
 		
 		 rhyme3 = new JPanel();
 		rhyme3.setLayout(null);
 		rhyme3.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme3.setBackground(new Color(100, 149, 237));
-		rhyme3.setBounds(0, 0, 278, 305);
+		rhyme3.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme3);
 		
 		JTextPane txtpnOneEarTwo_2 = new JTextPane();
@@ -126,14 +127,14 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo_2.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo_2.setEditable(false);
 		txtpnOneEarTwo_2.setBackground(new Color(255, 255, 255));
-		txtpnOneEarTwo_2.setBounds(10, 79, 255, 200);
+		txtpnOneEarTwo_2.setBounds(15, 45, 253, 130);
 		rhyme3.add(txtpnOneEarTwo_2);
 		
 		 rhyme4 = new JPanel();
 		rhyme4.setLayout(null);
 		rhyme4.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme4.setBackground(new Color(100, 149, 237));
-		rhyme4.setBounds(0, 0, 278, 305);
+		rhyme4.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme4);
 		
 		JTextPane txtpnOneEarTwo_3 = new JTextPane();
@@ -143,14 +144,14 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo_3.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo_3.setEditable(false);
 		txtpnOneEarTwo_3.setBackground(new Color(255, 255, 255));
-		txtpnOneEarTwo_3.setBounds(10, 84, 255, 120);
+		txtpnOneEarTwo_3.setBounds(15, 40, 254, 118);
 		rhyme4.add(txtpnOneEarTwo_3);
 		
 		 rhyme5 = new JPanel();
 		rhyme5.setLayout(null);
 		rhyme5.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme5.setBackground(new Color(100, 149, 237));
-		rhyme5.setBounds(0, 0, 278, 305);
+		rhyme5.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme5);
 		
 		JTextPane txtpnOneEarTwo_4 = new JTextPane();
@@ -160,14 +161,14 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo_4.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo_4.setEditable(false);
 		txtpnOneEarTwo_4.setBackground(new Color(255, 255, 255));
-		txtpnOneEarTwo_4.setBounds(10, 84, 255, 120);
+		txtpnOneEarTwo_4.setBounds(10, 55, 255, 120);
 		rhyme5.add(txtpnOneEarTwo_4);
 		
 		 rhyme6 = new JPanel();
 		rhyme6.setLayout(null);
 		rhyme6.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		rhyme6.setBackground(new Color(100, 149, 237));
-		rhyme6.setBounds(0, 0, 278, 305);
+		rhyme6.setBounds(0, 0, 278, 259);
 		layeredPane.add(rhyme6);
 		
 		JTextPane txtpnOneEarTwo_5 = new JTextPane();
@@ -177,7 +178,7 @@ public class Activity4 extends JPanel {
 		txtpnOneEarTwo_5.setFont(new Font("Dialog", Font.BOLD, 21));
 		txtpnOneEarTwo_5.setEditable(false);
 		txtpnOneEarTwo_5.setBackground(new Color(255, 255, 255));
-		txtpnOneEarTwo_5.setBounds(10, 84, 255, 120);
+		txtpnOneEarTwo_5.setBounds(10, 55, 255, 120);
 		rhyme6.add(txtpnOneEarTwo_5);
 		String[] columns = new String[] {"Diphthong IPA Keyword","Extracted Word"};
 		DefaultTableModel model = new DefaultTableModel(columns,7);
@@ -203,7 +204,7 @@ public class Activity4 extends JPanel {
 				
 			}
 		});
-		prev.setBounds(61, 482, 89, 23);
+		prev.setBounds(52, 410, 89, 23);
 		panel.add(prev);
 		
 		 next = new JButton("NEXT");
@@ -325,7 +326,7 @@ public class Activity4 extends JPanel {
 		get7.setBounds(169, 223, 136, 25);
 		panel_1.add(get7);
 		showRhymePanel(rhymeIndex);
-		next.setBounds(241, 482, 89, 23);
+		next.setBounds(241, 410, 89, 23);
 		panel.add(next);
 		
 		JButton btnSubmit = new JButton("SUBMIT");

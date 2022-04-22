@@ -1,23 +1,21 @@
 package teacher;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 import database.connection;
 import student.play_voice;
-
-import javax.swing.JScrollPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class act2_record extends JPanel {
 	private JTable table;
@@ -28,19 +26,37 @@ public class act2_record extends JPanel {
 	 */
 	public act2_record() throws Exception {
 		setBackground(new Color(255, 255, 255));
-		setBounds(0,0,769,691);
+		setBounds(0,0,769,490);
 		setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(88, 115, 286, 57);
+		comboBox.setBounds(113, 115, 141, 33);
 		add(comboBox);
 		
 		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(402, 115, 286, 57);
+		comboBox_1.setBounds(502, 115, 141, 33);
 		add(comboBox_1);
 		
+		comboBox.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				ArrayList<String> record_id;
+				try {
+					record_id = new connection().getAct2Records(comboBox.getSelectedItem().toString());
+					for(String record:record_id)
+					{
+						comboBox_1.addItem(record);
+					}
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+
+				
+				
+			}
+		});
 		JLabel lblNewLabel = new JLabel("Student ID");
-		lblNewLabel.setBounds(88, 90, 114, 14);
+		lblNewLabel.setBounds(113, 90, 114, 14);
 		add(lblNewLabel);
 		
 		try {
@@ -52,19 +68,12 @@ public class act2_record extends JPanel {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		ArrayList<String> record_id = new connection().getAct2Records(comboBox.getSelectedItem().toString());
-		for(String record:record_id)
-		{
-			comboBox_1.addItem(record);
-		}
-		
 		JLabel lblAttemptId = new JLabel("Attempt ID");
-		lblAttemptId.setBounds(402, 90, 114, 14);
+		lblAttemptId.setBounds(502, 90, 114, 14);
 		add(lblAttemptId);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(110, 231, 530, 239);
+		scrollPane.setBounds(113, 172, 530, 239);
 		add(scrollPane);
 		
 		table = new JTable();
@@ -80,7 +89,7 @@ public class act2_record extends JPanel {
 		
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setEnabled(false);
-		comboBox_2.setBounds(418, 481, 154, 23);
+		comboBox_2.setBounds(413, 422, 154, 23);
 		add(comboBox_2);
 		
 		JButton playbtn = new JButton("PLAY");
@@ -90,7 +99,7 @@ public class act2_record extends JPanel {
 			}
 		});
 		playbtn.setEnabled(false);
-		playbtn.setBounds(571, 481, 71, 23);
+		playbtn.setBounds(577, 422, 71, 23);
 		add(playbtn);
 
 		
@@ -117,8 +126,13 @@ public class act2_record extends JPanel {
 				}
 			}
 		});
-		btnNewButton.setBounds(325, 535, 130, 23);
+		btnNewButton.setBounds(110, 422, 130, 23);
 		add(btnNewButton);
+		
+		JLabel lblActivityRecords = new JLabel("ACTIVITY 2 RECORDS\r\n");
+		lblActivityRecords.setFont(new Font("Dialog", Font.BOLD, 28));
+		lblActivityRecords.setBounds(230, 29, 363, 24);
+		add(lblActivityRecords);
 		
 	}
 }

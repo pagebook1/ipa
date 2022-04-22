@@ -1,18 +1,12 @@
 package teacher;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JTabbedPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Font;
-import javax.swing.JLabel;
-import java.awt.SystemColor;
-import javax.swing.SwingConstants;
-import javax.swing.ImageIcon;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
 
 public class DiscussionList extends JPanel {
 

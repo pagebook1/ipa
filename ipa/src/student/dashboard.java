@@ -1,27 +1,20 @@
 package student;
 
-import java.awt.BorderLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.MouseInputAdapter;
-
-import org.w3c.dom.events.MouseEvent;
-import javax.sound.sampled.LineUnavailableException;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.GridLayout;
-import java.awt.FlowLayout;
+import java.awt.event.MouseAdapter;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.SwingConstants;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
-import java.awt.Window.Type;
+
+import game.login;
 
 public class dashboard extends JFrame {
 	public JPanel content;
@@ -52,22 +45,29 @@ public class dashboard extends JFrame {
 	public dashboard() {
 		
 		activityList = new ActivityList();
+		activityList.tabbedPane.setSize(791, 528);
+		activityList.setSize(769, 491);
+		activityList.tabbedPane.setLocation(-10, -23);
 		Home = new home();
+		Home.setBounds(0, 0, 769, 491);
 		activityList.setLocation(0, 0);
 		setType(Type.POPUP);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1080, 720);
+		setBounds(100, 100, 1079, 552);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(47, 79, 79));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(0, 0, 275, 681);
+		contentPane.add(scrollPane);
+		
 		JPanel panel = new JPanel();
+		scrollPane.setViewportView(panel);
 		panel.setBackground(new Color(0, 128, 128));
-		panel.setBounds(0, 0, 275, 681);
-		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
@@ -85,12 +85,12 @@ public class dashboard extends JFrame {
 				showpanel(Home);
 			}
 		});
-		homebtn.setBounds(10, 310, 249, 50);
+		homebtn.setBounds(10, 310, 249, 29);
 		panel.add(homebtn);
 		homebtn.setLayout(null);
 		
 		JLabel homelabel = new JLabel("HOME");
-		homelabel.setBounds(97, 0, 152, 50);
+		homelabel.setBounds(97, 0, 152, 29);
 		homelabel.setForeground(new Color(255, 255, 255));
 		homelabel.setHorizontalAlignment(SwingConstants.LEFT);
 		homelabel.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -99,14 +99,14 @@ public class dashboard extends JFrame {
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1.setIcon(new ImageIcon(dashboard.class.getResource("/assets/house.png")));
-		lblNewLabel_1.setBounds(10, 0, 73, 50);
+		lblNewLabel_1.setBounds(10, 0, 73, 29);
 		homebtn.add(lblNewLabel_1);
 		
 		
 		JPanel discussion = new JPanel();
 		discussion.setBorder(new LineBorder(new Color(95, 158, 160)));
 		discussion.setBackground(new Color(0, 128, 128));
-		discussion.setBounds(10, 371, 249, 50);
+		discussion.setBounds(10, 350, 249, 29);
 		panel.add(discussion);
 		discussion.setLayout(null);
 		
@@ -114,13 +114,13 @@ public class dashboard extends JFrame {
 		lblDiscussion.setHorizontalAlignment(SwingConstants.LEFT);
 		lblDiscussion.setForeground(Color.WHITE);
 		lblDiscussion.setFont(new Font("Dialog", Font.BOLD, 24));
-		lblDiscussion.setBounds(97, 0, 152, 50);
+		lblDiscussion.setBounds(97, 0, 152, 29);
 		discussion.add(lblDiscussion);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("");
 		lblNewLabel_1_1_1.setIcon(new ImageIcon(dashboard.class.getResource("/assets/discuss.png")));
 		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1_1.setBounds(0, 0, 73, 50);
+		lblNewLabel_1_1_1.setBounds(14, 0, 73, 29);
 		discussion.add(lblNewLabel_1_1_1);
 		
 		
@@ -134,12 +134,12 @@ public class dashboard extends JFrame {
 				ActivityList.tabbedPane.setSelectedIndex(0);
 			}
 		});
-		activitybtn.setBounds(10, 432, 249, 50);
+		activitybtn.setBounds(10, 390, 249, 29);
 		panel.add(activitybtn);
 		activitybtn.setLayout(null);
 		
 		JLabel vclabel = new JLabel("ACTIVITY");
-		vclabel.setBounds(97, 0, 152, 50);
+		vclabel.setBounds(97, 0, 152, 29);
 		vclabel.setHorizontalAlignment(SwingConstants.LEFT);
 		vclabel.setForeground(Color.WHITE);
 		vclabel.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -148,19 +148,19 @@ public class dashboard extends JFrame {
 		JLabel lblNewLabel_1_1 = new JLabel("");
 		lblNewLabel_1_1.setIcon(new ImageIcon(dashboard.class.getResource("/assets/activity.png")));
 		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setBounds(10, 0, 73, 50);
+		lblNewLabel_1_1.setBounds(10, 0, 73, 29);
 		activitybtn.add(lblNewLabel_1_1);
 		
 		JPanel quizbtn = new JPanel();
 		quizbtn.setBorder(new LineBorder(new Color(95, 158, 160)));
 		quizbtn.setBackground(new Color(0, 128, 128));
-		quizbtn.setBounds(10, 498, 249, 50);
+		quizbtn.setBounds(10, 430, 249, 29);
 		quizbtn.addMouseListener(new PanelMouseAdapter(quizbtn));
 		panel.add(quizbtn);
 		quizbtn.setLayout(null);
 		
 		JLabel quizlabel = new JLabel("QUIZ");
-		quizlabel.setBounds(97, 0, 152, 50);
+		quizlabel.setBounds(97, 0, 152, 29);
 		quizlabel.setHorizontalAlignment(SwingConstants.LEFT);
 		quizlabel.setForeground(Color.WHITE);
 		quizlabel.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -169,7 +169,7 @@ public class dashboard extends JFrame {
 		JLabel lblNewLabel_1_2 = new JLabel("");
 		lblNewLabel_1_2.setIcon(new ImageIcon(dashboard.class.getResource("/assets/ideas.png")));
 		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_2.setBounds(10, 0, 73, 50);
+		lblNewLabel_1_2.setBounds(10, 0, 73, 29);
 		quizbtn.add(lblNewLabel_1_2);
 		
 		JPanel logoutbtn = new JPanel();
@@ -182,12 +182,12 @@ public class dashboard extends JFrame {
 				dashboard.this.dispose();
 			}
 		});
-		logoutbtn.setBounds(10, 559, 249, 50);
+		logoutbtn.setBounds(10, 470, 249, 29);
 		panel.add(logoutbtn);
 		logoutbtn.setLayout(null);
 		
 		JLabel logout = new JLabel("LOGOUT");
-		logout.setBounds(97, 0, 152, 50);
+		logout.setBounds(97, 0, 152, 29);
 		logout.setHorizontalAlignment(SwingConstants.LEFT);
 		logout.setForeground(Color.WHITE);
 		logout.setFont(new Font("Dialog", Font.BOLD, 24));
@@ -196,20 +196,26 @@ public class dashboard extends JFrame {
 		JLabel lblNewLabel_1_3 = new JLabel("");
 		lblNewLabel_1_3.setIcon(new ImageIcon(dashboard.class.getResource("/assets/logout.png")));
 		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_3.setBounds(10, 0, 73, 50);
+		lblNewLabel_1_3.setBounds(10, 0, 73, 29);
 		logoutbtn.add(lblNewLabel_1_3);
 		
-		JLabel lblNewLabel_2 = new JLabel("STUDENT DASHBOARD");
+		JLabel lblNewLabel_2 = new JLabel("STUDENT'S DASHBOARD");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 21));
 		lblNewLabel_2.setForeground(new Color(255, 255, 255));
-		lblNewLabel_2.setBounds(10, 243, 249, 43);
+		lblNewLabel_2.setBounds(10, 243, 265, 43);
 		panel.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setText("Hello " + login.infos.get(3)+ " " + login.infos.get(4));
+		lblNewLabel_3.setForeground(new Color(255, 255, 255));
+		lblNewLabel_3.setBounds(10, 11, 255, 21);
+		panel.add(lblNewLabel_3);
 		
 		
 		content = new JPanel();
 		content.setBorder(null);
 		content.setBackground(new Color(255, 255, 255));
-		content.setBounds(285, 11, 769, 651);
+		content.setBounds(285, 11, 769, 491);
 		contentPane.add(content);
 		content.setLayout(null);
 		

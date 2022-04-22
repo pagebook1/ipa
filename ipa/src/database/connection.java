@@ -16,9 +16,9 @@ public class connection {
 	 public static Connection getConnection() throws Exception{
 	  try{
 	   String driver = "com.mysql.cj.jdbc.Driver";
-	   String url = "jdbc:mysql://localhost:3306/ipa"; // localhost or ipadatabase.mysql.database.azure.com
-	   String username = "root"; //pagebook or root
-	   String password = ""; //031920Kevin or ""
+	   String url = "jdbc:mysql://ipadatabase.mysql.database.azure.com:3306/ipa"; // localhost or ipadatabase.mysql.database.azure.com
+	   String username = "pagebook"; //pagebook or root
+	   String password = "031920Kevin"; //031920Kevin or ""
 	   Class.forName(driver);
 	   
 	   Connection conn = DriverManager.getConnection(url,username,password);
@@ -31,6 +31,39 @@ public class connection {
 	  
 	  return null;
 	 }
+	 public static void create_User(String fname,String lname,String user, String pass) throws Exception {
+		 Connection con = getConnection();
+		 Statement stmt=con.createStatement();  
+		 stmt.executeUpdate("INSERT INTO `user_accounts` (`id`, `first_name`, `last_name`, `user`, `password`, `account_type`)"
+		 		+ " VALUES (NULL, '"+fname+"', '"+lname+"', '"+user+"', '"+pass+"', 'student')");
+	 }
+	 public static ArrayList<String> id() throws Exception {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM `user_accounts`");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("id"));
+		 }
+		return info;
+		 
+	 }
+	 public static ArrayList<String> getInfos(String id) throws Exception {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM `user_accounts` where id = "+id+"");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("first_name"));
+			 info.add(rs.getString("last_name"));
+			 info.add(rs.getString("user"));
+			 info.add(rs.getString("password"));
+		 }
+		return info;
+		 
+	 }
 	 public static  ArrayList<String> user(String user, String pass) throws Exception {
 		 Connection con = getConnection();
 		 ArrayList <String> info = new ArrayList<String>();
@@ -41,6 +74,8 @@ public class connection {
 			 info.add(rs.getString("id"));
 			 info.add(rs.getString("user"));
 			 info.add(rs.getString("account_type"));
+			 info.add(rs.getString("first_name"));
+			 info.add(rs.getString("last_name"));
 		 }
 		return info;
 	 }
@@ -62,6 +97,20 @@ public class connection {
 			 info.add(rs.getString("filename"));
 		 }
 		return info;
+		 
+	 }
+	 public static void updateRecord(String id,String fname,String lname,String user,String pass) throws Exception {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 stmt.executeUpdate("UPDATE `user_accounts` SET `first_name` = '"+fname+"', `last_name` = '"+lname+"', `user` = '"+user+"', `password` = '"+pass+"' WHERE `user_accounts`.`id` = "+id+"");
+		 
+	 }
+	 public static void deleteRecord(String id) throws Exception {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 stmt.executeUpdate("DELETE FROM `user_accounts` WHERE `user_accounts`.`id` = "+id+"");
 		 
 	 }
 	 public static ArrayList<String> studentID() throws Exception{
@@ -178,6 +227,36 @@ public class connection {
 			e.printStackTrace();
 		}
 		 System.out.print(filename);
+	 }
+	 public static ArrayList<String> getAct3Records(String id) throws Exception
+	 {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT attempt_id FROM `act3_table` WHERE student_id = '"+id+"'");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("attempt_id"));
+		 }
+		return info;
+	 }
+	 public static ArrayList<String> getAct3Recording(String recordid) throws Exception
+	 {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM act3_table WHERE `attempt_id`='"+recordid+"'");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("reci1"));
+			 info.add(rs.getString("reci2"));
+			 info.add(rs.getString("reci3"));
+			 info.add(rs.getString("reci4"));
+			 info.add(rs.getString("reci5"));
+
+		 }
+		return info;
+		 
 	 }
 	 
 }

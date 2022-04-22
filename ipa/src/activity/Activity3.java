@@ -1,22 +1,21 @@
 package activity;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Random;
 
-import javax.swing.JPanel;
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextPane;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
 import database.connection;
 import student.record_voice;
-
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.Random;
-import java.awt.event.ActionEvent;
 
 public class Activity3 extends JPanel {
 	int filename = random();
@@ -34,12 +33,12 @@ public class Activity3 extends JPanel {
 	ArrayList<String>filenames = new ArrayList<String>();
 	public Activity3() {
 		setBackground(new Color(255, 255, 255));
-		setBounds(0, 0, 769, 651);
+		setBounds(0, 0, 769, 491);
 		setLayout(null);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(0, 0, 769, 651);
+		panel.setBounds(0, 0, 769, 491);
 		add(panel);
 		panel.setLayout(null);
 		
@@ -188,6 +187,7 @@ public class Activity3 extends JPanel {
 				JOptionPane.showMessageDialog(null,"Activity Finished!", "Congrats",JOptionPane.INFORMATION_MESSAGE);
 				showRecite(panel_1);
 				System.out.print(filenames);
+				filenames.clear();
 				student.ActivityList.tabbedPane.setSelectedIndex(0);
 			}
 		});
@@ -195,6 +195,25 @@ public class Activity3 extends JPanel {
 		panel_5.add(btnNewButton_2_1);
 		setVisible(true);
 		showRecite(panel_1);
+		
+		JLabel label = new JLabel("New label");
+		label.setBounds(47, 119, 46, 14);
+		panel_1.add(label);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setBackground(new Color(0, 128, 128));
+		panel_6.setBounds(10, 11, 749, 118);
+		panel.add(panel_6);
+		panel_6.setLayout(null);
+		
+		JTextPane txtpnInstructionsTheseStanzas = new JTextPane();
+		txtpnInstructionsTheseStanzas.setEditable(false);
+		txtpnInstructionsTheseStanzas.setOpaque(false);
+		txtpnInstructionsTheseStanzas.setForeground(new Color(255, 255, 255));
+		txtpnInstructionsTheseStanzas.setFont(new Font("Dialog", Font.BOLD, 17));
+		txtpnInstructionsTheseStanzas.setText("Instructions: These stanzas are adopted from the poem \"English is the Queenest Language.\" Read and recite the poem with conviction, taking note of the correct place and manner of articulation present in the various phonemes of the alphabet. Be cautious in your pronunciation, especially with those dynamic-sounding words.");
+		txtpnInstructionsTheseStanzas.setBounds(10, 11, 729, 96);
+		panel_6.add(txtpnInstructionsTheseStanzas);
 	}
 	public void showRecite(JPanel panel)
 	{

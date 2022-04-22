@@ -1,44 +1,37 @@
 package activity;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.concurrent.ExecutionException;
 
-import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
-import java.awt.Font;
-import javax.swing.JProgressBar;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
+import javax.swing.JTable;
 import javax.swing.JTextPane;
+import javax.swing.SwingConstants;
 import javax.swing.UIManager;
+import javax.swing.table.DefaultTableModel;
 
+import database.connection;
 import student.ActivityList;
 import student.play_voice;
 import student.record_voice;
 import student.speect2text;
 import student.text2speech;
-
-import javax.swing.ImageIcon;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.UUID;
-import java.util.concurrent.ExecutionException;
-import java.awt.SystemColor;
-import javax.swing.border.TitledBorder;
-import javax.swing.table.DefaultTableModel;
-
-import database.connection;
-
-import javax.swing.JTable;
-import javax.swing.JScrollPane;
-import javax.swing.JComboBox;
 
 public class Activity2 extends JPanel {
 
@@ -65,11 +58,11 @@ public class Activity2 extends JPanel {
 	public Activity2() {
 		
 		setBackground(new Color(255, 255, 255));
-		setBounds(0, 0, 769, 651);
+		setBounds(0, 0, 769, 491);
 		setLayout(null);
 		
 		 tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0, -40, 769, 746);
+		tabbedPane.setBounds(0, -45, 769, 535);
 		add(tabbedPane);
 		
 		JPanel panel = new JPanel();
@@ -99,7 +92,7 @@ public class Activity2 extends JPanel {
 		btnNewButton.setBackground(new Color(0, 128, 128));
 		btnNewButton.setForeground(new Color(255, 250, 250));
 		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 55));
-		btnNewButton.setBounds(241, 404, 239, 82);
+		btnNewButton.setBounds(248, 323, 239, 82);
 		panel.add(btnNewButton);
 		
 		JPanel panel_1 = new JPanel();
@@ -152,7 +145,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1.setBackground(new Color(0, 128, 128));
 		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1.setBounds(539, 380, 109, 56);
 		panel_1.add(btnNewButton_1);
 		
 		JPanel panel_1_1 = new JPanel();
@@ -204,7 +197,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1.add(btnNewButton_1_1);
 		
 		JPanel panel_1_1_1 = new JPanel();
@@ -256,7 +249,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1.add(btnNewButton_1_1_1);
 		
 		JPanel panel_1_1_1_1 = new JPanel();
@@ -308,7 +301,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1.add(btnNewButton_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1 = new JPanel();
@@ -360,7 +353,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1.add(btnNewButton_1_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1_1 = new JPanel();
@@ -412,7 +405,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1.add(btnNewButton_1_1_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1_1_1 = new JPanel();
@@ -465,7 +458,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1.add(btnNewButton_1_1_1_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1_1_1_1 = new JPanel();
@@ -517,7 +510,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1.add(btnNewButton_1_1_1_1_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_1 = new JPanel();
@@ -569,7 +562,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_1.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_1.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_1.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_1.add(btnNewButton_1_1_1_1_1_1_1_1_1);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_2 = new JPanel();
@@ -621,7 +614,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_2.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_2.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_2.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_2.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_2.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_2.add(btnNewButton_1_1_1_1_1_1_1_1_2);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_3 = new JPanel();
@@ -673,7 +666,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_3.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_3.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_3.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_3.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_3.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_3.add(btnNewButton_1_1_1_1_1_1_1_1_3);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_4 = new JPanel();
@@ -725,7 +718,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_4.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_4.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_4.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_4.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_4.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_4.add(btnNewButton_1_1_1_1_1_1_1_1_4);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_5 = new JPanel();
@@ -777,7 +770,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_5.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_5.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_5.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_5.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_5.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_5.add(btnNewButton_1_1_1_1_1_1_1_1_5);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_6 = new JPanel();
@@ -829,7 +822,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_6.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_6.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_6.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_6.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_6.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_6.add(btnNewButton_1_1_1_1_1_1_1_1_6);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_7 = new JPanel();
@@ -881,7 +874,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_7.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_7.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_7.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_7.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_7.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_7.add(btnNewButton_1_1_1_1_1_1_1_1_7);
 		
 		JPanel panel_1_1_1_1_1_1_1_1_8 = new JPanel();
@@ -945,7 +938,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_1_1_1_1_1_1_1_1_8.setForeground(Color.WHITE);
 		btnNewButton_1_1_1_1_1_1_1_1_8.setFont(new Font("Tahoma", Font.BOLD, 24));
 		btnNewButton_1_1_1_1_1_1_1_1_8.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1_1_1_1_1_1_1_8.setBounds(538, 438, 109, 56);
+		btnNewButton_1_1_1_1_1_1_1_1_8.setBounds(539, 380, 109, 56);
 		panel_1_1_1_1_1_1_1_1_8.add(btnNewButton_1_1_1_1_1_1_1_1_8);
 		
 		JPanel panel_2 = new JPanel();
@@ -1025,7 +1018,7 @@ public class Activity2 extends JPanel {
 		btnNewButton_3.setFont(new Font("Dialog", Font.BOLD, 20));
 		btnNewButton_3.setBackground(new Color(0, 128, 128));
 		btnNewButton_3.setForeground(new Color(255, 255, 255));
-		btnNewButton_3.setBounds(132, 435, 136, 56);
+		btnNewButton_3.setBounds(132, 402, 121, 35);
 		panel_2.add(btnNewButton_3);
 		
 		
