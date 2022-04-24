@@ -83,6 +83,7 @@ public class dashboard extends JFrame {
 			public void mouseClicked(java.awt.event.MouseEvent e)
 			{
 				showpanel(Home);
+				home.panel_show(home.panel);
 			}
 		});
 		homebtn.setBounds(10, 310, 249, 29);

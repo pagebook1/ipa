@@ -18,6 +18,8 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import discussions.SpeechOrgans;
+
 public class dashboard extends JFrame {
 
 	private JPanel contentPane;
@@ -81,7 +83,7 @@ public class dashboard extends JFrame {
 		homebtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(0);
+				tabbedPane.setSelectedIndex(9);
 			}
 		});
 		homebtn.setLayout(null);
@@ -107,7 +109,7 @@ public class dashboard extends JFrame {
 		discussion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(1);
+				tabbedPane.setSelectedIndex(0);
 				
 			}
 		});
@@ -134,7 +136,7 @@ public class dashboard extends JFrame {
 		activitybtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(6);
+				tabbedPane.setSelectedIndex(5);
 			}
 		});
 		activitybtn.setLayout(null);
@@ -194,7 +196,7 @@ public class dashboard extends JFrame {
 		createStudent.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(8);
+				tabbedPane.setSelectedIndex(7);
 			}
 		});
 		createStudent.setLayout(null);
@@ -226,9 +228,6 @@ public class dashboard extends JFrame {
 		 tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBounds(0,-27,769, 517);
 		content.add(tabbedPane);
-		
-		JPanel homePanel = new JPanel();
-		homePanel.setBackground(new Color(255, 255, 255));
 		discussionList = new DiscussionList();
 		
 		discussions.PlaceArticulation placeArticulation = new discussions.PlaceArticulation();
@@ -238,13 +237,11 @@ public class dashboard extends JFrame {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		tabbedPane.add(homePanel);
 		tabbedPane.add(discussionList);
 		tabbedPane.add(placeArticulation);
 		tabbedPane.add(rec);
 		tabbedPane.add(rec1);
 		tabbedPane.add(rec3);
-		tabbedPane.setSelectedIndex(0);
 		
 		JPanel recordlist = new JPanel();
 		tabbedPane.addTab("New tab", null, recordlist, null);
@@ -260,7 +257,7 @@ public class dashboard extends JFrame {
 		JButton btnActivity = new JButton("ACTIVITY 2");
 		btnActivity.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(3);
+				tabbedPane.setSelectedIndex(2);
 			}
 		});
 		btnActivity.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -273,7 +270,7 @@ public class dashboard extends JFrame {
 		JButton btnActivity_1 = new JButton("ACTIVITY 3");
 		btnActivity_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(5);
+				tabbedPane.setSelectedIndex(3);
 				
 			}
 		});
@@ -304,7 +301,7 @@ public class dashboard extends JFrame {
 		JButton btnNewButton_1 = new JButton("Create Student");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(7);
+				tabbedPane.setSelectedIndex(6);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -322,7 +319,7 @@ public class dashboard extends JFrame {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				}
-				tabbedPane.setSelectedIndex(9);
+				tabbedPane.setSelectedIndex(8);
 			}
 		});
 		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
@@ -332,5 +329,16 @@ public class dashboard extends JFrame {
 		listCreateStudent.add(btnNewButton_1_1);
 		deleteStudent = new DeleteStudent();
 		tabbedPane.addTab("New tab", null, new DeleteStudent(), null);
+		
+		JPanel homePanel = new JPanel();
+		homePanel.setBackground(new Color(255, 255, 255));
+		tabbedPane.add(homePanel);
+		
+		JPanel speechorgans = new discussions.SpeechOrgans();
+		tabbedPane.addTab("New tab", null, speechorgans, null);
+		tabbedPane.setSelectedIndex(9);
+		
+		JPanel voiced = new discussions.voice();
+		tabbedPane.addTab("New tab", null, voiced, null);
 	}
 }

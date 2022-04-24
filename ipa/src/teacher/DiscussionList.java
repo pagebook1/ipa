@@ -27,21 +27,38 @@ public class DiscussionList extends JPanel {
 		JButton btnNewButton = new JButton("PLACE OF ARTICULATION");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dashboard.tabbedPane.setSelectedIndex(2);
+				dashboard.tabbedPane.setSelectedIndex(1);
 			}
 		});
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 21));
 		btnNewButton.setBackground(new Color(0, 102, 102));
-		btnNewButton.setBounds(41, 128, 314, 92);
+		btnNewButton.setBounds(46, 307, 314, 92);
 		panel.add(btnNewButton);
 		
-		JButton btnMannerOfArticulation = new JButton("MANNER OF ARTICULATION");
+		JButton btnMannerOfArticulation = new JButton("SPEECH ORGANS");
+		btnMannerOfArticulation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dashboard.tabbedPane.setSelectedIndex(10);
+			}
+		});
 		btnMannerOfArticulation.setForeground(Color.WHITE);
 		btnMannerOfArticulation.setFont(new Font("Dialog", Font.BOLD, 21));
 		btnMannerOfArticulation.setBackground(new Color(0, 102, 102));
-		btnMannerOfArticulation.setBounds(347, 268, 324, 92);
+		btnMannerOfArticulation.setBounds(46, 131, 324, 92);
 		panel.add(btnMannerOfArticulation);
+		
+		JButton btnVoicedAndVoiceless = new JButton("VOICED AND VOICELESS");
+		btnVoicedAndVoiceless.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dashboard.tabbedPane.setSelectedIndex(11);
+			}
+		});
+		btnVoicedAndVoiceless.setForeground(Color.WHITE);
+		btnVoicedAndVoiceless.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnVoicedAndVoiceless.setBackground(new Color(0, 102, 102));
+		btnVoicedAndVoiceless.setBounds(385, 131, 324, 92);
+		panel.add(btnVoicedAndVoiceless);
 
 	}
 
