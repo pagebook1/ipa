@@ -14,14 +14,28 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
+import discussions.dipthongs;
+import discussionStudent.*;
 import game.login;
+import teacher.DiscussionList;
+
+import java.awt.event.MouseEvent;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class dashboard extends JFrame {
 	public JPanel content;
 	private JPanel contentPane;
 	public static ActivityList activityList;
 	public static home Home;
+	public static JPanel discussionList;
 	static dashboard frame =  new dashboard();
+	
+	static JPanel dipthongs1 ;
+	static JPanel articulate;
+	static JPanel speech ;
+	static JPanel voice;
 	
 
 	/**
@@ -105,6 +119,13 @@ public class dashboard extends JFrame {
 		
 		
 		JPanel discussion = new JPanel();
+		discussion.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				showpanel(discussionList);				
+				
+			}
+		});
 		discussion.setBorder(new LineBorder(new Color(95, 158, 160)));
 		discussion.setBackground(new Color(0, 128, 128));
 		discussion.setBounds(10, 350, 249, 29);
@@ -222,6 +243,67 @@ public class dashboard extends JFrame {
 		
 		content.add(activityList);
 		content.add(Home);
+		 discussionList = new JPanel();
+		discussionList.setBounds(0, 0, 769, 491);
+		content.add(discussionList);
+		
+		 dipthongs1 = new discussionStudent.dipthongs();
+		 articulate = new discussionStudent.PlaceArticulation();
+		 speech = new discussionStudent.SpeechOrgans();
+		 voice = new discussionStudent.voice();
+		content.add(dipthongs1);
+		content.add(articulate);
+		content.add(speech);
+		content.add(voice);
+		discussionList.setLayout(null);
+		
+		JButton btnNewButton = new JButton("PLACE AND MANNER OF ARTICULATION");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showpanel(articulate);
+			}
+		});
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnNewButton.setBackground(new Color(0, 102, 102));
+		btnNewButton.setBounds(43, 273, 314, 92);
+		discussionList.add(btnNewButton);
+		
+		JButton btnMannerOfArticulation = new JButton("SPEECH ORGANS");
+		btnMannerOfArticulation.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showpanel(speech);
+			}
+		});
+		btnMannerOfArticulation.setForeground(Color.WHITE);
+		btnMannerOfArticulation.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnMannerOfArticulation.setBackground(new Color(0, 102, 102));
+		btnMannerOfArticulation.setBounds(43, 97, 324, 92);
+		discussionList.add(btnMannerOfArticulation);
+		
+		JButton btnVoicedAndVoiceless = new JButton("VOICED AND VOICELESS");
+		btnVoicedAndVoiceless.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showpanel(voice);
+			}
+		});
+		btnVoicedAndVoiceless.setForeground(Color.WHITE);
+		btnVoicedAndVoiceless.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnVoicedAndVoiceless.setBackground(new Color(0, 102, 102));
+		btnVoicedAndVoiceless.setBounds(382, 97, 324, 92);
+		discussionList.add(btnVoicedAndVoiceless);
+		
+		JButton dipthongs = new JButton("Dipthongs");
+		dipthongs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showpanel(dipthongs1);
+			}
+		});
+		dipthongs.setForeground(Color.WHITE);
+		dipthongs.setFont(new Font("Dialog", Font.BOLD, 21));
+		dipthongs.setBackground(new Color(0, 102, 102));
+		dipthongs.setBounds(382, 273, 324, 92);
+		discussionList.add(dipthongs);
 		
 		showpanel(Home);
 	}
@@ -229,7 +311,11 @@ public class dashboard extends JFrame {
 	public static void showpanel(JPanel panel) {
 		activityList.setVisible(false);
 		Home.setVisible(false);
-		
+		discussionList.setVisible(false);
+		dipthongs1.setVisible(false);
+		articulate.setVisible(false);
+		speech.setVisible(false);
+		voice.setVisible(false);
 		panel.setVisible(true);
 		
 	}

@@ -24,14 +24,14 @@ public class DiscussionList extends JPanel {
 		panel.setBounds(0, 0, 764, 663);
 		add(panel);
 		
-		JButton btnNewButton = new JButton("PLACE OF ARTICULATION");
+		JButton btnNewButton = new JButton("PLACE AND MANNER OF ARTICULATION");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dashboard.tabbedPane.setSelectedIndex(1);
 			}
 		});
 		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
 		btnNewButton.setBackground(new Color(0, 102, 102));
 		btnNewButton.setBounds(46, 307, 314, 92);
 		panel.add(btnNewButton);
@@ -59,6 +59,18 @@ public class DiscussionList extends JPanel {
 		btnVoicedAndVoiceless.setBackground(new Color(0, 102, 102));
 		btnVoicedAndVoiceless.setBounds(385, 131, 324, 92);
 		panel.add(btnVoicedAndVoiceless);
+		
+		JButton dipthongs = new JButton("Dipthongs");
+		dipthongs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dashboard.tabbedPane.setSelectedIndex(12);
+			}
+		});
+		dipthongs.setForeground(Color.WHITE);
+		dipthongs.setFont(new Font("Dialog", Font.BOLD, 21));
+		dipthongs.setBackground(new Color(0, 102, 102));
+		dipthongs.setBounds(385, 307, 324, 92);
+		panel.add(dipthongs);
 
 	}
 

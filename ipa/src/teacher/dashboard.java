@@ -340,5 +340,8 @@ public class dashboard extends JFrame {
 		
 		JPanel voiced = new discussions.voice();
 		tabbedPane.addTab("New tab", null, voiced, null);
+		
+		JPanel dipthongs = new discussions.dipthongs();
+		tabbedPane.addTab("New tab", null, dipthongs, null);
 	}
 }

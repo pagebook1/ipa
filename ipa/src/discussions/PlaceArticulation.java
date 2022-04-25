@@ -19,6 +19,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
 import student.text2speech;
+import javax.swing.ImageIcon;
 
 public class PlaceArticulation extends JPanel {
 
@@ -27,7 +28,7 @@ public class PlaceArticulation extends JPanel {
 	 */
 	public PlaceArticulation() {
 		setBackground(new Color(255, 255, 255));
-		setBounds(0,0,769, 651);
+		setBounds(0,0,769, 491);
 		setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
@@ -36,7 +37,7 @@ public class PlaceArticulation extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		tabbedPane.addTab("New tab", null, panel, null);
+		tabbedPane.addTab("Home", null, panel, null);
 		panel.setLayout(null);
 		
 		JTextPane txtpnPlaceAndManner = new JTextPane();
@@ -46,9 +47,95 @@ public class PlaceArticulation extends JPanel {
 		txtpnPlaceAndManner.setBounds(178, 54, 415, 344);
 		panel.add(txtpnPlaceAndManner);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(Color.WHITE);
+		tabbedPane.addTab("Page 1", null, panel_1, null);
+		panel_1.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("LEARNING OUTCOMES");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setFont(new Font("Dialog", Font.BOLD, 35));
+		lblNewLabel_1.setBounds(146, 43, 519, 61);
+		panel_1.add(lblNewLabel_1);
+		
+		JTextPane txtpnAtTheEnd = new JTextPane();
+		txtpnAtTheEnd.setFont(new Font("Dialog", Font.PLAIN, 17));
+		txtpnAtTheEnd.setText("At the end of this lesson, the students should be able to:\r\n       1. Identify consonant sounds from the International Phonetics Alphabet.         \r\n       2. Familiarize the where and how of pronunciation as demonstrated in\r\n            the place and manner of articulation. \r\n       3. Reflect on the significance of place and manner of articulation in \r\n           improving one’s pronunciation or speaking proficiency. \r\n       4. Translate the IPA-transcribed words into their normal orthography as \r\n            highlighted in the poem “English is the Queerest Lamguage.” \r\n       5. Produce the English consonant sounds correctly. \r\n");
+		txtpnAtTheEnd.setBounds(101, 121, 634, 289);
+		panel_1.add(txtpnAtTheEnd);
+		
+		JPanel panel_2 = new JPanel();
+		tabbedPane.addTab("Page 2", null, panel_2, null);
+		panel_2.setLayout(null);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(Color.WHITE);
+		panel_4.setBounds(0, 0, 198, 463);
+		panel_2.add(panel_4);
+		panel_4.setLayout(null);
+		
+		JLabel lblNewLabel_5 = new JLabel("NOTES");
+		lblNewLabel_5.setFont(new Font("Dialog", Font.PLAIN, 30));
+		lblNewLabel_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5.setBounds(0, 0, 198, 41);
+		panel_4.add(lblNewLabel_5);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(0, 42, 198, 421);
+		panel_4.add(textPane);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBounds(198, 0, 556, 452);
+		panel_2.add(panel_5);
+		panel_5.setLayout(null);
+		
+		JLabel lblNewLabel_6 = new JLabel("");
+		lblNewLabel_6.setIcon(new ImageIcon(PlaceArticulation.class.getResource("/assets/placeofarticulation.png")));
+		lblNewLabel_6.setBounds(0, 5, 556, 436);
+		panel_5.add(lblNewLabel_6);
+		
+		JPanel panel_2_1 = new JPanel();
+		panel_2_1.setBackground(Color.WHITE);
+		panel_2_1.setLayout(null);
+		tabbedPane.addTab("Page 3", null, panel_2_1, null);
+		
+		JPanel panel_4_1 = new JPanel();
+		panel_4_1.setLayout(null);
+		panel_4_1.setBounds(0, 0, 198, 463);
+		panel_2_1.add(panel_4_1);
+		
+		JLabel lblNewLabel_5_1 = new JLabel("NOTES");
+		lblNewLabel_5_1.setBackground(Color.WHITE);
+		lblNewLabel_5_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_5_1.setFont(new Font("Dialog", Font.PLAIN, 30));
+		lblNewLabel_5_1.setBounds(0, 0, 198, 41);
+		panel_4_1.add(lblNewLabel_5_1);
+		
+		JTextPane textPane_1 = new JTextPane();
+		textPane_1.setBounds(10, 52, 178, 421);
+		panel_4_1.add(textPane_1);
+		
+		JPanel panel_5_1 = new JPanel();
+		panel_5_1.setLayout(null);
+		panel_5_1.setBounds(222, 0, 532, 452);
+		panel_2_1.add(panel_5_1);
+		
+		JTextPane txtpnMannerOfArticulation = new JTextPane();
+		txtpnMannerOfArticulation.setEditable(false);
+		txtpnMannerOfArticulation.setFont(new Font("Dialog", Font.PLAIN, 28));
+		txtpnMannerOfArticulation.setText("The manner of articulations of a sound is how the airstream is affected as it goes through your vocal tract. Essentially, the manners of articulations describe how air is modified to create different speech sounds.");
+		txtpnMannerOfArticulation.setBounds(0, 74, 546, 378);
+		panel_5_1.add(txtpnMannerOfArticulation);
+		
+		JLabel lblNewLabel_7 = new JLabel("MANNER OF ARTICULATION");
+		lblNewLabel_7.setBackground(Color.WHITE);
+		lblNewLabel_7.setFont(new Font("Dialog", Font.BOLD, 25));
+		lblNewLabel_7.setBounds(0, 11, 531, 52);
+		panel_5_1.add(lblNewLabel_7);
+		
 		JPanel phenomtable = new JPanel();
 		phenomtable.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, phenomtable, null);
+		tabbedPane.addTab("Page 4", null, phenomtable, null);
 		phenomtable.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -310,7 +397,7 @@ public class PlaceArticulation extends JPanel {
 		JPanel phenomtable_1 = new JPanel();
 		phenomtable_1.setLayout(null);
 		phenomtable_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, phenomtable_1, null);
+		tabbedPane.addTab("Page 5", null, phenomtable_1, null);
 		
 		JPanel panel_3_5 = new JPanel();
 		panel_3_5.setLayout(null);
@@ -565,7 +652,7 @@ public class PlaceArticulation extends JPanel {
 		JPanel phenomtable_1_1 = new JPanel();
 		phenomtable_1_1.setLayout(null);
 		phenomtable_1_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, phenomtable_1_1, null);
+		tabbedPane.addTab("Page 6", null, phenomtable_1_1, null);
 		
 		JPanel panel_3_5_1 = new JPanel();
 		panel_3_5_1.setLayout(null);
@@ -812,7 +899,7 @@ public class PlaceArticulation extends JPanel {
 		JPanel phenomtable_1_1_1 = new JPanel();
 		phenomtable_1_1_1.setLayout(null);
 		phenomtable_1_1_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, phenomtable_1_1_1, null);
+		tabbedPane.addTab("Page 7", null, phenomtable_1_1_1, null);
 		
 		JPanel panel_3_5_1_1 = new JPanel();
 		panel_3_5_1_1.setLayout(null);
@@ -1069,7 +1156,7 @@ public class PlaceArticulation extends JPanel {
 		JPanel phenomtable_1_1_1_1 = new JPanel();
 		phenomtable_1_1_1_1.setLayout(null);
 		phenomtable_1_1_1_1.setBackground(Color.WHITE);
-		tabbedPane.addTab("New tab", null, phenomtable_1_1_1_1, null);
+		tabbedPane.addTab("Page 8", null, phenomtable_1_1_1_1, null);
 		
 		JPanel panel_3_5_1_1_1 = new JPanel();
 		panel_3_5_1_1_1.setLayout(null);
