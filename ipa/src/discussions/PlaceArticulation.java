@@ -10,6 +10,7 @@ import java.util.concurrent.ExecutionException;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
@@ -270,30 +271,60 @@ public class PlaceArticulation extends JPanel {
 		panel_3_2.setLayout(null);
 		
 		JLabel lblNewLabel_3 = new JLabel("Bilabial");
-		lblNewLabel_3.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
+		lblNewLabel_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3.getText().toString());
+			}
+		});
+		lblNewLabel_3.setToolTipText("sounds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setBounds(10, 41, 107, 54);
 		panel_3_2.add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("Bilabial");
-		lblNewLabel_3_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
+		lblNewLabel_3_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1.getText().toString());
+			}
+		});
+		lblNewLabel_3_1.setToolTipText("sounds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1.setBounds(10, 92, 107, 54);
 		panel_3_2.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_3_1_1 = new JLabel("Alveolar");
+		lblNewLabel_3_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_1.setBounds(10, 206, 107, 54);
 		panel_3_2.add(lblNewLabel_3_1_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("Alveolar");
+		lblNewLabel_3_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_2.getText().toString());
+			}
+		});
 		lblNewLabel_3_2.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_2.setBounds(10, 141, 107, 54);
 		panel_3_2.add(lblNewLabel_3_2);
 		
 		JLabel lblNewLabel_3_3 = new JLabel("Velar");
+		lblNewLabel_3_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_3.getText().toString());
+			}
+		});
 		lblNewLabel_3_3.setToolTipText("behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.");
 		lblNewLabel_3_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_3.setBounds(10, 271, 107, 54);
@@ -526,30 +557,60 @@ public class PlaceArticulation extends JPanel {
 		phenomtable_1.add(panel_3_2_1);
 		
 		JLabel lblNewLabel_3_4 = new JLabel("Velar\r\n");
+		lblNewLabel_3_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_4.getText().toString());
+			}
+		});
 		lblNewLabel_3_4.setToolTipText("behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.");
 		lblNewLabel_3_4.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_4.setBounds(10, 43, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_4);
 		
 		JLabel lblNewLabel_3_1_2 = new JLabel("Labio-dental");
+		lblNewLabel_3_1_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_2.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_2.setToolTipText("consonants occur when you block/constrict airflow by curling your lower lip back and raising it to touch your upper row of teeth.");
 		lblNewLabel_3_1_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_2.setBounds(10, 88, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_1_2);
 		
 		JLabel lblNewLabel_3_1_1_1 = new JLabel("Dental/Interdental");
+		lblNewLabel_3_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_1_1.setToolTipText("are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth.");
 		lblNewLabel_3_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_1_1.setBounds(10, 198, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1 = new JLabel("Labio-dental");
+		lblNewLabel_3_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_2_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_2_1.setToolTipText("consonants occur when you block/constrict airflow by curling your lower lip back and raising it to touch your upper row of teeth.");
 		lblNewLabel_3_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_2_1.setBounds(10, 144, 107, 54);
 		panel_3_2_1.add(lblNewLabel_3_2_1);
 		
 		JLabel lblNewLabel_3_3_1 = new JLabel("Dental/Interdental");
+		lblNewLabel_3_3_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_3_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_3_1.setToolTipText("are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth.");
 		lblNewLabel_3_3_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_3_1.setBounds(10, 255, 107, 54);
@@ -773,30 +834,60 @@ public class PlaceArticulation extends JPanel {
 		phenomtable_1_1.add(panel_3_2_1_1);
 		
 		JLabel lblNewLabel_3_4_1 = new JLabel("Alveolar");
+		lblNewLabel_3_4_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_4_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_4_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_4_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_4_1.setBounds(10, 43, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_4_1);
 		
 		JLabel lblNewLabel_3_1_2_1 = new JLabel("Alveolar");
+		lblNewLabel_3_1_2_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_2_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_2_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_2_1.setBounds(10, 100, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_1_2_1);
 		
-		JLabel lblNewLabel_3_1_1_1_1 = new JLabel("Post-alveolar ");
+		JLabel lblNewLabel_3_1_1_1_1 = new JLabel("Post-alveolar");
+		lblNewLabel_3_1_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_1_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_1_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_1_1_1.setBounds(10, 212, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_1_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1_1 = new JLabel("Post-alveolar");
+		lblNewLabel_3_2_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_2_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_2_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_2_1_1.setBounds(10, 154, 107, 25);
 		panel_3_2_1_1.add(lblNewLabel_3_2_1_1);
 		
 		JLabel lblNewLabel_3_3_1_1 = new JLabel("Glottal");
+		lblNewLabel_3_3_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_3_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_3_1_1.setToolTipText("at the larynx (the glottis is the space between the vocal folds). Locate the glottis (the vocal folds) in the diagram, below. A glottal stop is a speech sound articulated by a momentary, complete closing of the glottis in the back of the throat. ");
 		lblNewLabel_3_3_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_3_1_1.setBounds(10, 271, 107, 25);
@@ -1028,30 +1119,60 @@ public class PlaceArticulation extends JPanel {
 		phenomtable_1_1_1.add(panel_3_2_1_1_1);
 		
 		JLabel lblNewLabel_3_4_1_1 = new JLabel("Post-alveolar");
+		lblNewLabel_3_4_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_4_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_4_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_4_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_4_1_1.setBounds(10, 44, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_4_1_1);
 		
 		JLabel lblNewLabel_3_1_2_1_1 = new JLabel("Post-alveolar");
+		lblNewLabel_3_1_2_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_2_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_1_2_1_1.setToolTipText("sounds involving the blade of the tongue and the area just behind the alveolar ridge.");
 		lblNewLabel_3_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_2_1_1.setBounds(10, 99, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_1_2_1_1);
 		
 		JLabel lblNewLabel_3_1_1_1_1_1 = new JLabel("Bilabial");
-		lblNewLabel_3_1_1_1_1_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
+		lblNewLabel_3_1_1_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_1_1_1_1_1.getText().toString());
+			}
+		});
+		lblNewLabel_3_1_1_1_1_1.setToolTipText("sounds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_1_1_1_1.setBounds(10, 210, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_1_1_1_1_1);
 		
 		JLabel lblNewLabel_3_2_1_1_1 = new JLabel("Alveolar");
+		lblNewLabel_3_2_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_2_1_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_2_1_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_2_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_2_1_1_1.setBounds(10, 154, 107, 54);
 		panel_3_2_1_1_1.add(lblNewLabel_3_2_1_1_1);
 		
 		JLabel lblNewLabel_3_3_1_1_1 = new JLabel("Alveolar");
+		lblNewLabel_3_3_1_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				ToolTip(lblNewLabel_3_3_1_1_1.getText().toString());
+			}
+		});
 		lblNewLabel_3_3_1_1_1.setToolTipText("the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.");
 		lblNewLabel_3_3_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_3_1_1_1.setBounds(10, 266, 107, 54);
@@ -1290,7 +1411,7 @@ public class PlaceArticulation extends JPanel {
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_1_2_1_1_1);
 		
 		JLabel lblNewLabel_3_1_1_1_1_1_1 = new JLabel("Bilabial");
-		lblNewLabel_3_1_1_1_1_1_1.setToolTipText("souds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
+		lblNewLabel_3_1_1_1_1_1_1.setToolTipText("sounds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.");
 		lblNewLabel_3_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3_1_1_1_1_1_1.setBounds(10, 210, 107, 25);
 		panel_3_2_1_1_1_1.add(lblNewLabel_3_1_1_1_1_1_1);
@@ -1425,5 +1546,43 @@ public class PlaceArticulation extends JPanel {
 			}
 		});
 		
+	}
+	public void ToolTip(String code)
+	{
+		switch(code)
+		{
+		case "Bilabial":
+			JOptionPane.showMessageDialog(null,
+				    "sounds are made with both lips. Bilabial consonants occur when you block/constrict airflow out of the mouth by bringing your lips together.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Alveolar":
+			JOptionPane.showMessageDialog(null,
+				    "the alveolar ridge is where your teeth meet your gums. You create alveolar consonants when you raise your tongue to the alveolar ridge to block or constrict airflow.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Velar":
+			JOptionPane.showMessageDialog(null,
+				    "behind your hard palate you have the velum or soft palate. Unlike the bony hard palate in front of it, mucousy tissue. You make velar consonants when you raise the back of your tongue to the velum to block or restrict airflow.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Labio-dental":
+			JOptionPane.showMessageDialog(null,
+				    "consonants occur when you block/constrict airflow by curling your lower lip back and raising it to touch your upper row of teeth.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Dental/Interdental":
+			JOptionPane.showMessageDialog(null,
+				    "are made with the tip of the tongue against the upper front teeth. Dental consonants occur when you block/constrict airflow by placing your slimy tongue against your upper teeth.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Post-alveolar":
+			JOptionPane.showMessageDialog(null,
+				    "sounds involving the blade of the tongue and the area just behind the alveolar ridge.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Glottal":
+			JOptionPane.showMessageDialog(null,
+				    "at the larynx (the glottis is the space between the vocal folds). Locate the glottis (the vocal folds) in the diagram, below. A glottal stop is a speech sound articulated by a momentary, complete closing of the glottis in the back of the throat.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		case "Palatal":
+			JOptionPane.showMessageDialog(null,
+				    "sound involving the center of the hard palate and either the blade or the back of the tongue.","Description",JOptionPane.INFORMATION_MESSAGE);
+			break;
+		}
 	}
 }

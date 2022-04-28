@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import discussions.SpeechOrgans;
+import student.home;
 
 public class dashboard extends JFrame {
 
@@ -27,6 +28,7 @@ public class dashboard extends JFrame {
 	JPanel content;
 	DiscussionList discussionList;
 	public static JTabbedPane tabbedPane;
+	JPanel homePanel;
 
 	/**
 	 * Launch the application.
@@ -80,12 +82,6 @@ public class dashboard extends JFrame {
 		panel.add(lblNewLabel);
 		
 		JPanel homebtn = new JPanel();
-		homebtn.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(9);
-			}
-		});
 		homebtn.setLayout(null);
 		homebtn.setBorder(new LineBorder(new Color(95, 158, 160), 1, true));
 		homebtn.setBackground(new Color(0, 128, 128));
@@ -248,6 +244,11 @@ public class dashboard extends JFrame {
 		recordlist.setLayout(null);
 		
 		JButton btnNewButton = new JButton("ACTIVITY 1");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.setSelectedIndex(13);
+			}
+		});
 		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 18));
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(0, 128, 128));
@@ -270,7 +271,7 @@ public class dashboard extends JFrame {
 		JButton btnActivity_1 = new JButton("ACTIVITY 3");
 		btnActivity_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(3);
+				tabbedPane.setSelectedIndex(4);
 				
 			}
 		});
@@ -283,7 +284,7 @@ public class dashboard extends JFrame {
 		JButton btnActivity_2 = new JButton("ACTIVITY 4");
 		btnActivity_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(4);
+				tabbedPane.setSelectedIndex(3);
 			}
 		});
 		btnActivity_2.setFont(new Font("Dialog", Font.BOLD, 18));
@@ -330,9 +331,16 @@ public class dashboard extends JFrame {
 		deleteStudent = new DeleteStudent();
 		tabbedPane.addTab("New tab", null, new DeleteStudent(), null);
 		
-		JPanel homePanel = new JPanel();
+		 homePanel = new student.home();
 		homePanel.setBackground(new Color(255, 255, 255));
 		tabbedPane.add(homePanel);
+		homebtn.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				tabbedPane.setSelectedIndex(9);
+				home.panel_show(home.panel);
+			}
+		});
 		
 		JPanel speechorgans = new discussions.SpeechOrgans();
 		tabbedPane.addTab("New tab", null, speechorgans, null);
@@ -343,5 +351,15 @@ public class dashboard extends JFrame {
 		
 		JPanel dipthongs = new discussions.dipthongs();
 		tabbedPane.addTab("New tab", null, dipthongs, null);
+		
+		JPanel panel_1;
+		try {
+			panel_1 = new act1_record();
+			tabbedPane.addTab("New tab", null, panel_1, null);
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 	}
 }

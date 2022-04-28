@@ -29,6 +29,19 @@ public class act2_record extends JPanel {
 		setBounds(0,0,769,490);
 		setLayout(null);
 		
+		JLabel name = new JLabel("");
+		name.setBounds(10, 212, 80, 23);
+		add(name);
+		
+		JLabel lname = new JLabel("");
+		lname.setBounds(10, 178, 80, 23);
+		add(lname);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setEnabled(false);
+		comboBox_2.setBounds(413, 422, 154, 23);
+		add(comboBox_2);
+		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(113, 115, 141, 33);
 		add(comboBox);
@@ -39,6 +52,8 @@ public class act2_record extends JPanel {
 		
 		comboBox.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				comboBox_1.removeAllItems();
+				comboBox_2.removeAllItems();
 				ArrayList<String> record_id;
 				try {
 					record_id = new connection().getAct2Records(comboBox.getSelectedItem().toString());
@@ -46,6 +61,9 @@ public class act2_record extends JPanel {
 					{
 						comboBox_1.addItem(record);
 					}
+					ArrayList <String> userinfo = new connection().userInfo(comboBox.getSelectedItem().toString());
+					name.setText(userinfo.get(0).toString());
+					lname.setText(userinfo.get(1).toString());
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
@@ -86,11 +104,6 @@ public class act2_record extends JPanel {
 		table.getTableHeader().setBackground(new Color(32,136,203));
 		table.getTableHeader().setForeground(new Color(255,255,255));
 		table.setRowHeight(25);
-		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setEnabled(false);
-		comboBox_2.setBounds(413, 422, 154, 23);
-		add(comboBox_2);
 		
 		JButton playbtn = new JButton("PLAY");
 		playbtn.addActionListener(new ActionListener() {

@@ -27,8 +27,17 @@ public class act4_record extends JPanel {
 	 * @throws Exception 
 	 */
 	public act4_record() throws Exception {
+		setBackground(Color.WHITE);
 		setBounds(0,0,769,491);
 		setLayout(null);
+		
+		JLabel name = new JLabel("");
+		name.setBounds(10, 176, 84, 23);
+		add(name);
+		
+		JLabel lname = new JLabel("");
+		lname.setBounds(10, 207, 87, 23);
+		add(lname);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setBounds(107, 133, 157, 32);
@@ -53,6 +62,9 @@ public class act4_record extends JPanel {
 					{
 						comboBox_1.addItem(record);
 					}
+					ArrayList <String> userinfo = new connection().userInfo(comboBox.getSelectedItem().toString());
+					name.setText(userinfo.get(0).toString());
+					lname.setText(userinfo.get(1).toString());
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

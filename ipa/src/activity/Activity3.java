@@ -50,10 +50,15 @@ public class Activity3 extends JPanel {
 	JButton ar4;
 	JButton ar5;
 	private JTextField textField_5;
-	static String[] recordscore = new String[5];
+	static String[] recordscore = new String[6];
 	private JButton ar5_1;
-	String[] word = new String[5];
+	String[] word = new String[6];
+	ArrayList<String[]> answers = new ArrayList<String[]>();
+	ArrayList<String[]> recordScore = new ArrayList<String[]>();
 	public Activity3() {
+		for (int j = 0; j < recordscore.length; j++) {
+			recordscore[j] ="0";
+		}
 		setBackground(new Color(255, 255, 255));
 		setBounds(0, 0, 769, 491);
 		setLayout(null);
@@ -342,8 +347,6 @@ public class Activity3 extends JPanel {
 		JButton[] b = {ar1,ar2,ar3,ar4,ar5,ar5_1};
 		 i = 1;
 		 
-		ArrayList<String[]> answers = new ArrayList<String[]>();
-		ArrayList<String[]> recordScore = new ArrayList<String[]>();
 		JButton nextbtn = new JButton("NEXT");
 		nextbtn.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -357,8 +360,12 @@ public class Activity3 extends JPanel {
 							textField_2.getText().toString(),
 							textField_3.getText().toString(),
 							textField_4.getText().toString()}; 
+					String[] scores1 = {recordscore[0],recordscore[1],recordscore[2],recordscore[3],recordscore[4]};
 					answers.add(answerField);
-					recordScore.add(recordscore);
+					recordScore.add(scores1);
+					for (int j = 0; j < recordscore.length; j++) {
+						recordscore[j] ="0";
+					}
 					for(JTextField field:a)
 					{
 						field.setText("");
@@ -377,13 +384,18 @@ public class Activity3 extends JPanel {
 					word[4] = "vine";
 					break;
 				case 2:
+					String[] scores11 = {recordscore[0],recordscore[1],recordscore[2],recordscore[3],recordscore[4]};
 					String[] answerFields = {textField.getText().toString(),
 							textField_1.getText().toString(),
 							textField_2.getText().toString(),
 							textField_3.getText().toString(),
 							textField_4.getText().toString()}; 
 					answers.add(answerFields);
-					recordScore.add(recordscore);
+					recordScore.add(scores11);
+					
+					for (int j = 0; j < recordscore.length; j++) {
+						recordscore[j] ="0";
+					}
 					textField_4.setVisible(false);
 					ar5.setVisible(false);
 					for(JTextField field:a)
@@ -401,13 +413,16 @@ public class Activity3 extends JPanel {
 					word[4] = "";
 					break;
 				case 3:
+					String[] scores111 = {recordscore[0],recordscore[1],recordscore[2],recordscore[3]};
 					String[] answerFieldss = {textField.getText().toString(),
 							textField_1.getText().toString(),
 							textField_2.getText().toString(),
 							textField_3.getText().toString()}; 
 					answers.add(answerFieldss);
-					recordScore.add(recordscore);
-					
+					recordScore.add(scores111);
+					for (int j = 0; j < recordscore.length; j++) {
+						recordscore[j] ="0";
+					}
 					
 					textField_4.setVisible(true);
 					ar5.setVisible(true);
@@ -426,13 +441,17 @@ public class Activity3 extends JPanel {
 					word[4] = "cat";
 					break;
 				case 4:
+					String[] scores1111 = {recordscore[0],recordscore[1],recordscore[2],recordscore[3],recordscore[4]};
 					String[] answerFieldsss = {textField.getText().toString(),
 							textField_1.getText().toString(),
 							textField_2.getText().toString(),
 							textField_3.getText().toString(),
 							textField_4.getText().toString()}; 
 					answers.add(answerFieldsss);
-					recordScore.add(recordscore);
+					recordScore.add(scores1111);
+					for (int j = 0; j < recordscore.length; j++) {
+						recordscore[j] ="0";
+					}
 					textField_4.setVisible(true);
 					textField_5.setVisible(true);
 					ar5_1.setVisible(true);
@@ -452,9 +471,10 @@ public class Activity3 extends JPanel {
 					word[2] = "Him";
 					word[3] = "Shim";
 					word[4] = "Agree";
-					word[4] = "queerest";
+					word[5] = "queerest";
 					break;
 				case 5:
+					String[] scores11111 = {recordscore[0],recordscore[1],recordscore[2],recordscore[3],recordscore[4],recordscore[5]};
 					String[] answerFieldssss = {textField.getText().toString(),
 							textField_1.getText().toString(),
 							textField_2.getText().toString(),
@@ -462,15 +482,63 @@ public class Activity3 extends JPanel {
 							textField_4.getText().toString(),
 							textField_5.getText().toString()}; 
 					answers.add(answerFieldssss);
-					recordScore.add(recordscore);
+					recordScore.add(scores11111);
 					
-					for(String[] rec:recordScore)
+					String[][]words = {
+								{
+								"box",
+								"ox",
+								"goose",
+								"mouse",
+								"house",
+								},
+								{
+								"men",
+								"pen",
+								"kine",
+								"bine",
+								"vine",
+								},
+								{
+								"foot",
+								"booth",
+								"tooth",
+								"booth",
+								},
+								{
+								"these",
+								"kiss",
+								"those",
+								"hose",
+								"cat",
+								},
+								{
+								"Brethren",
+								"Mother",
+								"Him",
+								"Shim",
+								"Agree",
+								"queerest",
+								},
+								
+							};
+					for (int j = 0; j < recordscore.length; j++) {
+						recordscore[j] ="0";
+					}
+					
+					for(int i = 0;i<recordScore.size();i++)
 					{
-						for(String recs:rec)
+						for(int j = 0;j<recordScore.get(i).length;j++)
 						{
-							System.out.println(recs);
+							try {
+								new connection().submitActivity3(words[i][j], answers.get(i)[j],recordScore.get(i)[j],filename+"_attempt");
+							} catch (Exception e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
 						}
 					}
+					JOptionPane.showMessageDialog(null, "ACTIVITY SUBMITTED");
 					break;
 				}
 				System.out.print(i);

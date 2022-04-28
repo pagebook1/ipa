@@ -79,6 +79,18 @@ public class connection {
 		 }
 		return info;
 	 }
+	 public static  ArrayList<String> userInfo(String id) throws Exception {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM `user_accounts` WHERE id = "+id+"");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("first_name"));
+			 info.add(rs.getString("last_name"));
+		 }
+		return info;
+	 }
 	 public static String RecordInfo(String filename) throws Exception {
 		 String id = game.login.infos.get(0);
 		 Connection con = getConnection();
@@ -215,44 +227,91 @@ public class connection {
 		return info;
 		 
 	 }
-	 public static void submitActivity3(ArrayList<String> filename,String attempt_id) throws Exception{
+	 public static void submitActivity3(String word, String answer,String score,String attempt_id) throws Exception{
 		 String id = game.login.infos.get(0);
 		 Connection con = getConnection();
 		 Statement stmt=con.createStatement();  
 		 try {
-			stmt.executeUpdate("INSERT INTO `act3_table` (`attempt_id`, `student_id`, `reci1`, `reci2`, `reci3`, `reci4`, `reci5`)"
-					+ " VALUES ('"+attempt_id+"', '"+id+"', '"+filename.get(0)+"', '"+filename.get(1)+"', '"+filename.get(2)+"', '"+filename.get(3)+"', '"+filename.get(4)+"')");
+			stmt.executeUpdate("INSERT INTO `act3_table` (`attempt_id`, `student_id`, `word`, `answer`, `pron_score`) VALUES ('"+attempt_id+"', '"+id+"', '"+word+"', '"+answer+"', '"+score+"')");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		 System.out.print(filename);
+		 System.out.print(attempt_id);
 	 }
 	 public static ArrayList<String> getAct3Records(String id) throws Exception
 	 {
 		 Connection con = getConnection();
 		 ArrayList <String> info = new ArrayList<String>();
 		 Statement stmt=con.createStatement();  
-		 ResultSet rs = stmt.executeQuery("SELECT attempt_id FROM `act3_table` WHERE student_id = '"+id+"'");
+		 ResultSet rs = stmt.executeQuery("SELECT DISTINCT(attempt_id) FROM `act3_table` WHERE student_id = '"+id+"'");
 		 while(rs.next())
 		 {
 			 info.add(rs.getString("attempt_id"));
 		 }
 		return info;
 	 }
-	 public static ArrayList<String> getAct3Recording(String recordid) throws Exception
+	 public static ArrayList<String[]> getAct3Recording(String recordid) throws Exception
 	 {
 		 Connection con = getConnection();
-		 ArrayList <String> info = new ArrayList<String>();
+		 ArrayList <String[]> info = new ArrayList<String[]>();
+		 ArrayList <String> answer = new ArrayList<String>();
+		 ArrayList <String> word = new ArrayList<String>();
+		 ArrayList <String> score = new ArrayList<String>();
 		 Statement stmt=con.createStatement();  
 		 ResultSet rs = stmt.executeQuery("SELECT * FROM act3_table WHERE `attempt_id`='"+recordid+"'");
 		 while(rs.next())
 		 {
-			 info.add(rs.getString("reci1"));
-			 info.add(rs.getString("reci2"));
-			 info.add(rs.getString("reci3"));
-			 info.add(rs.getString("reci4"));
-			 info.add(rs.getString("reci5"));
+			 answer.add(rs.getString("answer"));
+			 score.add(rs.getString("pron_score"));
+			 word.add(rs.getString("word"));
+		 }
+		 info.add((String[]) word.toArray(new String[0]));
+		 info.add((String[]) answer.toArray(new String[0]));
+		 info.add((String[]) score.toArray(new String[0]));
+		return info;
+		 
+	 }
+	 public static void submitActivity1(String uniqueid,ArrayList<String> answers,String textbox,String string) throws Exception
+	 {
+			 String id = game.login.infos.get(0);
+			 Connection con = getConnection();
+			 Statement stmt=con.createStatement();  
+			 try {
+				stmt.executeUpdate("INSERT INTO `act1_table` (`attempt_id`, `student_id`, `q1`, `q2`, `q3`, `q4`, `q5`, `textbox`, `filename`) VALUES"
+						+ " ('"+uniqueid+"', '"+id+"', '"+answers.get(0)+"', '"+answers.get(1)+"', '"+answers.get(2)+"', '"+answers.get(3)+"', '"+answers.get(4)+"', '"+textbox+"', '+filename+')");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 System.out.print(string);
+	 }
+	 public static ArrayList<String> getAct1AttemptID(String id) throws Exception
+	 {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT attempt_id FROM `act1_table` WHERE student_id = '"+id+"'");
+		 while(rs.next())
+		 {
+			 info.add(rs.getString("attempt_id"));
+		 }
+		return info;
+	 }
+	 public static ArrayList<String> getAct1Records(String recordid) throws Exception
+	 {
+		 Connection con = getConnection();
+		 ArrayList <String> info = new ArrayList<String>();
+		 Statement stmt=con.createStatement();  
+		 ResultSet rs = stmt.executeQuery("SELECT * FROM act1_table WHERE `attempt_id`='"+recordid+"'");
+		 while(rs.next())
+		 {
+				 info.add(rs.getString("q1"));
+				 info.add(rs.getString("q2"));
+				 info.add(rs.getString("q3"));
+				 info.add(rs.getString("q4"));
+				 info.add(rs.getString("q5"));
+				 info.add(rs.getString("textbox"));
 
 		 }
 		return info;

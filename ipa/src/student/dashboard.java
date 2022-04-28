@@ -119,7 +119,7 @@ public class dashboard extends JFrame {
 		
 		
 		JPanel discussion = new JPanel();
-		discussion.addMouseListener(new MouseAdapter() {
+		discussion.addMouseListener(new PanelMouseAdapter(discussion) {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				showpanel(discussionList);				
