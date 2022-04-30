@@ -8,26 +8,33 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import discussions.*;
+
 public class DiscussionList extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
+	static JPanel speech;
+	static JPanel dipt;
+	static JPanel place;
+	static JPanel voice;
+	static JPanel panel;
 	public DiscussionList() {
 		setBackground(new Color(255, 255, 255));
 		setBounds(0,0,769,691);
 		setLayout(null);
 		
-		JPanel panel = new JPanel();
+		 panel = new JPanel();
 		panel.setLayout(null);
 		panel.setBackground(Color.WHITE);
-		panel.setBounds(0, 0, 764, 663);
+		panel.setBounds(0, 0, 764, 491);
 		add(panel);
 		
 		JButton btnNewButton = new JButton("PLACE AND MANNER OF ARTICULATION");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dashboard.tabbedPane.setSelectedIndex(1);
+				show_panel(place);
 			}
 		});
 		btnNewButton.setForeground(Color.WHITE);
@@ -39,7 +46,7 @@ public class DiscussionList extends JPanel {
 		JButton btnMannerOfArticulation = new JButton("SPEECH ORGANS");
 		btnMannerOfArticulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dashboard.tabbedPane.setSelectedIndex(10);
+				show_panel(speech);
 			}
 		});
 		btnMannerOfArticulation.setForeground(Color.WHITE);
@@ -51,7 +58,7 @@ public class DiscussionList extends JPanel {
 		JButton btnVoicedAndVoiceless = new JButton("VOICED AND VOICELESS");
 		btnVoicedAndVoiceless.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dashboard.tabbedPane.setSelectedIndex(11);
+				show_panel(voice);
 			}
 		});
 		btnVoicedAndVoiceless.setForeground(Color.WHITE);
@@ -63,7 +70,7 @@ public class DiscussionList extends JPanel {
 		JButton dipthongs = new JButton("Dipthongs");
 		dipthongs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dashboard.tabbedPane.setSelectedIndex(12);
+				show_panel(dipt);
 			}
 		});
 		dipthongs.setForeground(Color.WHITE);
@@ -71,7 +78,31 @@ public class DiscussionList extends JPanel {
 		dipthongs.setBackground(new Color(0, 102, 102));
 		dipthongs.setBounds(385, 307, 324, 92);
 		panel.add(dipthongs);
-
+		
+		 speech = new SpeechOrgans();
+		speech.setBounds(0, 0, 764, 491);
+		add(speech);
+		
+		 dipt = new dipthongs();
+		dipt.setBounds(0, 0, 764, 491);
+		add(dipt);
+		
+		 place = new PlaceArticulation();
+		place.setBounds(0, 0, 764, 491);
+		add(place);
+		
+		 voice = new voice();
+		voice.setBounds(0, 0, 764, 491);
+		add(voice);
+		show_panel(panel);
 	}
-
+	public static void show_panel(JPanel panels)
+	{
+		JPanel[] panelist = {panel,speech,dipt,place,voice};
+		for(JPanel panelz:panelist)
+		{
+			panelz.setVisible(false);
+		}
+		panels.setVisible(true);
+	}
 }

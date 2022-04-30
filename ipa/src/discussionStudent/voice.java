@@ -1,4 +1,4 @@
-package discussions;
+package discussionStudent;
 
 import java.awt.Color;
 
@@ -53,7 +53,7 @@ public class voice extends JPanel {
 		JTextPane txtpnThisSubtleDifference = new JTextPane();
 		txtpnThisSubtleDifference.setEditable(false);
 		txtpnThisSubtleDifference.setText("\tThis subtle difference can be troublesome for some individuals who struggle with telling the difference between the sounds (auditory discrimination). Educators need to understand the difference between voiced and unvoiced sounds because there are several students who struggle to notice the difference between these  sounds. This is especially the case for students who have poor phonemic awareness and students who are learning English as an additional language. \r\n\tIt is common for poor spellers to have errors in their spelling where they substitute a voiced sound for it\u2018s unvoiced pair or vice versa. For example, when asked to spell the word \u2017ball\u2018, the individual may spell \u2017pall\u2018 because they were not able to detect the subtle difference between the voiced /b/ and the unvoiced /p/. Someone looking at this spelling with only a basic understanding of phonics may think phonetically speaking this spelling of \u2017pall\u2018 for the word \u2017ball\u2018 does not make sense. However, with the understanding of the difference between voiced and unvoiced consonant sounds they would be able to determine that the speller struggled to differentiate between the voiced/unvoiced pair of b & p. \r\n \tWhen working with young students or individuals who struggle with the distinction between voiced and unvoiced sounds, it is helpful to explicitly teach and practice the difference between these sounds. In a classroom or small group setting, a teacher can introduce a pair of sounds at the beginning of the lesson and then discuss how the students can use their fingers to tell the difference between the voiced and the unvoiced sounds. \r\n\tOnce the students understand the difference between these sounds, they can ask the students to give a thumbs up for words that begin with a voiced sound and a thumbs down for words that begin with and unvoiced sound. In the beginning, the teacher should work with only one pair of sounds but as the students become more comfortable in the exercise they can practice with the different sounds. It is important to only focus on the beginning sound (onset) of a word when teaching the difference between voiced and unvoiced sounds. Typically voiced consonant sounds may have a weaker, unvoiced sound at the end of a word. This makes words flow together more easily and naturally when you speak (Smith, 2019)\r\n");
-		txtpnThisSubtleDifference.setFont(new Font("Dialog", Font.PLAIN, 17));
+		txtpnThisSubtleDifference.setFont(new Font("Dialog", Font.PLAIN, 15));
 		scrollPane_1.setViewportView(txtpnThisSubtleDifference);
 		SimpleAttributeSet justify = new SimpleAttributeSet();
 		StyleConstants.setAlignment(justify, StyleConstants.ALIGN_JUSTIFIED);
@@ -508,15 +508,6 @@ public class voice extends JPanel {
 		add(panel_2);
 		panel_2.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("NOTES");
-		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 25));
-		lblNewLabel_1.setBounds(10, 5, 191, 40);
-		panel_2.add(lblNewLabel_1);
-		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(10, 56, 191, 391);
-		panel_2.add(textPane);
-		
 		JButton btnNewButton_1 = new JButton("1");
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 8));
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -558,6 +549,7 @@ public class voice extends JPanel {
 		panel_1.add(scrollPane);
 		
 		JTextPane txtpnA = new JTextPane();
+		txtpnA.setEditable(false);
 		scrollPane.setViewportView(txtpnA);
 		txtpnA.setContentType("text/html");
 		txtpnA.setText("<body style=\"font-family:dialog\"align = justify>\r\n<center>\r\n<h1>VOICE AND VOICELESS SOUND</h1>\r\n</center>\r\n<p style=\"font-size:15;\"> &nbsp All sounds are either voiced or voiceless. <b><i>Voiced sounds</i></b> are those that make our vocal cords vibrate when they are produced. Voiceless sounds are produced from air passing through the mouth at different points.</p>\r\n<h1>Voiced sounds</h1>\r\n<p style=\"font-size:15;\"> &nbsp Technically speaking, a voiced sound is a strong sound in which the vocal cords vibrate. All vowel sounds and diphthongs are voiced sounds, but only some of the consonant sounds (/b/, /d/, /g/, /j/, /v/, /z/, /th/ as in that, and /w/ as in wail) are considered as such.</p>\r\n<h1>Unvoiced or voiceless sounds</h1>\r\n<p style=\"font-size:15;\"> &nbsp Are weak and the vocal cords do not vibrate. There are eight unvoiced consonant sounds (/p/, /t/, /k/, /ch/, /f/, /s/, /th/ as in thin, and /hw/ as in whale).\r\nIf you put your fingers over your Adam\u2018s Apple (larynx) when you pronounce voiced sounds in isolation, you should be able to feel your vocal cords vibrate. When you pronounce an unvoiced or voiceless sound, you should not be able to feel a vibration.\r\nVoiced sounds take a little more effort to produce compared to their unvoiced counterparts.</p>\r\n</body>");
@@ -596,14 +588,14 @@ public class voice extends JPanel {
 
 	}
 	
-	public void panels(JPanel panels)
+	public void panels(JPanel panelsss)
 	{
 		JPanel[] panelss = {panel,panel_1,panel_3,panel_5};
 		for(JPanel panelist:panelss)
 		{
 			panelist.setVisible(false);
 		}
-		panels.setVisible(true);
+		panelsss.setVisible(true);
 	}
 
 }

@@ -201,6 +201,7 @@ public class home extends JPanel {
 		lblNewLabel_1_1_2.setFont(new Font("Dialog", Font.BOLD, 20));
 		lblNewLabel_1_1_2.setBounds(600, 0, 123, 65);
 		how_panel.add(lblNewLabel_1_1_2);
+		panel_show(panel);
 
 	}
 	public static void panel_show(JPanel pane)

@@ -18,7 +18,6 @@ import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import discussions.SpeechOrgans;
 import student.home;
 
 public class dashboard extends JFrame {
@@ -26,9 +25,16 @@ public class dashboard extends JFrame {
 	private JPanel contentPane;
 	static dashboard frame = new dashboard();
 	JPanel content;
-	DiscussionList discussionList;
-	public static JTabbedPane tabbedPane;
-	JPanel homePanel;
+	public static JPanel homePanel;
+	static JPanel listCreateStudent;
+	static JPanel recordlist;
+	static JPanel discussionList;
+	static JPanel act1;
+	static JPanel act2;
+	static JPanel act3;
+	static JPanel act4;
+	static JPanel createStudentPanel;
+	static JPanel deleteStudentPanel;
 
 	/**
 	 * Launch the application.
@@ -44,19 +50,9 @@ public class dashboard extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	act2_record rec;
-	act4_record rec1;
-	act3_record rec3;
-	createStudent createStudent;
-	DeleteStudent deleteStudent;
+	JPanel createStudent;
 	public dashboard() {
 		try {
-			rec =new act2_record();
-			rec3 = new act3_record();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -105,7 +101,8 @@ public class dashboard extends JFrame {
 		discussion.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(0);
+				show_panel(discussionList);
+				DiscussionList.show_panel(DiscussionList.panel);
 				
 			}
 		});
@@ -132,7 +129,12 @@ public class dashboard extends JFrame {
 		activitybtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(5);
+				try {
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				show_panel(recordlist);
 			}
 		});
 		activitybtn.setLayout(null);
@@ -165,7 +167,7 @@ public class dashboard extends JFrame {
 		logoutbtn.setLayout(null);
 		logoutbtn.setBorder(new LineBorder(new Color(95, 158, 160)));
 		logoutbtn.setBackground(new Color(0, 128, 128));
-		logoutbtn.setBounds(10, 426, 249, 29);
+		logoutbtn.setBounds(10, 466, 249, 29);
 		panel.add(logoutbtn);
 		
 		JLabel logout = new JLabel("LOGOUT");
@@ -192,13 +194,13 @@ public class dashboard extends JFrame {
 		createStudent.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(7);
+				show_panel(listCreateStudent);
 			}
 		});
 		createStudent.setLayout(null);
 		createStudent.setBorder(new LineBorder(new Color(95, 158, 160)));
 		createStudent.setBackground(new Color(0, 128, 128));
-		createStudent.setBounds(10, 466, 249, 29);
+		createStudent.setBounds(10, 426, 249, 29);
 		panel.add(createStudent);
 		
 		JLabel lblCreateStudent = new JLabel("CREATE STUDENT");
@@ -220,146 +222,181 @@ public class dashboard extends JFrame {
 		content.setBounds(285, 11, 769, 490);
 		contentPane.add(content);
 		content.setLayout(null);
-		
-		 tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(0,-27,769, 517);
-		content.add(tabbedPane);
-		discussionList = new DiscussionList();
-		
-		discussions.PlaceArticulation placeArticulation = new discussions.PlaceArticulation();
 		try {
-			rec1 = new act4_record();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		tabbedPane.add(discussionList);
-		tabbedPane.add(placeArticulation);
-		tabbedPane.add(rec);
-		tabbedPane.add(rec1);
-		tabbedPane.add(rec3);
-		
-		JPanel recordlist = new JPanel();
-		tabbedPane.addTab("New tab", null, recordlist, null);
-		recordlist.setLayout(null);
-		
-		JButton btnNewButton = new JButton("ACTIVITY 1");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(13);
-			}
-		});
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 18));
-		btnNewButton.setForeground(new Color(255, 255, 255));
-		btnNewButton.setBackground(new Color(0, 128, 128));
-		btnNewButton.setBounds(192, 139, 156, 48);
-		recordlist.add(btnNewButton);
-		
-		JButton btnActivity = new JButton("ACTIVITY 2");
-		btnActivity.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(2);
-			}
-		});
-		btnActivity.setFont(new Font("Dialog", Font.BOLD, 18));
-		btnActivity.setForeground(new Color(255, 255, 255));
-		btnActivity.setBackground(new Color(0, 128, 128));
-		
-		btnActivity.setBounds(387, 139, 156, 48);
-		recordlist.add(btnActivity);
-		
-		JButton btnActivity_1 = new JButton("ACTIVITY 3");
-		btnActivity_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(4);
-				
-			}
-		});
-		btnActivity_1.setBounds(192, 248, 156, 48);
-		btnActivity_1.setFont(new Font("Dialog", Font.BOLD, 18));
-		btnActivity_1.setForeground(new Color(255, 255, 255));
-		btnActivity_1.setBackground(new Color(0, 128, 128));
-		recordlist.add(btnActivity_1);
-		
-		JButton btnActivity_2 = new JButton("ACTIVITY 4");
-		btnActivity_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(3);
-			}
-		});
-		btnActivity_2.setFont(new Font("Dialog", Font.BOLD, 18));
-		btnActivity_2.setForeground(new Color(255, 255, 255));
-		btnActivity_2.setBackground(new Color(0, 128, 128));
-		btnActivity_2.setBounds(387, 248, 156, 48);
-		recordlist.add(btnActivity_2);
-		createStudent = new createStudent();
-		tabbedPane.addTab("New tab", null, createStudent, null);
-		
-		JPanel listCreateStudent = new JPanel();
-		tabbedPane.addTab("New tab", null, listCreateStudent, null);
-		listCreateStudent.setLayout(null);
-		
-		JButton btnNewButton_1 = new JButton("Create Student");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				tabbedPane.setSelectedIndex(6);
-			}
-		});
-		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnNewButton_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1.setBounds(119, 172, 239, 73);
-		listCreateStudent.add(btnNewButton_1);
-		
-		JButton btnNewButton_1_1 = new JButton("Delete/Update Student");
-		btnNewButton_1_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					DeleteStudent.refreshID();
-				} catch (Exception e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				tabbedPane.setSelectedIndex(8);
-			}
-		});
-		btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnNewButton_1_1.setForeground(new Color(255, 255, 255));
-		btnNewButton_1_1.setBackground(new Color(0, 128, 128));
-		btnNewButton_1_1.setBounds(380, 172, 239, 73);
-		listCreateStudent.add(btnNewButton_1_1);
-		deleteStudent = new DeleteStudent();
-		tabbedPane.addTab("New tab", null, new DeleteStudent(), null);
-		
-		 homePanel = new student.home();
-		homePanel.setBackground(new Color(255, 255, 255));
-		tabbedPane.add(homePanel);
 		homebtn.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				tabbedPane.setSelectedIndex(9);
+				show_panel(homePanel);
 				home.panel_show(home.panel);
 			}
 		});
-		
-		JPanel speechorgans = new discussions.SpeechOrgans();
-		tabbedPane.addTab("New tab", null, speechorgans, null);
-		tabbedPane.setSelectedIndex(9);
-		
-		JPanel voiced = new discussions.voice();
-		tabbedPane.addTab("New tab", null, voiced, null);
-		
-		JPanel dipthongs = new discussions.dipthongs();
-		tabbedPane.addTab("New tab", null, dipthongs, null);
-		
-		JPanel panel_1;
 		try {
-			panel_1 = new act1_record();
-			tabbedPane.addTab("New tab", null, panel_1, null);
+			
+			 discussionList = new DiscussionList();
+			discussionList.setBounds(0, 0, 764, 489);
+			content.add(discussionList);
+			
+			 recordlist = new JPanel();
+			recordlist.setLayout(null);
+			recordlist.setBounds(0, 0, 764, 489);
+			content.add(recordlist);
+			
+			JButton btnNewButton = new JButton("ACTIVITY 1");
+			btnNewButton.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					try {
+						act1 = new act1_record();
+						show_panel(act1);
+						content.add(act1);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+					
+				}
+			});
+			btnNewButton.setForeground(Color.WHITE);
+			btnNewButton.setFont(new Font("Dialog", Font.BOLD, 18));
+			btnNewButton.setBackground(new Color(0, 128, 128));
+			btnNewButton.setBounds(192, 139, 156, 48);
+			recordlist.add(btnNewButton);
+			
+			JButton btnActivity = new JButton("ACTIVITY 2");
+			btnActivity.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					try {
+						act2 = new act2_record();
+						show_panel(act2);
+						content.add(act2);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			});
+			btnActivity.setForeground(Color.WHITE);
+			btnActivity.setFont(new Font("Dialog", Font.BOLD, 18));
+			btnActivity.setBackground(new Color(0, 128, 128));
+			btnActivity.setBounds(387, 139, 156, 48);
+			recordlist.add(btnActivity);
+			
+			JButton btnActivity_1 = new JButton("ACTIVITY 3");
+			btnActivity_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					try {
+						act3 = new act3_record();
+						show_panel(act3);
+						content.add(act3);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			});
+			btnActivity_1.setForeground(Color.WHITE);
+			btnActivity_1.setFont(new Font("Dialog", Font.BOLD, 18));
+			btnActivity_1.setBackground(new Color(0, 128, 128));
+			btnActivity_1.setBounds(192, 248, 156, 48);
+			recordlist.add(btnActivity_1);
+			
+			JButton btnActivity_2 = new JButton("ACTIVITY 4");
+			btnActivity_2.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					try {
+						act4 = new act4_record();
+						show_panel(act4);
+						content.add(act4);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+			});
+			btnActivity_2.setForeground(Color.WHITE);
+			btnActivity_2.setFont(new Font("Dialog", Font.BOLD, 18));
+			btnActivity_2.setBackground(new Color(0, 128, 128));
+			btnActivity_2.setBounds(387, 248, 156, 48);
+			recordlist.add(btnActivity_2);
+			
+			 listCreateStudent = new JPanel();
+			listCreateStudent.setLayout(null);
+			listCreateStudent.setBounds(0, 0, 764, 489);
+			content.add(listCreateStudent);
+			
+			JButton btnNewButton_1 = new JButton("Create Student");
+			btnNewButton_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					createStudentPanel = new createStudent();
+					content.add(createStudentPanel);
+					show_panel(createStudentPanel);
+					
+				}
+			});
+			btnNewButton_1.setForeground(Color.WHITE);
+			btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
+			btnNewButton_1.setBackground(new Color(0, 128, 128));
+			btnNewButton_1.setBounds(119, 172, 239, 73);
+			listCreateStudent.add(btnNewButton_1);
+			
+			JButton btnNewButton_1_1 = new JButton("Delete/Update Student");
+			btnNewButton_1_1.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					deleteStudentPanel = new DeleteStudent();
+					content.add(deleteStudentPanel);
+					show_panel(deleteStudentPanel);
+					DeleteStudent.refreshID();
+				}
+			});
+			btnNewButton_1_1.setForeground(Color.WHITE);
+			btnNewButton_1_1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+			btnNewButton_1_1.setBackground(new Color(0, 128, 128));
+			btnNewButton_1_1.setBounds(380, 172, 239, 73);
+			listCreateStudent.add(btnNewButton_1_1);
+			
+			 homePanel = new home();
+			homePanel.setBackground(Color.WHITE);
+			homePanel.setBounds(0, 0, 764, 489);
+			content.add(homePanel);
+			
+			//to add method then change the values when activity btn clicked
+			act1 = new JPanel();
+			act2 = new JPanel();
+			act3 = new JPanel();
+			act4 = new JPanel();
+			createStudentPanel = new JPanel();
+			deleteStudentPanel = new JPanel();
+			
+			act1.setBackground(Color.WHITE);
+			act1.setBounds(0, 0, 764, 489);
+			act2.setBackground(Color.WHITE);
+			act2.setBounds(0, 0, 764, 489);
+			act3.setBackground(Color.WHITE);
+			act3.setBounds(0, 0, 764, 489);
+			act4.setBackground(Color.WHITE);
+			act4.setBounds(0, 0, 764, 489);
+			createStudentPanel.setBackground(Color.WHITE);
+			createStudentPanel.setBounds(0, 0, 764, 489);
+			deleteStudentPanel.setBackground(Color.WHITE);
+			deleteStudentPanel.setBounds(0, 0, 764, 489);
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
+		show_panel(homePanel);
 		
+	}
+	public static void show_panel(JPanel panels)
+	
+	{
+		JPanel[] panelist = {homePanel,listCreateStudent,recordlist,discussionList,act1,act2,act3,act4,createStudentPanel,deleteStudentPanel};
+		for(JPanel panelz:panelist)
+		{
+			panelz.setVisible(false);
+		}
+		panels.setVisible(true);
 	}
 }

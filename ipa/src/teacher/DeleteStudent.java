@@ -1,25 +1,20 @@
 package teacher;
 
-import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import database.connection;
-
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
-import java.awt.Font;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.util.ArrayList;
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
 
 public class DeleteStudent extends JPanel {
 	private JTextField nameField;
@@ -113,7 +108,12 @@ public class DeleteStudent extends JPanel {
 						lnameField.setText("");
 						userField.setText("");
 						passField.setText("");
-						dashboard.tabbedPane.setSelectedIndex(0);
+						try {
+							dashboard.show_panel(dashboard.homePanel);
+						} catch (Exception e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 						
 					}
 					
@@ -140,7 +140,12 @@ public class DeleteStudent extends JPanel {
 					lnameField.setText("");
 					userField.setText("");
 					passField.setText("");
-					dashboard.tabbedPane.setSelectedIndex(0);
+					try {
+						dashboard.show_panel(dashboard.homePanel);
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
 					
 				} catch (Exception e1) {
 					// TODO Auto-generated catch block

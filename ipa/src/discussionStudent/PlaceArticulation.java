@@ -1,4 +1,4 @@
-package discussions;
+package discussionStudent;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -16,10 +16,10 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
-import javax.swing.UIManager;
 import javax.swing.border.EtchedBorder;
 import javax.swing.border.TitledBorder;
 
+import discussions.embedVideo;
 import student.text2speech;
 import javax.swing.ImageIcon;
 
@@ -71,6 +71,7 @@ public class PlaceArticulation extends JPanel {
 		panel_2.setLayout(null);
 		
 		JPanel panel_4 = new JPanel();
+		panel_4.setVisible(false);
 		panel_4.setBackground(Color.WHITE);
 		panel_4.setBounds(0, 0, 198, 463);
 		panel_2.add(panel_4);
@@ -102,6 +103,7 @@ public class PlaceArticulation extends JPanel {
 		tabbedPane.addTab("Page 3", null, panel_2_1, null);
 		
 		JPanel panel_4_1 = new JPanel();
+		panel_4_1.setVisible(false);
 		panel_4_1.setLayout(null);
 		panel_4_1.setBounds(0, 0, 198, 463);
 		panel_2_1.add(panel_4_1);
@@ -118,6 +120,7 @@ public class PlaceArticulation extends JPanel {
 		panel_4_1.add(textPane_1);
 		
 		JPanel panel_5_1 = new JPanel();
+		panel_5_1.setBackground(new Color(255, 255, 255));
 		panel_5_1.setLayout(null);
 		panel_5_1.setBounds(222, 0, 532, 452);
 		panel_2_1.add(panel_5_1);

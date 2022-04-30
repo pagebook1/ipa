@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
@@ -69,7 +70,7 @@ public class login extends JFrame {
 		username.setBounds(706, 142, 281, 50);
 		username.setColumns(10);
 		
-		password = new JTextField();
+		password = new JPasswordField();
 		password.setBounds(706, 218, 281, 55);
 		password.setColumns(10);
 		
@@ -137,9 +138,10 @@ public class login extends JFrame {
 		panel_1.add(panel_2);
 		
 		JTextPane txtpnToOurDearest = new JTextPane();
+		txtpnToOurDearest.setEditable(false);
 		txtpnToOurDearest.setContentType("text/html");
 		txtpnToOurDearest.setFont(new Font("Dialog", Font.PLAIN, 25));
-		txtpnToOurDearest.setText("<br><p style=\"font-size:30; font-family: 'Brush Script MT'\"align=\"justify\">\r\nTo our dearest teachers and students, we greet you with orace and happiness. Thank you for taking part in our strategy and being one of those who installed and tried Pronouncely. Feel free to delve into and explore this software. We hope that we can contribute to your pronunciation improvement with our plotted pedagigy. We claim for your success because it&rsquo;s ours too.</p>\r\n\r\n<p style=\"font-size:25;font-family:'Brush Script MT'\">Thank you and Enjoy!</p>");
+		txtpnToOurDearest.setText("<br><p style=\"font-size:30; font-family: 'Brush Script MT'\"align=\"justify\">\r\nTo our dearest teachers and students, we greet you with grace and happiness. Thank you for taking part in our strategy and being one of those who installed and tried Pronouncely. Feel free to delve into and explore this software. We hope that we can contribute to your pronunciation improvement with our plotted pedagogy. We claim for your success because it&rsquo;s ours too.</p>\r\n\r\n<p style=\"font-size:25;font-family:'Brush Script MT'\">Thank you and Enjoy!</p>");
 		txtpnToOurDearest.setBounds(10, 63, 584, 391);
 		panel_1.add(txtpnToOurDearest);
 		

@@ -102,7 +102,7 @@ public class createStudent extends JPanel {
 						lnameField.setText("");
 						userField.setText("");
 						passField.setText("");
-						dashboard.tabbedPane.setSelectedIndex(0);
+						dashboard.show_panel(dashboard.homePanel);
 						
 					}
 					

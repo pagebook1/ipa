@@ -1,22 +1,20 @@
 package teacher;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.JPanel;
-
-import database.connection;
-import student.play_voice;
-
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import java.awt.Font;
-import java.util.ArrayList;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JScrollPane;
+
+import database.connection;
 
 public class act3_record extends JPanel {
 	private JTable table;
@@ -76,7 +74,7 @@ public class act3_record extends JPanel {
 		lblNewLabel.setBounds(234, 67, 363, 24);
 		add(lblNewLabel);
 		
-		JButton btnNewButton = new JButton("get_records\r\n");
+		JButton btnNewButton = new JButton("GET RECORDS");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				model.setRowCount(0);

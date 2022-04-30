@@ -17,6 +17,7 @@ import javax.swing.border.LineBorder;
 import discussions.dipthongs;
 import discussionStudent.*;
 import game.login;
+import quiz.quizlist;
 import teacher.DiscussionList;
 
 import java.awt.event.MouseEvent;
@@ -36,6 +37,7 @@ public class dashboard extends JFrame {
 	static JPanel articulate;
 	static JPanel speech ;
 	static JPanel voice;
+	static JPanel quizs;
 	
 
 	/**
@@ -177,7 +179,14 @@ public class dashboard extends JFrame {
 		quizbtn.setBorder(new LineBorder(new Color(95, 158, 160)));
 		quizbtn.setBackground(new Color(0, 128, 128));
 		quizbtn.setBounds(10, 430, 249, 29);
-		quizbtn.addMouseListener(new PanelMouseAdapter(quizbtn));
+		quizbtn.addMouseListener(new PanelMouseAdapter(quizbtn) {
+			public void mouseClicked(MouseEvent e)
+			{
+				showpanel(quizs);
+				quizlist.showpanel(quizlist.panel);
+				
+			}
+		});
 		panel.add(quizbtn);
 		quizbtn.setLayout(null);
 		
@@ -246,7 +255,6 @@ public class dashboard extends JFrame {
 		 discussionList = new JPanel();
 		discussionList.setBounds(0, 0, 769, 491);
 		content.add(discussionList);
-		
 		 dipthongs1 = new discussionStudent.dipthongs();
 		 articulate = new discussionStudent.PlaceArticulation();
 		 speech = new discussionStudent.SpeechOrgans();
@@ -304,7 +312,9 @@ public class dashboard extends JFrame {
 		dipthongs.setBackground(new Color(0, 102, 102));
 		dipthongs.setBounds(382, 273, 324, 92);
 		discussionList.add(dipthongs);
-		
+		 quizs = new quiz.quizlist();
+		quizs.setBounds(0, 0, 769, 491);
+		content.add(quizs);
 		showpanel(Home);
 	}
 	
@@ -316,6 +326,7 @@ public class dashboard extends JFrame {
 		articulate.setVisible(false);
 		speech.setVisible(false);
 		voice.setVisible(false);
+		quizs.setVisible(false);
 		panel.setVisible(true);
 		
 	}

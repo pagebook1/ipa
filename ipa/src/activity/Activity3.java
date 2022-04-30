@@ -211,7 +211,7 @@ public class Activity3 extends JPanel {
 		 	}
 		 });
 		ar1.setForeground(Color.WHITE);
-		ar1.setBackground(Color.CYAN);
+		ar1.setBackground(new Color(30, 144, 255));
 		ar1.setBounds(195, 47, 113, 29);
 		panel_7.add(ar1);
 		
@@ -233,7 +233,7 @@ public class Activity3 extends JPanel {
 				filename = random();
 		 	}
 		 });
-		ar2.setBackground(Color.CYAN);
+		ar2.setBackground(new Color(30, 144, 255));
 		ar2.setForeground(Color.WHITE);
 		ar2.setBounds(195, 93, 113, 29);
 		panel_7.add(ar2);
@@ -256,7 +256,7 @@ public class Activity3 extends JPanel {
 				filename = random();
 		 	}
 		 });
-		ar3.setBackground(Color.CYAN);
+		ar3.setBackground(new Color(30, 144, 255));
 		ar3.setForeground(Color.WHITE);
 		ar3.setBounds(195, 139, 113, 29);
 		panel_7.add(ar3);
@@ -279,7 +279,7 @@ public class Activity3 extends JPanel {
 				filename = random();
 		 	}
 		 });
-		ar4.setBackground(Color.CYAN);
+		ar4.setBackground(new Color(30, 144, 255));
 		ar4.setForeground(Color.WHITE);
 		ar4.setBounds(195, 190, 113, 29);
 		panel_7.add(ar4);
@@ -302,7 +302,7 @@ public class Activity3 extends JPanel {
 				filename = random();
 		 	}
 		 });
-		ar5.setBackground(Color.CYAN);
+		ar5.setBackground(new Color(30, 144, 255));
 		ar5.setForeground(Color.WHITE);
 		ar5.setBounds(195, 236, 113, 29);
 		panel_7.add(ar5);
@@ -332,7 +332,7 @@ public class Activity3 extends JPanel {
 			}
 		});
 		ar5_1.setForeground(Color.WHITE);
-		ar5_1.setBackground(Color.CYAN);
+		ar5_1.setBackground(new Color(30, 144, 255));
 		ar5_1.setVisible(false);
 		ar5_1.setBounds(195, 286, 113, 29);
 		panel_7.add(ar5_1);
@@ -546,7 +546,7 @@ public class Activity3 extends JPanel {
 			}
 		});
 		nextbtn.setForeground(Color.WHITE);
-		nextbtn.setBackground(Color.CYAN);
+		nextbtn.setBackground(new Color(30, 144, 255));
 		nextbtn.setBounds(311, 369, 113, 29);
 		panel.add(nextbtn);
 	}
