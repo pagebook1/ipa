@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import database.connection;
 import javax.swing.SwingConstants;
 import javax.swing.JTextPane;
+import java.awt.Toolkit;
 
 public class login extends JFrame {
 
@@ -58,6 +59,7 @@ public class login extends JFrame {
 	 * Create the frame.
 	 */
 	public login() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(login.class.getResource("/assets/talking.png")));
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1079, 552);

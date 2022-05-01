@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -24,6 +25,7 @@ import java.awt.event.MouseEvent;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Toolkit;
 
 public class dashboard extends JFrame {
 	public JPanel content;
@@ -59,6 +61,7 @@ public class dashboard extends JFrame {
 	 * Create the frame.
 	 */
 	public dashboard() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(dashboard.class.getResource("/assets/talking.png")));
 		
 		activityList = new ActivityList();
 		activityList.tabbedPane.setSize(791, 528);
@@ -252,56 +255,61 @@ public class dashboard extends JFrame {
 		
 		content.add(activityList);
 		content.add(Home);
-		 discussionList = new JPanel();
-		discussionList.setBounds(0, 0, 769, 491);
-		content.add(discussionList);
 		 dipthongs1 = new discussionStudent.dipthongs();
 		 articulate = new discussionStudent.PlaceArticulation();
 		 speech = new discussionStudent.SpeechOrgans();
 		 voice = new discussionStudent.voice();
-		content.add(dipthongs1);
-		content.add(articulate);
-		content.add(speech);
-		content.add(voice);
+		discussionList = new JPanel();
+		discussionList.setBackground(new Color(255, 255, 255));
+		discussionList.setBounds(0, 0, 769, 491);
+		content.add(discussionList);
 		discussionList.setLayout(null);
 		
-		JButton btnNewButton = new JButton("PLACE AND MANNER OF ARTICULATION");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setBorder(null);
+		btnNewButton.setIcon(new ImageIcon(dashboard.class.getResource("/assets/person.png")));
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showpanel(articulate);
-			}
-		});
-		btnNewButton.setForeground(Color.WHITE);
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
-		btnNewButton.setBackground(new Color(0, 102, 102));
-		btnNewButton.setBounds(43, 273, 314, 92);
-		discussionList.add(btnNewButton);
-		
-		JButton btnMannerOfArticulation = new JButton("SPEECH ORGANS");
-		btnMannerOfArticulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				showpanel(speech);
 			}
 		});
-		btnMannerOfArticulation.setForeground(Color.WHITE);
-		btnMannerOfArticulation.setFont(new Font("Dialog", Font.BOLD, 21));
-		btnMannerOfArticulation.setBackground(new Color(0, 102, 102));
-		btnMannerOfArticulation.setBounds(43, 97, 324, 92);
-		discussionList.add(btnMannerOfArticulation);
+		btnNewButton.setForeground(Color.WHITE);
+		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.setBounds(36, 167, 165, 148);
+		discussionList.add(btnNewButton);
 		
-		JButton btnVoicedAndVoiceless = new JButton("VOICED AND VOICELESS");
-		btnVoicedAndVoiceless.addActionListener(new ActionListener() {
+		JButton btnMannerOfArticulation = new JButton("");
+		btnMannerOfArticulation.setBorder(null);
+		btnMannerOfArticulation.setIcon(new ImageIcon(dashboard.class.getResource("/assets/voice-message.png")));
+		btnMannerOfArticulation.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				showpanel(voice);
 			}
 		});
+		btnMannerOfArticulation.setForeground(Color.WHITE);
+		btnMannerOfArticulation.setFont(new Font("Dialog", Font.BOLD, 21));
+		btnMannerOfArticulation.setBackground(new Color(255, 255, 255));
+		btnMannerOfArticulation.setBounds(211, 167, 165, 149);
+		discussionList.add(btnMannerOfArticulation);
+		
+		JButton btnVoicedAndVoiceless = new JButton("");
+		btnVoicedAndVoiceless.setBorder(null);
+		btnVoicedAndVoiceless.setIcon(new ImageIcon(dashboard.class.getResource("/assets/voice.png")));
+		btnVoicedAndVoiceless.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showpanel(articulate);
+			}
+		});
 		btnVoicedAndVoiceless.setForeground(Color.WHITE);
 		btnVoicedAndVoiceless.setFont(new Font("Dialog", Font.BOLD, 21));
-		btnVoicedAndVoiceless.setBackground(new Color(0, 102, 102));
-		btnVoicedAndVoiceless.setBounds(382, 97, 324, 92);
+		btnVoicedAndVoiceless.setBackground(new Color(255, 255, 255));
+		btnVoicedAndVoiceless.setBounds(386, 167, 165, 148);
 		discussionList.add(btnVoicedAndVoiceless);
 		
-		JButton dipthongs = new JButton("Dipthongs");
+		JButton dipthongs = new JButton("");
+		dipthongs.setBorder(null);
+		dipthongs.setIcon(new ImageIcon(dashboard.class.getResource("/assets/earphones.png")));
 		dipthongs.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				showpanel(dipthongs1);
@@ -309,9 +317,43 @@ public class dashboard extends JFrame {
 		});
 		dipthongs.setForeground(Color.WHITE);
 		dipthongs.setFont(new Font("Dialog", Font.BOLD, 21));
-		dipthongs.setBackground(new Color(0, 102, 102));
-		dipthongs.setBounds(382, 273, 324, 92);
+		dipthongs.setBackground(new Color(255, 255, 255));
+		dipthongs.setBounds(560, 167, 165, 148);
 		discussionList.add(dipthongs);
+		
+		JTextPane lblNewLabel_4 = new JTextPane();
+		lblNewLabel_4.setText("Speech Organs");
+		lblNewLabel_4.setForeground(new Color(0, 128, 128));
+		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblNewLabel_4.setBounds(36, 118, 165, 38);
+		discussionList.add(lblNewLabel_4);
+		
+		JTextPane lblActivity = new JTextPane();
+		lblActivity.setContentType("text/html");
+		lblActivity.setText("<p style=\"font-family:dialog;font-size:20;text-align:center;color:#008080\"><b>Place and Manner of Articulation</b></p>");
+		lblActivity.setForeground(new Color(0, 128, 128));
+		lblActivity.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblActivity.setBounds(371, 102, 205, 73);
+		discussionList.add(lblActivity);
+		
+		JTextPane lblActivity_1 = new JTextPane();
+		lblActivity_1.setContentType("text/html");
+		lblActivity_1.setText("<p style=\"font-family:dialog;font-size:20;text-align:center;color:#008080\"><b>Voiced and Voiceless</b></p>");
+		lblActivity_1.setForeground(new Color(0, 128, 128));
+		lblActivity_1.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblActivity_1.setBounds(211, 102, 165, 73);
+		discussionList.add(lblActivity_1);
+		
+		JTextPane lblActivity_2 = new JTextPane();
+		lblActivity_2.setText("Diphthongs");
+		lblActivity_2.setForeground(new Color(0, 128, 128));
+		lblActivity_2.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblActivity_2.setBounds(586, 118, 139, 38);
+		discussionList.add(lblActivity_2);
+		content.add(dipthongs1);
+		content.add(articulate);
+		content.add(speech);
+		content.add(voice);
 		 quizs = new quiz.quizlist();
 		quizs.setBounds(0, 0, 769, 491);
 		content.add(quizs);

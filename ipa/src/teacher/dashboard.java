@@ -19,6 +19,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import student.home;
+import java.awt.Toolkit;
 
 public class dashboard extends JFrame {
 
@@ -52,6 +53,7 @@ public class dashboard extends JFrame {
 	}
 	JPanel createStudent;
 	public dashboard() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(dashboard.class.getResource("/assets/talking.png")));
 		try {
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block

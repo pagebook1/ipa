@@ -14,6 +14,7 @@ import javax.swing.JTextPane;
 import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.MutableAttributeSet;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
@@ -47,53 +48,61 @@ public class home extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		
-		JButton lblWhat = new JButton("WHAT");
+		JButton lblWhat = new JButton("");
+		lblWhat.setBorder(null);
+		lblWhat.setIcon(new ImageIcon(home.class.getResource("/assets/question.png")));
 		lblWhat.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_show(what_panel);
 			}
 		});
-		lblWhat.setForeground(Color.GREEN);
+		lblWhat.setForeground(Color.WHITE);
 		lblWhat.setFont(new Font("Dialog", Font.BOLD, 35));
 		lblWhat.setBackground(Color.WHITE);
-		lblWhat.setBounds(95, 120, 160, 60);
+		lblWhat.setBounds(44, 174, 160, 144);
 		panel.add(lblWhat);
 		
-		JButton lblWho = new JButton("WHO");
+		JButton lblWho = new JButton("");
+		lblWho.setBorder(null);
+		lblWho.setIcon(new ImageIcon(home.class.getResource("/assets/teamwork.png")));
 		lblWho.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_show(who_panel);
 
 			}
 		});
-		lblWho.setForeground(Color.GREEN);
+		lblWho.setForeground(Color.WHITE);
 		lblWho.setFont(new Font("Dialog", Font.BOLD, 35));
 		lblWho.setBackground(Color.WHITE);
-		lblWho.setBounds(157, 287, 160, 60);
+		lblWho.setBounds(384, 174, 180, 144);
 		panel.add(lblWho);
 		
-		JButton lblWhy = new JButton("WHY");
+		JButton lblWhy = new JButton("");
+		lblWhy.setBorder(null);
+		lblWhy.setIcon(new ImageIcon(home.class.getResource("/assets/question-mark.png")));
 		lblWhy.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_show(why_panel);
 			}
 		});
-		lblWhy.setForeground(Color.GREEN);
+		lblWhy.setForeground(Color.WHITE);
 		lblWhy.setFont(new Font("Dialog", Font.BOLD, 35));
 		lblWhy.setBackground(Color.WHITE);
-		lblWhy.setBounds(497, 120, 160, 60);
+		lblWhy.setBounds(214, 174, 160, 144);
 		panel.add(lblWhy);
 		
-		JButton lblHow = new JButton("HOW");
+		JButton lblHow = new JButton("");
+		lblHow.setBorder(null);
+		lblHow.setIcon(new ImageIcon(home.class.getResource("/assets/cogs.png")));
 		lblHow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				panel_show(how_panel);
 			}
 		});
-		lblHow.setForeground(Color.GREEN);
+		lblHow.setForeground(Color.WHITE);
 		lblHow.setFont(new Font("Dialog", Font.BOLD, 35));
 		lblHow.setBackground(Color.WHITE);
-		lblHow.setBounds(442, 287, 160, 60);
+		lblHow.setBounds(574, 174, 160, 144);
 		panel.add(lblHow);
 		
 		 what_panel = new JPanel();
@@ -133,21 +142,12 @@ public class home extends JPanel {
 		who_panel.add(scrollPane_1);
 		
 		JTextPane txtpnTheStudentsOf = new JTextPane();
+		txtpnTheStudentsOf.setContentType("text/html");
+		txtpnTheStudentsOf.setEditable(false);
 		txtpnTheStudentsOf.setFont(new Font("Dialog", Font.PLAIN, 20));
 //		txtpnTheStudentsOf.insertIcon());
-		txtpnTheStudentsOf.setText("\r\n\t\tThe proponents of the study and this software are students from Maryhill College taking the degree program Bachelor of Secondary Education major in English. Inspired by how Linguistics works, the researchers chose to focus on the mechanics of Phonology and Phonetics as the ambiguity of English sounds is not confined to the 26 letters of the alphabet. Thus, seeking to thoroughly present each phoneme with its symbols that precisely show how it must be said, the researchers came up with the idea of integrating the International Phonetics Alphabet, both as a pedagogy and Pronouncely as an instrumental part in conducting the strategy of teaching and learning pronunciation.\r\n\t\tBehind all the work and endeavors for the study's progress and crafting of the software is the group of Ms. Kristine Claire A. Gabatin, Ms. Lyka Mae L. Castillo, Ms. Reisha Mae D. Garay, and Mr. Jayarr C. Rondina, who are also future teachers dedicated to improving learning English as a second language, especially in terms of speaking and pronunciation. Everything was keenly prepared and conceptualized from the flows, instructions, features, and functions to operate the games, discussions, and activities meant to achieve a set of lessons. The creative juices and critical content are from the minds, efforts, and hard work of this cream of the crop, exerting the best and most of their knowledge, skills, and time.\u00A0\r\n");
+		txtpnTheStudentsOf.setText("<body align=justify>\r\n<center><img src=\""+new ImageIcon(ActivityList.class.getResource("/assets/who_imgss.png"))+"\"></img></center>\r\n<p style=\"font-family:dialog;font-size:20\">&nbsp &nbsp The proponents of the study and this software are students from Maryhill College taking the degree program Bachelor of Secondary Education major in English. Inspired by how Linguistics works, the researchers chose to focus on the mechanics of Phonology and Phonetics as the ambiguity of English sounds is not confined to the 26 letters of the alphabet. Thus, seeking to thoroughly present each phoneme with its symbols that precisely show how it must be said, the researchers came up with the idea of integrating the International Phonetics Alphabet, both as a pedagogy and Pronouncely as an instrumental part in conducting the strategy of teaching and learning pronunciation.<br>\r\n&nbsp &nbsp Behind all the work and endeavors for the study's progress and crafting of the software is the group of <b>Ms. Kristine Claire A. Gabatin</b>, <b>Ms. Lyka Mae L. Castillo</b>, <b>Ms. Reisha Mae D. Garay</b>, and <b>Mr. Jayarr C. Rondina</b>, who are also future teachers dedicated to improving learning English as a second language, especially in terms of speaking and pronunciation. Everything was keenly prepared and conceptualized from the flows, instructions, features, and functions to operate the games, discussions, and activities meant to achieve a set of lessons. The creative juices and critical content are from the minds, efforts, and hard work of this cream of the crop, exerting the best and most of their knowledge, skills, and time.&#160;<br>\r\n</p>\r\n</body>");
 		scrollPane_1.setViewportView(txtpnTheStudentsOf);
-		
-		StyledDocument doc1 = txtpnTheStudentsOf.getStyledDocument();
-		javax.swing.text.Style stylewho = doc1.addStyle("StyleName", null);
-		 StyleConstants.setIcon(stylewho, new ImageIcon(home.class.getResource("/assets/who_imgss.png")));
-		try {
-			doc1.insertString(0, "invisible text", stylewho);
-		} catch (BadLocationException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		doc1.setParagraphAttributes(0, doc1.getLength(), justify, false);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("WHO");
 		lblNewLabel_1_1.setForeground(Color.RED);
@@ -202,6 +202,34 @@ public class home extends JPanel {
 		lblNewLabel_1_1_2.setBounds(600, 0, 123, 65);
 		how_panel.add(lblNewLabel_1_1_2);
 		panel_show(panel);
+		
+		JLabel lblNewLabel = new JLabel("WHAT");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(new Color(0, 128, 128));
+		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblNewLabel.setBounds(44, 329, 160, 28);
+		panel.add(lblNewLabel);
+		
+		JLabel lblWhy_1 = new JLabel("WHY");
+		lblWhy_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWhy_1.setForeground(new Color(0, 128, 128));
+		lblWhy_1.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblWhy_1.setBounds(214, 329, 156, 28);
+		panel.add(lblWhy_1);
+		
+		JLabel lblWho_1 = new JLabel("WHO");
+		lblWho_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblWho_1.setForeground(new Color(0, 128, 128));
+		lblWho_1.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblWho_1.setBounds(384, 329, 180, 28);
+		panel.add(lblWho_1);
+		
+		JLabel lblHow_1 = new JLabel("HOW");
+		lblHow_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHow_1.setForeground(new Color(0, 128, 128));
+		lblHow_1.setFont(new Font("Dialog", Font.BOLD, 20));
+		lblHow_1.setBounds(574, 329, 156, 28);
+		panel.add(lblHow_1);
 
 	}
 	public static void panel_show(JPanel pane)

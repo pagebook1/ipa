@@ -114,10 +114,12 @@ public class Activity2 extends JPanel {
 		panel_1.add(phonemtype);
 		
 		 voicelabel = new JTextPane();
+		 voicelabel.setEditable(false);
+		 voicelabel.setContentType("text/html");
 		voicelabel.setFont(new Font("Dialog", Font.BOLD, 25));
 		voicelabel.setForeground(UIManager.getColor("CheckBox.darkShadow"));
-		voicelabel.setText("liberty\r\n'l\u026Ab\u0259rti\r\n");
-		voicelabel.setBounds(295, 164, 93, 75);
+		voicelabel.setText("<p style=\"font-family:dialog;font-size:25\"><b> li<u>b</u>erty<br>l\u026A<u>b</u>\u0259rti </b></p>");
+		voicelabel.setBounds(295, 142, 93, 87);
 		panel_1.add(voicelabel);
 		
 		 lblNewLabel_2 = new JLabel("");
@@ -167,10 +169,12 @@ public class Activity2 extends JPanel {
 		panel_1_1.add(phonemtype_1);
 		
 		JTextPane txtpnDullDl = new JTextPane();
-		txtpnDullDl.setText("dull \r\nd\u028Cl\r\n");
+		txtpnDullDl.setEditable(false);
+		txtpnDullDl.setContentType("text/html");
+		txtpnDullDl.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b> <u>d</u>ull \r\n\t\t<br><u>d</u>\u028Cl\r\n\t</b>\r\n</p>");
 		txtpnDullDl.setForeground(SystemColor.controlDkShadow);
 		txtpnDullDl.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnDullDl.setBounds(295, 164, 93, 75);
+		txtpnDullDl.setBounds(295, 148, 93, 87);
 		panel_1_1.add(txtpnDullDl);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
@@ -219,10 +223,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1.add(phonemtype_1_1);
 		
 		JTextPane txtpnGivev = new JTextPane();
-		txtpnGivev.setText("give\r\n\u0261\u026Av\r\n");
+		txtpnGivev.setEditable(false);
+		txtpnGivev.setContentType("text/html");
+		txtpnGivev.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b> <u>g</u>ive\r\n\t\t<br><u>g</u>\u026Av\r\n\t</b>\r\n</p>");
 		txtpnGivev.setForeground(SystemColor.controlDkShadow);
 		txtpnGivev.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnGivev.setBounds(295, 164, 93, 75);
+		txtpnGivev.setBounds(295, 142, 93, 97);
 		panel_1_1_1.add(txtpnGivev);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("");
@@ -271,10 +277,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1.add(phonemtype_1_1_1);
 		
 		JTextPane txtpnJoustDast = new JTextPane();
-		txtpnJoustDast.setText("joust\r\nd\u0292a\u028Ast\r\n");
+		txtpnJoustDast.setEditable(false);
+		txtpnJoustDast.setContentType("text/html");
+		txtpnJoustDast.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b> <u>j</u>oust\r\n\t\t<br><u>d\u0292</u>a\u028Ast\r\n\t</b>\r\n</p>");
 		txtpnJoustDast.setForeground(SystemColor.controlDkShadow);
 		txtpnJoustDast.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnJoustDast.setBounds(295, 164, 93, 75);
+		txtpnJoustDast.setBounds(295, 138, 93, 101);
 		panel_1_1_1_1.add(txtpnJoustDast);
 		
 		JLabel lblNewLabel_2_1_1_1 = new JLabel("");
@@ -323,10 +331,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1.add(phonemtype_1_1_1_1);
 		
 		JTextPane txtpnCrevicekrevs = new JTextPane();
-		txtpnCrevicekrevs.setText("crevice\r\n'krev\u026As\r\n");
+		txtpnCrevicekrevs.setEditable(false);
+		txtpnCrevicekrevs.setContentType("text/html");
+		txtpnCrevicekrevs.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>cre<u>v</u>ice\r\n\t\t<br>\r\n\t'kr<u>e</u>v\u026As\r\n\t</b>\r\n</p>");
 		txtpnCrevicekrevs.setForeground(SystemColor.controlDkShadow);
 		txtpnCrevicekrevs.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnCrevicekrevs.setBounds(295, 164, 93, 75);
+		txtpnCrevicekrevs.setBounds(295, 140, 132, 99);
 		panel_1_1_1_1_1.add(txtpnCrevicekrevs);
 		
 		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("");
@@ -375,10 +385,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1.add(phonemtype_1_1_1_1_1);
 		
 		JTextPane txtpnGauzeGz = new JTextPane();
-		txtpnGauzeGz.setText("gauze \r\ng\u0254\u02D0z \r\n");
+		txtpnGauzeGz.setEditable(false);
+		txtpnGauzeGz.setContentType("text/html");
+		txtpnGauzeGz.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>gau<u>z</u>e \r\n\t\t<br>\r\n\tg\u0254\u02D0<u>z</u> \r\n\t</b>\r\n</p>");
 		txtpnGauzeGz.setForeground(SystemColor.controlDkShadow);
 		txtpnGauzeGz.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnGauzeGz.setBounds(295, 164, 93, 75);
+		txtpnGauzeGz.setBounds(295, 139, 93, 100);
 		panel_1_1_1_1_1_1.add(txtpnGauzeGz);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("");
@@ -427,10 +439,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1.add(phonemtype_1_1_1_1_1_1);
 		
 		JTextPane txtpnWithW = new JTextPane();
-		txtpnWithW.setText("with\r\nw\u026A\u00F0\r\n");
+		txtpnWithW.setEditable(false);
+		txtpnWithW.setContentType("text/html");
+		txtpnWithW.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>wi<u>th</u>\r\n\t\t<br>\r\n\tw\u026A<u>\u00F0</u>\r\n\t</b>\r\n</p>");
 		txtpnWithW.setForeground(SystemColor.controlDkShadow);
 		txtpnWithW.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnWithW.setBounds(295, 164, 93, 75);
+		txtpnWithW.setBounds(295, 146, 93, 93);
 		panel_1_1_1_1_1_1_1.add(txtpnWithW);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1 = new JLabel("");
@@ -480,10 +494,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1.add(phonemtype_1_1_1_1_1_1_1);
 		
 		JTextPane txtpnVowedVaud = new JTextPane();
-		txtpnVowedVaud.setText("vowed\r\nvaud\r\n");
+		txtpnVowedVaud.setEditable(false);
+		txtpnVowedVaud.setContentType("text/html");
+		txtpnVowedVaud.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>vo<u>w</u>ed\r\n\t\t<br>\r\n\tva<u>u</u>d\r\n\t</b>\r\n</p>");
 		txtpnVowedVaud.setForeground(SystemColor.controlDkShadow);
 		txtpnVowedVaud.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnVowedVaud.setBounds(295, 164, 93, 75);
+		txtpnVowedVaud.setBounds(295, 146, 93, 93);
 		panel_1_1_1_1_1_1_1_1.add(txtpnVowedVaud);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1 = new JLabel("");
@@ -532,10 +548,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_1.add(phonemtype_1_1_1_1_1_1_1_1);
 		
 		JTextPane txtpnPetalpetl = new JTextPane();
-		txtpnPetalpetl.setText("petal\r\n'petl\r\n\r\n");
+		txtpnPetalpetl.setEditable(false);
+		txtpnPetalpetl.setContentType("text/html");
+		txtpnPetalpetl.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>p</u>etal\r\n\t\t<br>\r\n\t'<u>p</u>etl\r\n\t</b>\r\n</p>");
 		txtpnPetalpetl.setForeground(SystemColor.controlDkShadow);
 		txtpnPetalpetl.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnPetalpetl.setBounds(295, 164, 93, 75);
+		txtpnPetalpetl.setBounds(295, 142, 93, 97);
 		panel_1_1_1_1_1_1_1_1_1.add(txtpnPetalpetl);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_1 = new JLabel("");
@@ -584,10 +602,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_2.add(phonemtype_1_1_1_1_1_1_1_2);
 		
 		JTextPane txtpnButBt = new JTextPane();
-		txtpnButBt.setText("but\r\nb\u0259t\r\n");
+		txtpnButBt.setEditable(false);
+		txtpnButBt.setContentType("text/html");
+		txtpnButBt.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>bu<u>t</u>\r\n\t\t<br>\r\n\tb\u0259<u>t</u>\r\n\t</b>\r\n</p>");
 		txtpnButBt.setForeground(SystemColor.controlDkShadow);
 		txtpnButBt.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnButBt.setBounds(295, 164, 93, 75);
+		txtpnButBt.setBounds(295, 143, 93, 96);
 		panel_1_1_1_1_1_1_1_1_2.add(txtpnButBt);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_2 = new JLabel("");
@@ -636,10 +656,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_3.add(phonemtype_1_1_1_1_1_1_1_3);
 		
 		JTextPane txtpnWorkWrk = new JTextPane();
-		txtpnWorkWrk.setText("work\r\nw\u025C\u02D0rk\r\n");
+		txtpnWorkWrk.setEditable(false);
+		txtpnWorkWrk.setContentType("text/html");
+		txtpnWorkWrk.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b>wor<u>k</u>\r\n\t\t<br>\r\n\tw\u025C\u02D0r<u>k</u>\r\n\t</b>\r\n</p>");
 		txtpnWorkWrk.setForeground(SystemColor.controlDkShadow);
 		txtpnWorkWrk.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnWorkWrk.setBounds(295, 164, 93, 75);
+		txtpnWorkWrk.setBounds(295, 144, 93, 95);
 		panel_1_1_1_1_1_1_1_1_3.add(txtpnWorkWrk);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_3 = new JLabel("");
@@ -688,10 +710,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_4.add(phonemtype_1_1_1_1_1_1_1_4);
 		
 		JTextPane txtpnChalicetls = new JTextPane();
-		txtpnChalicetls.setText("chalice\r\n't\u0283\u00E6l\u026As\r\n");
+		txtpnChalicetls.setEditable(false);
+		txtpnChalicetls.setContentType("text/html");
+		txtpnChalicetls.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>ch</u>alice\r\n\t\t<br>\r\n\t't<u>\u0283</u>\u00E6l\u026As\r\n\t</b>\r\n</p>");
 		txtpnChalicetls.setForeground(SystemColor.controlDkShadow);
 		txtpnChalicetls.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnChalicetls.setBounds(295, 164, 93, 75);
+		txtpnChalicetls.setBounds(295, 152, 93, 87);
 		panel_1_1_1_1_1_1_1_1_4.add(txtpnChalicetls);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_4 = new JLabel("");
@@ -740,10 +764,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_5.add(phonemtype_1_1_1_1_1_1_1_5);
 		
 		JTextPane txtpnFriendFrnd = new JTextPane();
-		txtpnFriendFrnd.setText("friend \r\nfr\u025Bnd \r\n");
+		txtpnFriendFrnd.setEditable(false);
+		txtpnFriendFrnd.setContentType("text/html");
+		txtpnFriendFrnd.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>f</u>riend \r\n\t\t<br>\r\n\t<u>f</u>r\u025Bnd \r\n\t</b>\r\n</p>");
 		txtpnFriendFrnd.setForeground(SystemColor.controlDkShadow);
 		txtpnFriendFrnd.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnFriendFrnd.setBounds(295, 164, 93, 75);
+		txtpnFriendFrnd.setBounds(295, 152, 93, 87);
 		panel_1_1_1_1_1_1_1_1_5.add(txtpnFriendFrnd);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_5 = new JLabel("");
@@ -792,10 +818,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_6.add(phonemtype_1_1_1_1_1_1_1_6);
 		
 		JTextPane txtpnSpikeySpikey = new JTextPane();
-		txtpnSpikeySpikey.setText("spikey\r\nspikey\r\n");
+		txtpnSpikeySpikey.setEditable(false);
+		txtpnSpikeySpikey.setContentType("text/html");
+		txtpnSpikeySpikey.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>s</u>pikey\r\n\t\t<br>\r\n\t<u>s</u>pikey\r\n\t</b>\r\n</p>");
 		txtpnSpikeySpikey.setForeground(SystemColor.controlDkShadow);
 		txtpnSpikeySpikey.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnSpikeySpikey.setBounds(295, 164, 93, 75);
+		txtpnSpikeySpikey.setBounds(295, 144, 93, 95);
 		panel_1_1_1_1_1_1_1_1_6.add(txtpnSpikeySpikey);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_6 = new JLabel("");
@@ -844,10 +872,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_7.add(phonemtype_1_1_1_1_1_1_1_7);
 		
 		JTextPane txtpnThinkk = new JTextPane();
-		txtpnThinkk.setText("think\r\n\u03B8\u026A\u014Bk\r\n");
+		txtpnThinkk.setEditable(false);
+		txtpnThinkk.setContentType("text/html");
+		txtpnThinkk.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>th</u>ink\r\n\t\t<br>\r\n\t<u>\u03B8</u>\u026A\u014Bk\r\n\t</b>\r\n</p>");
 		txtpnThinkk.setForeground(SystemColor.controlDkShadow);
 		txtpnThinkk.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnThinkk.setBounds(295, 164, 93, 75);
+		txtpnThinkk.setBounds(295, 152, 93, 87);
 		panel_1_1_1_1_1_1_1_1_7.add(txtpnThinkk);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_7 = new JLabel("");
@@ -896,10 +926,12 @@ public class Activity2 extends JPanel {
 		panel_1_1_1_1_1_1_1_1_8.add(phonemtype_1_1_1_1_1_1_1_8);
 		
 		JTextPane txtpnWhichW = new JTextPane();
-		txtpnWhichW.setText("which\r\nw\u026A\u02A7\r\n");
+		txtpnWhichW.setEditable(false);
+		txtpnWhichW.setContentType("text/html");
+		txtpnWhichW.setText("<p style=\"font-family:dialog;font-size:25\">\r\n\t<b><u>wh</u>ich\r\n\t\t<br>\r\n\t<u>w</u>\u026A\u02A7\r\n\t</b>\r\n</p>");
 		txtpnWhichW.setForeground(SystemColor.controlDkShadow);
 		txtpnWhichW.setFont(new Font("Dialog", Font.BOLD, 25));
-		txtpnWhichW.setBounds(295, 164, 93, 75);
+		txtpnWhichW.setBounds(295, 143, 93, 96);
 		panel_1_1_1_1_1_1_1_1_8.add(txtpnWhichW);
 		
 		JLabel lblNewLabel_2_1_1_1_1_1_1_1_8 = new JLabel("");
